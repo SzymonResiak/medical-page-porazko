@@ -42,7 +42,7 @@ export const SpecialistCard = ({
           quality={100}
         />
         <div className="relative">
-          <div className="flex items-center gap-2 tablet:gap-4 mb-4 mobile-2:mb-12 mobile-3:mb-19 desktop:mb-35">
+          <div className="flex items-center gap-2 tablet:gap-4 mb-4 mobile-2:mb-12 mobile-3:mb-19 desktop:mb-35 desktop-2:mb-23">
             <div>
               <IconCircle icon={icon} size={isMobile ? "xs" : "md"} />
             </div>
@@ -63,7 +63,7 @@ export const SpecialistCard = ({
           <div className="flex justify-end">
             <Link href={link}>
               <Button
-                className="mt-4 mobile-2:mt-12 mobile-3:mt-19 desktop:mt-35"
+                className="mt-4 mobile-2:mt-12 mobile-3:mt-19 desktop:mt-35 desktop-2:mt-23"
                 rightIcon={<ArrowRightIcon />}
               >
                 dowiedz się więcej
