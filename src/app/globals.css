@@ -6,7 +6,11 @@
 
 @theme {
   --breakpoint-mobile: 320px;
+  --breakpoint-mobile-2: 390px;
+  --breakpoint-mobile-3: 430px;
   --breakpoint-tablet: 700px;
+  --breakpoint-desktop: 1024px;
+  --breakpoint-desktop-2: 1760px;
 }
 
 :root {
