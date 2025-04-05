@@ -5,12 +5,12 @@ import { SpecialistCard } from "@/components/SpecialistCard";
 export default function Home() {
   return (
     <div className="max-w-4xl mx-auto">
-      <h1 className="text-xl tablet:text-4xl font-bold text-center p-3 mb-4 tablet:mb-12 text-[#2E2E2E]">
+      <h1 className="text-xl tablet:text-4xl desktop:text-[3.5rem] font-bold text-center p-3 mb-4 tablet:mb-12 text-[#2E2E2E]">
         Jakiego wsparcia zdrowotnego potrzebujesz?
       </h1>
 
       <div className="grid gap-5 flex justify-center">
-        <div className="grid gap-5 grid-cols-1 desktop:grid-cols-2 mx-auto">
+        <div className="grid gap-5 grid-cols-1 desktop-2:grid-cols-2 mx-auto">
           <SpecialistCard
             imageSrc="/images/toothbrush-bg.png"
             imageAlt="Toothbrush background"

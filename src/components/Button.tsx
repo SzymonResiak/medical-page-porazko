@@ -29,13 +29,13 @@ export const Button = ({
         {leftIcon && (
           <IconCircle
             icon={leftIcon}
-            size={isMobile ? "xs" : "lg"}
+            size={isMobile ? "xs" : "xl"}
             backgroundColor={variant === "default" ? "#2E2E2E" : "#006AFF"}
           />
         )}
         {children && (
           <div
-            className={`${variantClasses} text-[#FCFCFC] rounded-full p-3 tablet:p-5 text-xs tablet:text-2xl`}
+            className={`${variantClasses} text-[#FCFCFC] rounded-[30] p-3 tablet:p-5 text-xs tablet:text-2xl`}
           >
             {children}
           </div>
@@ -43,7 +43,7 @@ export const Button = ({
         {rightIcon && (
           <IconCircle
             icon={rightIcon}
-            size={isMobile ? "xs" : "lg"}
+            size={isMobile ? "xs" : "xl"}
             backgroundColor={variant === "default" ? "#2E2E2E" : "#006AFF"}
           />
         )}

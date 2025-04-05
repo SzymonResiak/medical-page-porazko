@@ -15,7 +15,9 @@ export default function RootLayout({
   return (
     <html lang="pl">
       <body className="antialiased">
-        <main className="min-h-screen p-3 bg-[#FCFCFC]">{children}</main>
+        <main className="min-h-screen p-3 desktop:p-12 bg-[#FCFCFC]">
+          {children}
+        </main>
         {/* przez ten footer rozjezdza sie na malym ekranie */}
         {/* <Footer /> */}
       </body>
