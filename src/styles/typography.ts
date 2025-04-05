@@ -27,5 +27,5 @@ export const typography = {
   "Body-Medium-Bold":
     "text-[14px] mobile:text-[14px] tablet:text-[25px] font-bold leading-[150%]",
   "Body-Small-Regular":
-    "text-[12px] mobile:text-[12px] tablet:text-[20px] font-normal leading-none",
+    "text-[12px] tablet:text-[20px] font-normal leading-none",
 };
