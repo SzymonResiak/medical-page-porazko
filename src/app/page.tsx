@@ -38,12 +38,6 @@ export default function Home() {
           />
         </div>
       </div>
-      <section className="space-y-4 w-full">
-        <h2 className="text-xl font-medium border-b pb-2">
-          Certificates Examples
-        </h2>
-        <Certificates />
-      </section>
     </div>
   );
 }
