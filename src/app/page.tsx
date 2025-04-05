@@ -3,6 +3,7 @@ import { BackIcon } from "@/components/icons/BackIcon";
 import { ToothIcon } from "@/components/icons/ToothIcon";
 import { Accordion } from "@/components/Accordion";
 import { Button } from "@/components/Button";
+import { InfoLabel } from "@/components/InfoLabel";
 
 export default function Home() {
   return (
@@ -10,6 +11,50 @@ export default function Home() {
       <h1 className="text-2xl font-bold">Component Showcase</h1>
 
       <div className="flex flex-col items-center gap-12 w-full max-w-3xl">
+        <section className="space-y-4 w-full">
+          <h2 className="text-xl font-medium border-b pb-2">
+            InfoLabel Examples
+          </h2>
+          <div className="flex flex-col gap-4 w-full">
+            <InfoLabel
+              icon="radioactive"
+              text="Nowoczesna, cyfrowa diagnostyka rentgenowska. Obraz jest uzyskiwany natychmiastowo z minimalizacją szkodliwej dawki."
+              className="bg-green-200"
+            />
+            <InfoLabel
+              icon="translate"
+              text="Biegle komunikuję się po angielsku."
+              className="bg-gray-200"
+            />
+            <InfoLabel
+              icon="transferWhite"
+              text="Akceptuje płatności kartą lub przelewem."
+              className="bg-gray-200"
+            />
+            <InfoLabel
+              text={[
+                { text: "Dom Medyczny " },
+                { text: '"Pro Corde"', bold: true, newLine: true },
+                { text: " gabinet znajduje się na pierwszym piętrze." },
+              ]}
+              className="bg-gray-800"
+              textColor="white"
+            />
+            <InfoLabel
+              icon="transferGreen"
+              text="Akceptuje płatności kartą lub przelewem."
+              className="bg-gray-700"
+              textColor="white"
+            />
+            <InfoLabel
+              icon="invoice"
+              text="Wystawiam faktury."
+              className="bg-gray-700"
+              textColor="white"
+            />
+          </div>
+        </section>
+
         <section className="space-y-4 w-full">
           <h2 className="text-xl font-medium border-b pb-2">
             Accordion Examples
