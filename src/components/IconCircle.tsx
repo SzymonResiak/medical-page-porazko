@@ -1,4 +1,3 @@
-import { cn } from "@/styles/typography";
 import { ReactNode } from "react";
 
 interface IconCircleProps {
@@ -25,11 +24,7 @@ export const IconCircle = ({
 }: IconCircleProps) => {
   return (
     <div
-      className={cn(
-        "rounded-full flex items-center justify-center transition-colors",
-        sizeClasses[size],
-        className
-      )}
+      className={`rounded-full flex items-center justify-center transition-colors ${sizeClasses[size]} ${className}`}
       style={{ backgroundColor }}
     >
       {icon}
