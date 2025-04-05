@@ -2,6 +2,7 @@ import { IconCircle } from "@/components/IconCircle";
 import { BackIcon } from "@/components/icons/BackIcon";
 import { ToothIcon } from "@/components/icons/ToothIcon";
 import { Accordion } from "@/components/Accordion";
+import { Button } from "@/components/Button";
 
 export default function Home() {
   return (
@@ -114,6 +115,23 @@ export default function Home() {
               />
               <span className="text-sm text-gray-500">Yellow</span>
             </div>
+          </div>
+        </section>
+
+        <section className="space-y-4 w-full">
+          <h2 className="text-xl font-medium border-b pb-2">Button Examples</h2>
+          <div className="flex flex-wrap gap-4">
+            <Button>Default Button</Button>
+            <Button variant="primary">Primary Button</Button>
+            <Button leftIcon={<BackIcon />}>With Left Icon</Button>
+            <Button rightIcon={<ToothIcon />}>With Right Icon</Button>
+            <Button leftIcon={<BackIcon />} rightIcon={<ToothIcon />}>
+              Both Icons
+            </Button>
+            <Button leftIcon={<ToothIcon />} variant="primary">
+              Primary with Icon
+            </Button>
+            <Button leftIcon={<ToothIcon />} />
           </div>
         </section>
       </div>
