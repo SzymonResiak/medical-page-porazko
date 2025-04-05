@@ -5,16 +5,19 @@ const config: Config = {
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {
-      screens: {
-        mobile: "360px",
-        tablet: "700px",
-      },
-      fontFamily: {
-        noto: ["Noto Sans Telugu", "sans-serif"],
-      },
+    screens: {
+      mobile: "320px",
+      tablet: "700px",
+    },
+    fontFamily: {
+      "noto-ui": ['"Noto Sans Telugu UI"', "sans-serif"],
+    },
+    fontWeight: {
+      normal: "400",
+      bold: "700",
     },
   },
   plugins: [],

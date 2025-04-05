@@ -1,4 +1,20 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;500;600;700&display=swap");
+@font-face {
+  font-family: "Noto Sans Telugu UI";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/src/assets/fonts/noto-sans-telugu-ui/NotoSansTeluguUI-Regular.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-family: "Noto Sans Telugu UI";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/src/assets/fonts/noto-sans-telugu-ui/NotoSansTeluguUI-Bold.woff2")
+    format("woff2");
+}
 
 @tailwind base;
 @tailwind components;
@@ -12,5 +28,5 @@
 body {
   color: rgb(var(--foreground-rgb));
   background: rgb(var(--background-rgb));
-  font-family: "Noto Sans Telugu", sans-serif;
+  font-family: "Noto Sans Telugu UI", sans-serif;
 }
