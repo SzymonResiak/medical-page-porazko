@@ -1,13 +1,60 @@
 import { IconCircle } from "@/components/IconCircle";
 import { BackIcon } from "@/components/icons/BackIcon";
 import { ToothIcon } from "@/components/icons/ToothIcon";
+import { Accordion } from "@/components/Accordion";
 
 export default function Home() {
   return (
     <div className="p-8 flex flex-col items-center gap-8">
-      <h1 className="text-2xl font-bold">IconCircle Component Showcase</h1>
+      <h1 className="text-2xl font-bold">Component Showcase</h1>
 
       <div className="flex flex-col items-center gap-12 w-full max-w-3xl">
+        <section className="space-y-4 w-full">
+          <h2 className="text-xl font-medium border-b pb-2">
+            Accordion Examples
+          </h2>
+          <div className="flex flex-col gap-4 w-full">
+            <Accordion header="Basic Accordion Example" icon={<ToothIcon />}>
+              <p>
+                This is a basic example of the accordion content. When you click
+                the header, this content will smoothly expand or collapse.
+              </p>
+            </Accordion>
+
+            <Accordion
+              header="Accordion with List Content"
+              icon={<ToothIcon />}
+            >
+              <ul className="list-disc pl-4 space-y-2">
+                <li>First item in the list</li>
+                <li>Second item in the list</li>
+                <li>
+                  Third item with some longer text to show how it wraps within
+                  the accordion container
+                </li>
+              </ul>
+            </Accordion>
+
+            <Accordion
+              header="Accordion with Rich Content"
+              icon={<ToothIcon />}
+              className="bg-gray-50"
+            >
+              <div className="space-y-4">
+                <p>
+                  This accordion contains rich content with multiple elements.
+                </p>
+                <div className="bg-blue-100 p-4 rounded">
+                  <p>Including a highlighted box with custom styling</p>
+                </div>
+                <button className="bg-blue-500 text-white px-4 py-2 rounded">
+                  And even a button!
+                </button>
+              </div>
+            </Accordion>
+          </div>
+        </section>
+
         <section className="space-y-4 w-full">
           <h2 className="text-xl font-medium border-b pb-2">All Sizes</h2>
           <div className="flex gap-4 items-center flex-wrap">
