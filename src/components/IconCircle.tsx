@@ -20,7 +20,7 @@ const sizeClasses = {
 export const IconCircle = ({
   icon,
   size = "md",
-  backgroundColor = "#4ECDC4",
+  backgroundColor = "#FFFFFF",
   className,
 }: IconCircleProps) => {
   return (
