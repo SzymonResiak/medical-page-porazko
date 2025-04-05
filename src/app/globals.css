@@ -9,6 +9,7 @@
   --breakpoint-mobile-2: 390px;
   --breakpoint-mobile-3: 430px;
   --breakpoint-tablet: 700px;
+  --breakpoint-desktop: 1024px;
 }
 
 :root {
