@@ -7,6 +7,7 @@
 @theme {
   --breakpoint-mobile: 320px;
   --breakpoint-mobile-2: 390px;
+  --breakpoint-mobile-3: 430px;
   --breakpoint-tablet: 700px;
 }
 

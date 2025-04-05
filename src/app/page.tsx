@@ -23,7 +23,7 @@ export default function Home() {
               quality={100}
             />
             <div className="relative">
-              <div className="flex items-center gap-2 mb-4 mobile-2:mb-12">
+              <div className="flex items-center gap-2 mb-4 mobile-2:mb-12 mobile-3:mb-19">
                 <div>
                   <IconCircle icon={<ToothIcon />} size="xs" />
                 </div>
@@ -44,7 +44,7 @@ export default function Home() {
               </div>
               <div className="flex justify-end">
                 <Link href="/dentist">
-                  <Button className="mt-4 mobile-2:mt-12">
+                  <Button className="mt-4 mobile-2:mt-12 mobile-3:mt-19">
                     dowiedz się więcej
                   </Button>
                 </Link>
@@ -63,7 +63,7 @@ export default function Home() {
               quality={100}
             />
             <div className="relative">
-              <div className="flex items-center gap-2 mobile-2:mb-12">
+              <div className="flex items-center gap-2 mb-4 mobile-2:mb-12 mobile-3:mb-19">
                 <div>
                   <IconCircle icon={<KidneysIcon />} size="xs" />
                 </div>
@@ -85,7 +85,7 @@ export default function Home() {
               </div>
               <div className="flex justify-end">
                 <Link href="/dentist">
-                  <Button className="mt-4 mobile-2:mt-12">
+                  <Button className="mt-4 mobile-2:mt-12 mobile-3:mt-19">
                     dowiedz się więcej
                   </Button>
                 </Link>
