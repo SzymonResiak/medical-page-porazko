@@ -9,7 +9,7 @@ export default function Home() {
         Jakiego wsparcia zdrowotnego potrzebujesz?
       </h1>
 
-      <div className="grid gap-5 flex justify-center">
+      <div className="grid gap-5 flex justify-center mb-8">
         <div className="grid gap-5 desktop-2:gap-12 grid-cols-1 desktop-2:grid-cols-2 mx-auto">
           <SpecialistCard
             imageSrc="/images/toothbrush-bg.png"
