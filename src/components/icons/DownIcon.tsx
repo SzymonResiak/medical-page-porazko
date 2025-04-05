@@ -10,14 +10,14 @@ export const DownIcon = () => {
       <path
         d="M11.4434 19.8893V1.22266"
         stroke="#2E2E2E"
-        stroke-width="1.5"
-        stroke-miterlimit="10"
+        strokeWidth="1.5"
+        strokeMiterlimit="10"
       />
       <path
         d="M4.65234 13.0986L11.4435 19.8897L18.2346 13.0986"
         stroke="#2E2E2E"
-        stroke-width="1.5"
-        stroke-miterlimit="10"
+        strokeWidth="1.5"
+        strokeMiterlimit="10"
       />
     </svg>
   );
