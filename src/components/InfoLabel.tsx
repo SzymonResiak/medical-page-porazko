@@ -11,6 +11,7 @@ import { TranslateIcon } from "./icons/TranslateIcon";
 import { TransferWhiteIcon } from "./icons/TransferWhite";
 import { TransferGreenIcon } from "./icons/TransferGreen";
 import { InvoiceIcon } from "./icons/Invoice";
+import { CashIcon } from "./icons/CashIcon";
 
 interface InfoLabelProps {
   icon?:
@@ -26,7 +27,8 @@ interface InfoLabelProps {
     | "translate"
     | "transferGreen"
     | "transferWhite"
-    | "invoice";
+    | "invoice"
+    | "cash";
   text: string | { text: string; bold?: boolean; newLine?: boolean }[];
   className?: string;
   textColor?: "white" | "black";
@@ -53,6 +55,7 @@ export const InfoLabel = ({
         transferGreen: TransferGreenIcon,
         transferWhite: TransferWhiteIcon,
         invoice: InvoiceIcon,
+        cash: CashIcon,
       }[icon]
     : null;
 
