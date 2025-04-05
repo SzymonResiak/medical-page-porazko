@@ -3,7 +3,7 @@ import { typography } from "../styles/typography";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#2A2A2A] text-[#FCFCFC] rounded-[30px] p-[35px] min-w-[280px] flex flex-wrap justify-between items-center gap-4">
+    <footer className="bg-[#2A2A2A] text-[#FCFCFC] rounded-[1.875rem] p-[2.1875rem] min-w-[17.5rem] max-w-full flex flex-wrap justify-between items-center gap-4">
       {/* Left side - contact information */}
       <div className="min-w-[360px]">
         <p className={`${typography["Body-Small-Regular"]}`}>
@@ -35,5 +35,4 @@ const Footer = () => {
     </footer>
   );
 };
-
 export default Footer;
