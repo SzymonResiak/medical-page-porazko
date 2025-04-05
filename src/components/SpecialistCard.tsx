@@ -32,8 +32,8 @@ export const SpecialistCard = ({
   const isMobile = useMediaQuery(700);
 
   return (
-    <div className="group relative max-w-md desktop:max-w-full">
-      <div className="rounded-lg p-4 tablet:p-5 desktop:p-17 relative overflow-hidden">
+    <div className="group relative max-w-md desktop:max-w-full h-full">
+      <div className="rounded-lg p-4 tablet:p-5 desktop:p-17 relative overflow-hidden h-full">
         <Image
           src={imageSrc}
           alt={imageAlt}
