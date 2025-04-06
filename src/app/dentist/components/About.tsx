@@ -10,7 +10,7 @@ export const About = () => {
         stomatologia, której <br /> możesz zaufać
       </p>
       <Image src="/images/tools.png" alt="About" width={500} height={500} />
-      <div className="p-9 border-black">
+      <div className="p-9 mt-8 border border-[#EAEAEA] rounded-[30] ">
         <p className="text-xl font-bold">O mnie</p>
         <p className="mt-2">
           Jestem absolwentką Wydziału Stomatologii Uniwersytetu Medycznego im.

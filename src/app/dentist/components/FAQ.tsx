@@ -1,22 +1,5 @@
 import { Accordion } from "@/components/Accordion";
 
-export const FAQ = () => {
-  return (
-    <div className="mb-12">
-      <p className="text-2xl">
-        Często zadawane <br /> <span className="font-bold">pytania</span>
-      </p>
-      <p className="mt-7 text-lg">
-        Znajdziesz tu kluczowe informacje o moich usługach, płatnościach i
-        wizytach
-      </p>
-      <div className="mt-12">
-        <FAQItems />
-      </div>
-    </div>
-  );
-};
-
 const FAQItems = () => {
   return (
     <div className="flex flex-col gap-5">
@@ -57,6 +40,23 @@ const FAQItems = () => {
           Tak - bez problemu porozumiesz się równie w języku angielskim.
         </p>
       </Accordion>
+    </div>
+  );
+};
+
+export const FAQ = () => {
+  return (
+    <div className="mb-12">
+      <p className="text-2xl">
+        Często zadawane <br /> <span className="font-bold">pytania</span>
+      </p>
+      <p className="mt-7 text-lg">
+        Znajdziesz tu kluczowe informacje o moich usługach, płatnościach i
+        wizytach
+      </p>
+      <div className="mt-12">
+        <FAQItems />
+      </div>
     </div>
   );
 };
