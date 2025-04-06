@@ -17,7 +17,12 @@ export const Location = () => {
         </p>
       </div>
       <div className="mt-5">
-        <Image src="/images/map.png" alt="Map" width={500} height={500} />
+        <Image
+          src="/images/map-mobile.png"
+          alt="Map"
+          width={500}
+          height={500}
+        />
       </div>
       <div className="mt-5">
         <p className="text-xl text-right">
