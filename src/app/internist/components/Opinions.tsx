@@ -40,7 +40,7 @@ export const Opinions = () => {
   return (
     <div className="container">
       <p className="text-2xl desktop-2:text-7xl mb-8">
-        Wasze uśmiechy to <br /> moja{" "}
+        Opinie pacjentów to <br /> moja{" "}
         <span className="font-bold">najlepsza rekomendacja</span>
       </p>
       <OpinionList />

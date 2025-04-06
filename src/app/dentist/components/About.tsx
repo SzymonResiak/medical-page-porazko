@@ -31,7 +31,7 @@ export const About = () => {
           textColor="black"
         />
         <InfoLabel
-          icon="cash"
+          icon="transferWhite"
           text="Akceptuję płatność kartą"
           className="bg-[#EAEAEA] flex-1"
           textColor="black"

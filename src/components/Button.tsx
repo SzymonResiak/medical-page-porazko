@@ -35,7 +35,7 @@ export const Button = ({
         )}
         {children && (
           <div
-            className={`${variantClasses} text-[#FCFCFC] rounded-[30] p-3 tablet:p-5 text-xs tablet:text-2xl`}
+            className={`${variantClasses} text-[#FCFCFC] rounded-[20] p-3 tablet:p-5 text-xs tablet:text-2xl`}
           >
             {children}
           </div>

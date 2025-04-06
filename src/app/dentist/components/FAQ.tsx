@@ -3,41 +3,47 @@ import { Accordion } from "@/components/Accordion";
 const FAQItems = () => {
   return (
     <div className="flex flex-col gap-5">
-      <Accordion header="Jak mogę umówić wizytę?">
+      <Accordion header="Jak mogę umówić wizytę?" isOpen={true}>
         <p className="text-sm desktop-2:text-2xl">
           Wizytę można umówić telefonicznie <br /> (+48 735 239 395) lub
           osobiście w gabinecie.
         </p>
       </Accordion>
-      <Accordion header="Jakie metody płatności są akceptowane?">
+      <Accordion header="Jakie metody płatności są akceptowane?" isOpen={true}>
         <p className="text-sm desktop-2:text-2xl">
           Akceptuję płatności kartą oraz przelewem.
         </p>
       </Accordion>
-      <Accordion header="Czy leczenie kanałowe jest bolesne?">
+      <Accordion header="Czy leczenie kanałowe jest bolesne?" isOpen={true}>
         <p className="text-sm desktop-2:text-2xl">
           Dzięki nowoczesnym metodom i znieczuleniu leczenie jest bezbolesne i
           komfortowe.
         </p>
       </Accordion>
-      <Accordion header="Jak przygotować się do wizyty?">
+      <Accordion header="Jak przygotować się do wizyty?" isOpen={true}>
         <p className="text-sm desktop-2:text-2xl">
           Przed wizytą warto umyć zęby i zabrać ze sobą dokumentację medycznę
           (jeśli jest dostępna).
         </p>
       </Accordion>
-      <Accordion header="Co zrobić w przypadku nagłego bólu zęba?">
+      <Accordion
+        header="Co zrobić w przypadku nagłego bólu zęba?"
+        isOpen={true}
+      >
         <p className="text-sm desktop-2:text-2xl">
           Skontaktuj się z gabinetem jak najszybciej - postaram się znaleźć dla
           Ciebie najbliszy wolny termin.
         </p>
       </Accordion>
-      <Accordion header="Jak długo trwa wizyta?">
+      <Accordion header="Jak długo trwa wizyta?" isOpen={true}>
         <p className="text-sm desktop-2:text-2xl">
           Czas wizyty zależy od rodzaju zabiegu - konsultacja trwa ok. 30 minut.
         </p>
       </Accordion>
-      <Accordion header="Czy mogę porozumieć się po angielsku w gabinecie?">
+      <Accordion
+        header="Czy mogę porozumieć się po angielsku w gabinecie?"
+        isOpen={true}
+      >
         <p className="text-sm desktop-2:text-2xl">
           Tak - bez problemu porozumiesz się równie w języku angielskim.
         </p>
