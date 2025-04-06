@@ -3,7 +3,7 @@ import { Contact } from "../../components/Contact";
 import { XRay } from "./components/XRay";
 import { Services } from "./components/Services";
 import { About } from "./components/About";
-import { Certificates } from "./components/Cerificates";
+import { Certificates } from "./components/Certificates";
 import { Opinions } from "./components/Opinions";
 import { Location } from "../../components/Location";
 import { FAQ } from "./components/FAQ";
