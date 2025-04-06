@@ -2,8 +2,8 @@ import Card from "@/components/Card";
 
 export const Opinions = () => {
   return (
-    <div className="container mx-auto">
-      <p className="text-2xl mb-8">
+    <div className="container">
+      <p className="text-2xl desktop-2:text-7xl mb-8">
         Wasze uśmiechy to <br /> moja{" "}
         <span className="font-bold">najlepsza rekomendacja</span>
       </p>
@@ -35,7 +35,7 @@ const opinions = [
 
 const OpinionList = () => {
   return (
-    <div className="grid grid-cols-1 tablet:grid-cols-2 desktop:grid-cols-3 gap-6">
+    <div className="grid grid-cols-1 tablet:grid-cols-3 gap-6">
       {opinions.map((opinion, index) => (
         <Card
           key={index}

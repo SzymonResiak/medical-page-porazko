@@ -1,8 +1,17 @@
+"use client";
+
+import { InfoLabel } from "@/components/InfoLabel";
+import { useMediaQuery } from "@/hooks/useMediaQuery";
+
 export const XRay = () => {
+  const isMobile = useMediaQuery(768);
+
   return (
-    <div className="bg-[#338075] text-[#FCFCFC] text-sm p-5 rounded-[20]">
-      Nowoczesna cyfrowa, diagnostyka rentgenowska. Obraz jest uzyskiwany
-      natychmiastowo z minimalizacją szkodliwej dawki.
-    </div>
+    <InfoLabel
+      icon={!isMobile ? "radioactive" : undefined}
+      text="Nowoczesna cyfrowa, diagnostyka rentgenowska. Obraz jest uzyskiwany natychmiastowo z minimalizacją szkodliwej dawki."
+      className="bg-[#338075]"
+      textColor="white"
+    />
   );
 };

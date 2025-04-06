@@ -19,7 +19,7 @@ export const Cards = () => {
         link="/dentist"
       />
 
-      <div className="relative rounded-lg overflow-hidden aspect-[4/3]">
+      <div className="relative max-w-md desktop:max-w-full h-full rounded-[20] overflow-hidden">
         <Image
           src="/images/dentist.png"
           alt="Medical services"

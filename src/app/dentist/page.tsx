@@ -10,7 +10,7 @@ import { FAQ } from "./components/FAQ";
 
 export default function DentistPage() {
   return (
-    <div className="mx-auto flex flex-col gap-8">
+    <div className="mx-auto flex flex-col gap-8 desktop-2:gap-37">
       <Cards />
       <Contact />
       <XRay />

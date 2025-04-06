@@ -10,7 +10,7 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ name, rating, review }) => {
   return (
-    <div className="box-border flex flex-col items-start p-[35px] gap-[10px] w-full tablet:w-[calc(50%-10px)] bg-[#FCFCFC] border-[0.5px] border-[rgba(128,128,128,0.55)] rounded-[20px]">
+    <div className="box-border flex flex-col items-start p-[35px] gap-[10px] w-full bg-[#FCFCFC] border-[0.5px] border-[rgba(128,128,128,0.55)] rounded-[20px]">
       <div className="flex items-center w-full">
         <div className="flex-1">
           <div className="flex items-center gap-2">

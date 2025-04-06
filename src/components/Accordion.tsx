@@ -45,7 +45,7 @@ export const Accordion = ({
           isOpen ? "max-h-96" : "max-h-0"
         }`}
       >
-        <div className="p-2 tablet:p-4 bg-white border border-[#EAEAEA] rounded-b-[20] text-[#2E2E2E]">
+        <div className="p-2 tablet:p-5 bg-white border border-[#EAEAEA] rounded-b-[20] text-[#2E2E2E]">
           {children}
         </div>
       </div>

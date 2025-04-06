@@ -45,7 +45,7 @@ const services = [
 
 const ServicesList = () => {
   return (
-    <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className="mt-10 grid grid-cols-1 tablet:grid-cols-2 desktop:grid-cols-3 desktop-2:grid-cols-4 gap-5">
       {services.map((service) => (
         <CardImage
           key={service.imageName}
@@ -61,13 +61,13 @@ const ServicesList = () => {
 export const Services = () => {
   return (
     <div>
-      <p className="text-2xl">
+      <p className="text-2xl desktop-2:text-7xl">
         Kompleksowa opieka stomatologiczna <br />
-        <span className="font-bold">
-          znajdź usługę dla <br /> siebie
+        <span className="font-bold block md:inline">
+          znajdź usługę dla siebie
         </span>
       </p>
-      <p className="mt-5 text-lg">
+      <p className="mt-5 text-lg desktop-2:text-4xl">
         Pełna oferta stomatologiczna dopasowana do Twoich potrzeb
       </p>
       <ServicesList />
