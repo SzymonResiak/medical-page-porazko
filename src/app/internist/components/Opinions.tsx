@@ -23,7 +23,7 @@ const opinions = [
 
 const OpinionList = () => {
   return (
-    <div className="grid grid-cols-1 tablet:grid-cols-3 gap-6">
+    <div className="grid grid-cols-1 tablet:grid-cols-3 gap-[1.25rem] items-end w-full max-w-none">
       {opinions.map((opinion, index) => (
         <Card
           key={index}
@@ -38,7 +38,7 @@ const OpinionList = () => {
 
 export const Opinions = () => {
   return (
-    <div className="container">
+    <div className="w-full max-w-none px-4">
       <p className="text-2xl desktop-2:text-7xl mb-8">
         Opinie pacjentów to <br /> moja{" "}
         <span className="font-bold">najlepsza rekomendacja</span>
