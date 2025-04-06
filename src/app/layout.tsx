@@ -1,23 +1,9 @@
-import type { Metadata } from "next";
+"use client";
+
 import "./globals.css";
 import { FooterLandingPage } from "@/components/FooterLandingPage";
-
-export const metadata: Metadata = {
-  title: "Klinika Porażko - Stomatologia i Nefrologia",
-  description:
-    "Specjalistyczna opieka stomatologiczna i nefrologiczna w Opolu. Profesjonalne usługi medyczne dla całej rodziny.",
-  authors: [{ name: "Klinika Porażko" }],
-  keywords: [
-    "stomatologia",
-    "nefrologia",
-    "klinika",
-    "Opole",
-    "lekarz",
-    "dentysta",
-  ],
-  viewport: "width=device-width, initial-scale=1",
-  robots: "index, follow",
-};
+import Footer from "@/components/Footer";
+import { usePathname } from "next/navigation";
 
 interface RootLayoutProps {
   children: React.ReactNode;
@@ -29,14 +15,19 @@ const MainContent = ({ children }: { children: React.ReactNode }) => (
   </div>
 );
 
-const Footer = () => (
-  <>
-    <FooterLandingPage />
-    <p className="text-right text-sm text-[#2E2E2E] mt-1">
-      © 2025 XYZ – Wszelkie prawa zastrzeżone.
-    </p>
-  </>
-);
+const ConditionalFooter = () => {
+  const pathname = usePathname();
+  const isMainPage = pathname === "/";
+
+  return (
+    <>
+      {isMainPage ? <FooterLandingPage /> : <Footer />}
+      <p className="text-right text-sm text-[#2E2E2E] mt-1">
+        © 2025 XYZ – Wszelkie prawa zastrzeżone.
+      </p>
+    </>
+  );
+};
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
@@ -45,7 +36,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <main>
           <MainContent>
             {children}
-            <Footer />
+            <ConditionalFooter />
           </MainContent>
         </main>
       </body>

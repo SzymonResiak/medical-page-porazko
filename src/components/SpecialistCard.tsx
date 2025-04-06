@@ -33,7 +33,7 @@ export const SpecialistCard = ({
 
   return (
     <div className="group relative max-w-md desktop:max-w-full h-full">
-      <div className="rounded-lg p-4 tablet:p-5 desktop:p-17 relative overflow-hidden h-full">
+      <div className="rounded-[20] p-4 tablet:p-5 desktop:p-17 relative overflow-hidden h-full">
         <Image
           src={imageSrc}
           alt={imageAlt}
