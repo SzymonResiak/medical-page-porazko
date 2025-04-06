@@ -9,7 +9,7 @@ import { useMediaQuery } from "@/hooks/useMediaQuery";
 interface AccordionProps {
   header: string;
   children: React.ReactNode;
-  icon: React.ReactNode;
+  icon?: React.ReactNode;
   className?: string;
 }
 
@@ -23,18 +23,16 @@ export const Accordion = ({
   const isMobile = useMediaQuery(700);
 
   return (
-    <div className={`w-full rounded-lg bg-[#EAEAEA]  ${className}`}>
+    <div className={`w-full rounded-[20] bg-[#EAEAEA] ${className}`}>
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="flex w-full items-center justify-between p-2.5 tablet:p-5 text-left"
         aria-expanded={isOpen}
       >
-        <div className="flex items-center gap-2 tablet:gap-5">
-          <IconCircle icon={icon} size={isMobile ? "2xs" : "lg"} />
-          <h3 className="text-sm tablet:text-3xl font-normal text-gray-900">
-            {header}
-          </h3>
-        </div>
+        {icon && <IconCircle icon={icon} size={isMobile ? "2xs" : "lg"} />}
+        <h3 className="text-sm tablet:text-3xl font-normal text-[#2E2E2E] flex-1 mx-2 tablet:mx-5">
+          {header}
+        </h3>
         <IconCircle
           icon={isOpen ? <TopIcon /> : <DownIcon />}
           backgroundColor={isOpen ? "#2E2E2E" : "#FFFFFF"}
@@ -47,7 +45,9 @@ export const Accordion = ({
           isOpen ? "max-h-96" : "max-h-0"
         }`}
       >
-        <div className="p-2 tablet:p-4 text-gray-600 bg-white">{children}</div>
+        <div className="p-2 tablet:p-4 bg-white border border-[#EAEAEA] rounded-b-[20] text-[#2E2E2E]">
+          {children}
+        </div>
       </div>
     </div>
   );
