@@ -20,7 +20,10 @@ export const Services = () => {
         Tomaszem Porażką, aby umówić <br /> wizytę
       </p>
       <div className="flex justify-end">
-        <Button className="mt-5">zadzwoń</Button>
+        <Button className="mt-5 md:hidden">zadzwoń</Button>
+        <p className="hidden md:block mt-5 text-lg desktop-2:text-2xl ">
+          <span className="font-bold">Zadzwoń:</span> +48 735 239 795
+        </p>
       </div>
 
       <div className="mt-10 flex flex-col gap-5">
