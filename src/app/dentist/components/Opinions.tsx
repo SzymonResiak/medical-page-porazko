@@ -2,7 +2,7 @@ import Card from "@/components/Card";
 
 export const Opinions = () => {
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto">
       <p className="text-2xl mb-8">
         Wasze uśmiechy to <br /> moja{" "}
         <span className="font-bold">najlepsza rekomendacja</span>
