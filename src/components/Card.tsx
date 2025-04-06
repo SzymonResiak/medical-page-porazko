@@ -1,7 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import tickIcon from "@/app/assets/tick.svg";
-import starIcon from "@/app/assets/star.svg";
 import { typography } from "../styles/typography";
 
 interface CardProps {
@@ -20,7 +18,7 @@ const Card: React.FC<CardProps> = ({ name, rating, review }) => {
               {name}
             </h3>
             <Image
-              src={tickIcon}
+              src="/tick.svg"
               alt="Zweryfikowana opinia"
               width={20}
               height={20}
@@ -31,7 +29,7 @@ const Card: React.FC<CardProps> = ({ name, rating, review }) => {
             {[...Array(5)].map((_, index) => (
               <Image
                 key={index}
-                src={starIcon}
+                src="/star.svg"
                 alt="Gwiazdka"
                 width={20}
                 height={20}

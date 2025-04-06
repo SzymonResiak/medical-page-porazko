@@ -19,7 +19,7 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
+  color: #2e2e2e;
   background: rgb(var(--background-rgb));
   font-family: "Noto Sans Telugu UI", system-ui, -apple-system,
     BlinkMacSystemFont, sans-serif;
