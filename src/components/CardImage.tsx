@@ -39,8 +39,8 @@ export const CardImage = ({
   return (
     <div
       className={
-        "relative cursor-pointer overflow-hidden rounded-[1.875rem] bg-white " +
-        "shadow-sm hover:shadow-md transition-all duration-300 p-[1.875rem] " +
+        "relative overflow-hidden rounded-[1.875rem] bg-white " +
+        "border border-gray-300 transition-all duration-300 p-[1.875rem] " +
         className
       }
     >
