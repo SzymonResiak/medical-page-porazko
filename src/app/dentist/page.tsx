@@ -3,6 +3,10 @@ import { Contact } from "./components/Contact";
 import { XRay } from "./components/XRay";
 import { Services } from "./components/Services";
 import { About } from "./components/About";
+import { Certificates } from "./components/Cerificates";
+import { Opinions } from "./components/Opinions";
+import { Location } from "./components/Location";
+import { FAQ } from "./components/FAQ";
 
 export default function DentistPage() {
   return (
@@ -12,6 +16,10 @@ export default function DentistPage() {
       <XRay />
       <Services />
       <About />
+      <Certificates />
+      <Opinions />
+      <Location />
+      <FAQ />
     </div>
   );
 }
