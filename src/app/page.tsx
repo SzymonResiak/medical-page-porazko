@@ -1,8 +1,4 @@
 import { ToothIcon } from "@/components/icons/ToothIcon";
-import { Accordion } from "@/components/Accordion";
-import { Button } from "@/components/Button";
-import { InfoLabel } from "@/components/InfoLabel";
-import { Certificates } from "@/components/Certificates";
 import { KidneysIcon } from "@/components/icons/KidneysIcon";
 import { SpecialistCard } from "@/components/SpecialistCard";
 
@@ -34,7 +30,7 @@ export default function Home() {
             title="Internista, nefrolog"
             name="Tomasz Porażko"
             description="Badanie USG jamy brzusznej obejmujące nerki, drogi moczowe, płuca, naczynia oraz przetoki i grafty do hemodializ."
-            link="/dentist"
+            link="/internist"
           />
         </div>
       </div>
