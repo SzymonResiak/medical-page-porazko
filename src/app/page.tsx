@@ -1,4 +1,8 @@
 import { ToothIcon } from "@/components/icons/ToothIcon";
+import { Accordion } from "@/components/Accordion";
+import { Button } from "@/components/Button";
+import { InfoLabel } from "@/components/InfoLabel";
+import { Certificates } from "@/components/Certificates";
 import { KidneysIcon } from "@/components/icons/KidneysIcon";
 import { SpecialistCard } from "@/components/SpecialistCard";
 

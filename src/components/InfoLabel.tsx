@@ -75,17 +75,17 @@ export const InfoLabel = ({
   return (
     <div
       className={
-        "flex flex-row items-center gap-[30px] p-[20px] rounded-[20px] " +
+        "flex flex-row items-center gap-[1.875rem] p-[1.25rem] rounded-[1.25rem] " +
         className
       }
     >
       {IconComponent && (
-        <div className="w-[50px] h-[50px] flex items-center justify-center">
+        <div className="w-[3.125rem] h-[3.125rem] flex items-center justify-center">
           <IconComponent />
         </div>
       )}
       <span
-        className={`text-[14px] mobile:text-[12px] tablet:text-[20px] font-normal leading-none ${
+        className={`text-[0.875rem] mobile:text-[0.75rem] tablet:text-[1.25rem] font-normal leading-none ${
           textColor === "white" ? "text-white" : "text-black"
         }`}
       >

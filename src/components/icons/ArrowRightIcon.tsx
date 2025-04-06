@@ -10,14 +10,14 @@ export const ArrowRightIcon = () => {
       <path
         d="M28.4173 3.53418L2.58398 29.3675"
         stroke="#FCFCFC"
-        stroke-width="1.9375"
-        stroke-miterlimit="10"
+        strokeWidth="1.9375"
+        strokeMiterlimit="10"
       />
       <path
         d="M28.4167 21.2946V3.53418H10.6562"
         stroke="#FCFCFC"
-        stroke-width="1.9375"
-        stroke-miterlimit="10"
+        strokeWidth="1.9375"
+        strokeMiterlimit="10"
       />
     </svg>
   );
