@@ -39,21 +39,21 @@ export const CardImage = ({
   return (
     <div
       className={
-        "relative cursor-pointer overflow-hidden rounded-[1.25rem] bg-white " +
+        "relative cursor-pointer overflow-hidden rounded-[1.875rem] bg-white " +
         "shadow-sm hover:shadow-md transition-all duration-300 p-[1.875rem] " +
         className
       }
     >
-      <div className="relative w-[18.75rem] h-[12.5rem] mb-[1.875rem]">
+      <div className="relative w-full h-auto aspect-[3/2] mb-[1.875rem] px-[1.875rem]">
         <Image
           src={cardImages[imageName]}
           alt={message}
           fill
-          className="object-contain rounded-[1.25rem]"
+          className="object-contain rounded-[1.875rem]"
           sizes="(max-width: 48rem) 100vw, (max-width: 75rem) 50vw, 33vw"
         />
       </div>
-      <div className="flex flex-col w-[18.75rem]">
+      <div className="flex flex-col w-full">
         <h3 className="text-[1.125rem] mobile:text-[1rem] tablet:text-[1.25rem] font-semibold text-gray-900 mb-[0.5rem]">
           {message}
         </h3>
