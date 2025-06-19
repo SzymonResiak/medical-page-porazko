@@ -3,20 +3,20 @@ import { Accordion } from "@/components/Accordion";
 const FAQItems = () => {
   return (
     <div className="flex flex-col gap-5">
-      <Accordion header="Jak mogę umówić wizytę?" isOpen={true}>
+      <Accordion header="Jak mogę umówić wizytę?" isOpen={false}>
         <p className="text-sm desktop-2:text-2xl">
           Wizytę można umówić telefonicznie <br /> (+48 735 239 395) lub
           osobiście w gabinecie.
         </p>
       </Accordion>
-      <Accordion header="Jakie metody płatności są akceptowane?" isOpen={true}>
+      <Accordion header="Jakie metody płatności są akceptowane?" isOpen={false}>
         <p className="text-sm desktop-2:text-2xl">
           Akceptuję płatności kartą oraz przelewem.
         </p>
       </Accordion>
       <Accordion
         header="Jakie dokumenty należy zabrać na wizytę?"
-        isOpen={true}
+        isOpen={false}
       >
         <div className="text-sm desktop-2:text-2xl">
           <ul className="list-disc pl-5 space-y-1">
@@ -43,7 +43,7 @@ const FAQItems = () => {
       </Accordion>
       <Accordion
         header="Czy wystawiane są recepty na leki refundowane przez NFZ?"
-        isOpen={true}
+        isOpen={false}
       >
         <p className="text-sm desktop-2:text-2xl">
           Nie wystawiam recept na leki refundowane przez NFZ.
@@ -51,7 +51,7 @@ const FAQItems = () => {
       </Accordion>
       <Accordion
         header="Czy wystawiane są skierowania na badania diagnostyczne?"
-        isOpen={true}
+        isOpen={false}
       >
         <p className="text-sm desktop-2:text-2xl">
           Nie wystawiam skierowań na badania diagnostyczne refundowane przez
