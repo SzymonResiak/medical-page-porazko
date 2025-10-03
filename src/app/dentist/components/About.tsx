@@ -9,7 +9,7 @@ export const About = () => {
         <br />
         stomatologia, której <br /> możesz zaufać
       </p>
-      <div className="flex flex-col md:flex-row md:gap-5 items-start">
+      <div className="flex flex-col md:flex-row md:gap-5 items-center">
         <Image src="/images/tools.png" alt="About" width={500} height={500} />
         <div className="p-9 mt-8 md:mt-0 border border-[#EAEAEA] rounded-[30] flex-1">
           <p className="text-xl desktop-2:text-4xl font-bold">O mnie</p>
