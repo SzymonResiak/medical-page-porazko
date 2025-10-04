@@ -32,9 +32,11 @@ export const Services = () => {
           icon={<KidneysIcon />}
           isOpen={true}
         >
-          <p className="text-sm desktop-2:text-2xl">
-            Specjalizuję się w diagnostyce i leczeniu schorzeń nerek, oferując
-            skuteczną pomoc w takich przypadkach jak:
+          <div className="text-sm desktop-2:text-2xl">
+            <p>
+              Specjalizuję się w diagnostyce i leczeniu schorzeń nerek, oferując
+              skuteczną pomoc w takich przypadkach jak:
+            </p>
             <ul className="list-disc pl-5 mt-2">
               <li>Kłębuszkowe zapalenie nerek</li>
               <li>Cewkowo-śródmiąższowe zapalenia nerek</li>
@@ -43,24 +45,25 @@ export const Services = () => {
               <li>Nawracające infekcje układu moczowego</li>
               <li>Schorzenia nerek w ciąży</li>
             </ul>
-            <br />
-            Usługi dodatkowe:
+            <p className="mt-4">Usługi dodatkowe:</p>
             <ul className="list-disc pl-5 mt-2">
               <li>
                 Rehabilitacja i leczenie dietetyczne w chorobach nerek we
                 współpracy z innymi specjalistami
               </li>
             </ul>
-          </p>
+          </div>
         </Accordion>
         <Accordion
           header="Diagnostyka USG"
           icon={<KidneysIcon />}
           isOpen={true}
         >
-          <p className="text-sm desktop-2:text-2xl">
-            W trakcie wizyt wykonuję badania USG, ze szczególnym uwzględnieniem
-            nerek i dróg moczowych, a także:
+          <div className="text-sm desktop-2:text-2xl">
+            <p>
+              W trakcie wizyt wykonuję badania USG, ze szczególnym
+              uwzględnieniem nerek i dróg moczowych, a także:
+            </p>
             <ul className="list-disc pl-5 mt-2">
               <li>USG jamy brzusznej</li>
               <li>
@@ -68,16 +71,18 @@ export const Services = () => {
                 przetoki, grafty do hemodializ)
               </li>
             </ul>
-          </p>
+          </div>
         </Accordion>
         <Accordion
           header="Leczenie nerkozastępcze"
           icon={<KidneysIcon />}
           isOpen={true}
         >
-          <p className="text-sm desktop-2:text-2xl">
-            Konsultacje w zakresie diagnostyki i wytwarzania dostępu do naczyń
-            do hemodializy oraz dostępu do dializy otrzewnowej.
+          <div className="text-sm desktop-2:text-2xl">
+            <p>
+              Konsultacje w zakresie diagnostyki i wytwarzania dostępu do naczyń
+              do hemodializy oraz dostępu do dializy otrzewnowej.
+            </p>
             <ul className="list-disc pl-5 mt-2">
               <li>
                 Konsultacje dotyczące leczenia nerkozastępczego - hemodializa,
@@ -92,7 +97,7 @@ export const Services = () => {
                 specjalistami
               </li>
             </ul>
-          </p>
+          </div>
         </Accordion>
       </div>
       <div className="flex flex-col desktop-2:flex-row gap-5 mt-5">

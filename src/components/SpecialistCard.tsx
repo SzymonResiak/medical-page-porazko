@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { IconCircle } from "./IconCircle";
 import { ArrowRightIcon } from "./icons/ArrowRightIcon";
+import { BackIcon } from "./icons/BackIcon";
 import { Button } from "./Button";
 import { ReactNode } from "react";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
@@ -17,6 +18,8 @@ interface SpecialistCardProps {
   name: string;
   description: string;
   link: string;
+  showBackButton?: boolean;
+  priority?: boolean;
 }
 
 export const SpecialistCard = ({
@@ -28,6 +31,8 @@ export const SpecialistCard = ({
   name,
   description,
   link,
+  showBackButton = false,
+  priority = false,
 }: SpecialistCardProps) => {
   const isMobile = useMediaQuery(700);
 
@@ -40,6 +45,8 @@ export const SpecialistCard = ({
           fill
           className="object-cover"
           quality={100}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          priority={priority}
         />
         <div className="relative">
           <div className="flex items-center gap-2 tablet:gap-4 mb-4 mobile-2:mb-12 mobile-3:mb-19 desktop:mb-35 desktop-2:mb-23">
@@ -61,14 +68,23 @@ export const SpecialistCard = ({
             </p>
           </div>
           <div className="flex justify-end">
-            <Link href={link}>
-              <Button
-                className="mt-4 mobile-2:mt-12 mobile-3:mt-19 desktop:mt-35 desktop-2:mt-23"
-                rightIcon={<ArrowRightIcon />}
-              >
-                dowiedz się więcej
-              </Button>
-            </Link>
+            {showBackButton ? (
+              <Link href="/">
+                <Button
+                  className="mt-4 mobile-2:mt-12 mobile-3:mt-19 desktop:mt-35 desktop-2:mt-23"
+                  rightIcon={<BackIcon />}
+                />
+              </Link>
+            ) : (
+              <Link href={link}>
+                <Button
+                  className="mt-4 mobile-2:mt-12 mobile-3:mt-19 desktop:mt-35 desktop-2:mt-23"
+                  rightIcon={<ArrowRightIcon />}
+                >
+                  dowiedz się więcej
+                </Button>
+              </Link>
+            )}
           </div>
         </div>
       </div>

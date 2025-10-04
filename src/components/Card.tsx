@@ -1,6 +1,7 @@
 import React from "react";
-import Image from "next/image";
 import { typography } from "../styles/typography";
+import { TickIcon } from "./icons/TickIcon";
+import { StarIcon } from "./icons/StarIcon";
 
 interface CardProps {
   name: string;
@@ -17,24 +18,20 @@ const Card: React.FC<CardProps> = ({ name, rating, review }) => {
             <h3 className={`${typography["Body-Small-Regular"]} text-gray-800`}>
               {name}
             </h3>
-            <Image
-              src="/tick.svg"
-              alt="Zweryfikowana opinia"
-              width={20}
-              height={20}
-              className="text-green-500"
-            />
+            <div className="w-5 h-5 text-green-500">
+              <TickIcon />
+            </div>
           </div>
           <div className="flex items-center mt-1 gap-1">
             {[...Array(5)].map((_, index) => (
-              <Image
+              <div
                 key={index}
-                src="/star.svg"
-                alt="Gwiazdka"
-                width={20}
-                height={20}
-                className={index < rating ? "text-yellow-400" : "text-gray-300"}
-              />
+                className={`w-5 h-5 ${
+                  index < rating ? "text-yellow-400" : "text-gray-300"
+                }`}
+              >
+                <StarIcon />
+              </div>
             ))}
           </div>
         </div>
