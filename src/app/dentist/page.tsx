@@ -8,16 +8,16 @@ import { Opinions } from "./components/Opinions";
 import { Location } from "../../components/Location";
 import { FAQ } from "./components/FAQ";
 import { ScrollAnimation } from "../../components/ScrollAnimation";
+import { Animation } from "../../components/Animation";
 
 export default function DentistPage() {
   return (
     <div className="mx-auto flex flex-col gap-8 desktop-2:gap-37">
-      <ScrollAnimation>
+      <div>
         <Cards />
-      </ScrollAnimation>
-      <ScrollAnimation>
-        <Contact />
-      </ScrollAnimation>
+        <Animation src="/images/animation.gif" alt="scroll animation" />
+      </div>
+      <Contact />
       <ScrollAnimation>
         <XRay />
       </ScrollAnimation>

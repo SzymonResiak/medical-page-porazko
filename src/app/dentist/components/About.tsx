@@ -10,7 +10,13 @@ export const About = () => {
         stomatologia, której <br /> możesz zaufać
       </p>
       <div className="flex flex-col md:flex-row md:gap-5 items-center">
-        <Image src="/images/tools.png" alt="About" width={500} height={500} />
+        <Image
+          src="/images/tools.png"
+          alt="About"
+          width={500}
+          height={500}
+          style={{ width: "auto", height: "auto" }}
+        />
         <div className="p-9 mt-8 md:mt-0 border border-[#EAEAEA] rounded-[30] flex-1">
           <p className="text-xl desktop-2:text-4xl font-bold">O mnie</p>
           <p className="mt-2 desktop-2:text-2xl">
