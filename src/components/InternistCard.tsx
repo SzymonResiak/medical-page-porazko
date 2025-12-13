@@ -1,13 +1,15 @@
 import { KidneysIcon } from "@/components/icons/KidneysIcon";
 import { SpecialistCard } from "@/components/SpecialistCard";
 
+interface InternistCardProps {
+  showBackButton?: boolean;
+  priority?: boolean;
+}
+
 export const InternistCard = ({
   showBackButton = false,
   priority = false,
-}: {
-  showBackButton?: boolean;
-  priority?: boolean;
-}) => {
+}: InternistCardProps) => {
   return (
     <SpecialistCard
       imageSrc="/images/medicine-bg.png"

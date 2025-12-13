@@ -1,24 +1,46 @@
-import { useState, useCallback, useEffect } from "react";
+import { useCallback, useSyncExternalStore } from "react";
+import { BREAKPOINTS } from "@/data/constants";
 
-export const useMediaQuery = (width: number) => {
-  const [targetReached, setTargetReached] = useState(false);
+// Cache dla MediaQueryList - zapobiega tworzeniu wielu listenerów
+const mediaQueryCache = new Map<string, MediaQueryList>();
 
-  const updateTarget = useCallback(
-    (e: MediaQueryListEvent | MediaQueryList) => {
-      setTargetReached(e.matches);
+function getMediaQueryList(query: string): MediaQueryList {
+  if (!mediaQueryCache.has(query)) {
+    mediaQueryCache.set(query, window.matchMedia(query));
+  }
+  return mediaQueryCache.get(query)!;
+}
+
+/**
+ * Hook do sprawdzania media query
+ * @param width - Maksymalna szerokość ekranu
+ * @returns true jeśli viewport jest mniejszy lub równy podanej szerokości
+ */
+export const useMediaQuery = (width: number): boolean => {
+  const query = `(max-width: ${width}px)`;
+
+  const subscribe = useCallback(
+    (callback: () => void) => {
+      if (typeof window === "undefined") return () => {};
+
+      const mediaQuery = getMediaQueryList(query);
+      mediaQuery.addEventListener("change", callback);
+      return () => mediaQuery.removeEventListener("change", callback);
     },
-    []
+    [query]
   );
 
-  useEffect(() => {
-    const media = window.matchMedia(`(max-width: ${width}px)`);
+  const getSnapshot = useCallback(() => {
+    if (typeof window === "undefined") return false;
+    return getMediaQueryList(query).matches;
+  }, [query]);
 
-    updateTarget(media);
+  const getServerSnapshot = useCallback(() => false, []);
 
-    media.addEventListener("change", updateTarget);
-
-    return () => media.removeEventListener("change", updateTarget);
-  }, [width, updateTarget]);
-
-  return targetReached;
+  return useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 };
+
+// Predefiniowane hooki dla popularnych breakpointów
+export const useIsMobile = () => useMediaQuery(BREAKPOINTS.TABLET - 1);
+export const useIsTablet = () => useMediaQuery(BREAKPOINTS.DESKTOP - 1);
+export const useIsDesktop = () => !useMediaQuery(BREAKPOINTS.DESKTOP - 1);

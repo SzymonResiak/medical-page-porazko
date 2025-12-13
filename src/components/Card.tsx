@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { typography } from "../styles/typography";
 import { TickIcon } from "./icons/TickIcon";
 import { StarIcon } from "./icons/StarIcon";
@@ -9,25 +9,28 @@ interface CardProps {
   review: string;
 }
 
-const Card: React.FC<CardProps> = ({ name, rating, review }) => {
+// Tablica gwiazdek - stała, nie tworzona przy każdym renderze
+const STARS_ARRAY = Array.from({ length: 5 }, (_, i) => i);
+
+export const Card: React.FC<CardProps> = memo(function Card({ name, rating, review }) {
   return (
-    <div className="box-border flex flex-col items-start p-[35px] gap-[10px] w-full max-w-none flex-1 bg-[#FCFCFC] border-[0.5px] border-gray-300 rounded-[20px] h-fit">
+    <div className="box-border flex flex-col items-start p-[35px] gap-[10px] w-full max-w-none flex-1 bg-off-white border-[0.5px] border-gray-300 rounded-[20px] h-fit">
       <div className="flex items-center w-full">
         <div className="flex-1">
           <div className="flex items-center gap-2">
             <h3 className={`${typography["Body-Small-Regular"]} text-gray-800`}>
               {name}
             </h3>
-            <div className="w-5 h-5 text-green-500">
+            <div className="w-4 h-4 text-success">
               <TickIcon />
             </div>
           </div>
-          <div className="flex items-center mt-1 gap-1">
-            {[...Array(5)].map((_, index) => (
+          <div className="flex items-center mt-1 gap-0.5">
+            {STARS_ARRAY.map((index) => (
               <div
-                key={index}
-                className={`w-5 h-5 ${
-                  index < rating ? "text-yellow-400" : "text-gray-300"
+                key={`star-${index}`}
+                className={`w-4 h-4 ${
+                  index < rating ? "text-primary" : "text-gray-300"
                 }`}
               >
                 <StarIcon />
@@ -36,11 +39,9 @@ const Card: React.FC<CardProps> = ({ name, rating, review }) => {
           </div>
         </div>
       </div>
-      <p className={`${typography["Body-Small-Regular"]} text-gray-600 w-full`}>
+      <p className={`${typography["Body-Small-Regular"]} text-gray-600 w-full leading-relaxed`}>
         {review}
       </p>
     </div>
   );
-};
-
-export default Card;
+});

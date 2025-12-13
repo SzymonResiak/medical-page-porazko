@@ -1,8 +1,9 @@
 "use client";
 
-import { ReactNode } from "react";
+import { ReactNode, memo } from "react";
 import { IconCircle } from "./IconCircle";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
+import { BREAKPOINTS } from "@/data/constants";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children?: ReactNode;
@@ -11,17 +12,17 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "default" | "primary";
 }
 
-export const Button = ({
+export const Button = memo(function Button({
   children,
   leftIcon,
   rightIcon,
   variant = "default",
   className = "",
   ...props
-}: ButtonProps) => {
-  const isMobile = useMediaQuery(700);
+}: ButtonProps) {
+  const isMobile = useMediaQuery(BREAKPOINTS.TABLET - 1);
   const variantClasses =
-    variant === "default" ? "bg-[#2E2E2E]" : "bg-[#006AFF]";
+    variant === "default" ? "bg-dark-gray" : "bg-accent";
 
   return (
     <button className={`${className} cursor-pointer`} {...props}>
@@ -35,7 +36,7 @@ export const Button = ({
         )}
         {children && (
           <div
-            className={`${variantClasses} text-[#FCFCFC] rounded-[20] p-3 tablet:p-5 text-xs tablet:text-2xl`}
+            className={`${variantClasses} text-off-white rounded-[20px] p-3 tablet:p-5 text-xs tablet:text-2xl`}
           >
             {children}
           </div>
@@ -50,4 +51,4 @@ export const Button = ({
       </div>
     </button>
   );
-};
+});

@@ -1,16 +1,17 @@
-import React from "react";
 import Image from "next/image";
 
+// Stała tablica - nie tworzona przy każdym renderze
+const CERTIFICATES = [
+  "/images/certificate-stom-1.png",
+  "/images/certificate-stom-2.png",
+  "/images/certificate-stom-3.png",
+  "/images/certificate-stom-4.png",
+  "/images/certificate-stom-5.png",
+  "/images/certificate-stom-6.png",
+  "/images/certificate-stom-7.png",
+] as const;
+
 export const Certificates = () => {
-  const certificates = [
-    "/images/certificate-stom-1.png",
-    "/images/certificate-stom-2.png",
-    "/images/certificate-stom-3.png",
-    "/images/certificate-stom-4.png",
-    "/images/certificate-stom-5.png",
-    "/images/certificate-stom-6.png",
-    "/images/certificate-stom-7.png",
-  ];
 
   return (
     <div className="w-full p-0 flex justify-center">
@@ -21,9 +22,9 @@ export const Certificates = () => {
             "repeat(auto-fit, minmax(min(100%, 140px), 1fr))",
         }}
       >
-        {certificates.map((certificate, index) => (
+        {CERTIFICATES.map((certificate, index) => (
           <div
-            key={index}
+            key={certificate}
             className="certificate-container w-full bg-white shadow-sm rounded-lg overflow-hidden"
           >
             <div className="relative w-full" style={{ aspectRatio: "1/1.4" }}>
@@ -33,6 +34,7 @@ export const Certificates = () => {
                 fill
                 className="object-contain p-[0.5rem]"
                 sizes="(max-width: 320px) 140px, (max-width: 640px) 200px, (max-width: 1024px) 50vw, 33vw"
+                loading="lazy"
               />
             </div>
           </div>

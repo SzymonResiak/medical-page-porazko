@@ -1,15 +1,21 @@
-import Image from "next/image";
-
 interface AnimationProps {
-  src: string;
-  alt: string;
   className?: string;
 }
 
-export const Animation = ({ src, alt, className = "" }: AnimationProps) => {
+export const Animation = ({ className = "" }: AnimationProps) => {
   return (
     <div className={`flex justify-center ${className}`}>
-      <Image src={src} alt={alt} width={72} height={72} unoptimized />
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="w-[72px] h-[72px]"
+        aria-label="Scroll animation"
+      >
+        <source src="/images/animation.webm" type="video/webm" />
+        <source src="/images/animation.mp4" type="video/mp4" />
+      </video>
     </div>
   );
 };

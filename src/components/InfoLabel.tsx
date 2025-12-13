@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { StarIcon } from "./icons/StarIcon";
 import { DownIcon } from "./icons/DownIcon";
 import { TopIcon } from "./icons/TopIcon";
@@ -8,8 +9,7 @@ import { PhoneIcon } from "./icons/PhoneIcon";
 import { ToothIcon } from "./icons/ToothIcon";
 import { RadioactiveIcon } from "./icons/RadioactiveIcon";
 import { TranslateIcon } from "./icons/TranslateIcon";
-import { TransferWhiteIcon } from "./icons/TransferWhite";
-import { TransferGreenIcon } from "./icons/TransferGreen";
+import { TransferIcon } from "./icons/TransferIcon";
 import { InvoiceIcon } from "./icons/Invoice";
 import { CashIcon } from "./icons/CashIcon";
 
@@ -34,30 +34,35 @@ interface InfoLabelProps {
   textColor?: "white" | "black";
 }
 
-export const InfoLabel = ({
+// Komponenty wrapper dla TransferIcon z wariantami
+const TransferGreenIcon = () => <TransferIcon variant="green" />;
+const TransferWhiteIcon = () => <TransferIcon variant="white" />;
+
+// Mapowanie ikon - stała, nie tworzona przy każdym renderze
+const ICON_MAP = {
+  star: StarIcon,
+  down: DownIcon,
+  top: TopIcon,
+  tick: TickIcon,
+  medicalDoc: MedicalDocIcon,
+  back: BackIcon,
+  phone: PhoneIcon,
+  tooth: ToothIcon,
+  radioactive: RadioactiveIcon,
+  translate: TranslateIcon,
+  transferGreen: TransferGreenIcon,
+  transferWhite: TransferWhiteIcon,
+  invoice: InvoiceIcon,
+  cash: CashIcon,
+} as const;
+
+export const InfoLabel = memo(function InfoLabel({
   icon,
   text,
   className,
   textColor = "black",
-}: InfoLabelProps) => {
-  const IconComponent = icon
-    ? {
-        star: StarIcon,
-        down: DownIcon,
-        top: TopIcon,
-        tick: TickIcon,
-        medicalDoc: MedicalDocIcon,
-        back: BackIcon,
-        phone: PhoneIcon,
-        tooth: ToothIcon,
-        radioactive: RadioactiveIcon,
-        translate: TranslateIcon,
-        transferGreen: TransferGreenIcon,
-        transferWhite: TransferWhiteIcon,
-        invoice: InvoiceIcon,
-        cash: CashIcon,
-      }[icon]
-    : null;
+}: InfoLabelProps) {
+  const IconComponent = icon ? ICON_MAP[icon] : null;
 
   const renderText = () => {
     if (typeof text === "string") {
@@ -85,7 +90,7 @@ export const InfoLabel = ({
         </div>
       )}
       <span
-        className={`text-[0.875rem] mobile:text-[0.75rem] tablet:text-[1.25rem] font-normal leading-none ${
+        className={`text-[0.75rem] tablet:text-[1.25rem] font-normal leading-none ${
           textColor === "white" ? "text-white" : "text-black"
         }`}
       >
@@ -93,4 +98,4 @@ export const InfoLabel = ({
       </span>
     </div>
   );
-};
+});

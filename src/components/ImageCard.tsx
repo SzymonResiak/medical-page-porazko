@@ -1,13 +1,18 @@
 import Image from "next/image";
 
-export const ImageCard = () => {
+interface ImageCardProps {
+  imageSrc: string;
+  imageAlt: string;
+}
+
+export const ImageCard = ({ imageSrc, imageAlt }: ImageCardProps) => {
   return (
-    <div className="group relative max-w-md desktop:max-w-full h-full">
-      <div className="rounded-[20] p-4 tablet:p-5 desktop:p-17 relative overflow-hidden h-full min-h-[400px]">
+    <div className="group relative w-full h-full">
+      <div className="rounded-[20px] relative overflow-hidden h-full">
         <Image
-          src="/images/dentist.png"
-          alt="Medical services"
-          className="object-cover"
+          src={imageSrc}
+          alt={imageAlt}
+          className="object-cover object-center"
           fill
           sizes="(max-width: 768px) 100vw, 50vw"
           priority

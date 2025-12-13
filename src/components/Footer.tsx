@@ -1,22 +1,23 @@
-import React from "react";
+import { memo } from "react";
 import { typography } from "../styles/typography";
+import { CONTACT } from "@/data/constants";
 
-const Footer = () => {
+export const Footer = memo(function Footer() {
   return (
-    <footer className="bg-[#2A2A2A] text-[#FCFCFC] rounded-[1.875rem] p-[2.1875rem] min-w-[17.5rem] max-w-full flex flex-wrap justify-between items-center gap-4">
+    <footer className="bg-darker-gray text-off-white rounded-[1.875rem] p-[2.1875rem] min-w-[17.5rem] max-w-full flex flex-wrap justify-between items-center gap-4">
       {/* Left side - contact information */}
       <div className="min-w-[360px]">
         <p className={`${typography["Body-Small-Regular"]}`}>
-          Adres: ul. Piłsudskiego 11A, 45-706 Opole
+          Adres: {CONTACT.address.full}
         </p>
         <p className={`${typography["Body-Small-Regular"]}`}>
-          Telefon: +48 735 239 795
+          Telefon: {CONTACT.phone}
         </p>
         <p className={`${typography["Body-Small-Regular"]}`}>
-          E-mail: kontakt@klinika.pl
+          E-mail: {CONTACT.email}
         </p>
         <p className={`${typography["Body-Small-Regular"]}`}>
-          Godziny otwarcia: Pon–Pt: 9:00–18:00
+          Godziny otwarcia: {CONTACT.workingHours}
         </p>
       </div>
 
@@ -34,5 +35,4 @@ const Footer = () => {
       </div>
     </footer>
   );
-};
-export default Footer;
+});

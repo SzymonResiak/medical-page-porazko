@@ -1,30 +1,19 @@
 import { Accordion } from "@/components/Accordion";
-import { Button } from "@/components/Button";
 import { KidneysIcon } from "@/components/icons/KidneysIcon";
 import { InfoLabel } from "@/components/InfoLabel";
 
 export const Services = () => {
   return (
     <div>
-      <p className="text-2xl desktop-2:text-7xl">
+      <p className="text-2xl desktop-lg:text-7xl">
         Wszystko, czego potrzebujesz dla zdrowia nerek
         <span className="font-bold block md:inline">
           oferta diagnostyki i leczenia
         </span>
       </p>
-      <p className="mt-5 text-lg desktop-2:text-4xl">
-        Diagnostyka i leczenie <br /> dopasowne do Twoich potrzeb.
+      <p className="mt-5 text-lg desktop-lg:text-4xl">
+        Diagnostyka i leczenie <br /> dopasowane do Twoich potrzeb.
       </p>
-      <p className="mt-5 text-lg desktop-2:text-4xl text-right">
-        Skontaktuj się z dr hab.n.med. <br />
-        Tomaszem Porażką, aby umówić <br /> wizytę
-      </p>
-      <div className="flex justify-end">
-        <Button className="mt-5 md:hidden">zadzwoń</Button>
-        <p className="hidden md:block mt-5 text-lg desktop-2:text-2xl ">
-          <span className="font-bold">Zadzwoń:</span> +48 735 239 795
-        </p>
-      </div>
 
       <div className="mt-10 flex flex-col gap-5">
         <Accordion
@@ -32,7 +21,7 @@ export const Services = () => {
           icon={<KidneysIcon />}
           isOpen={true}
         >
-          <div className="text-sm desktop-2:text-2xl">
+          <div className="text-sm desktop-lg:text-2xl">
             <p>
               Specjalizuję się w diagnostyce i leczeniu schorzeń nerek, oferując
               skuteczną pomoc w takich przypadkach jak:
@@ -59,7 +48,7 @@ export const Services = () => {
           icon={<KidneysIcon />}
           isOpen={true}
         >
-          <div className="text-sm desktop-2:text-2xl">
+          <div className="text-sm desktop-lg:text-2xl">
             <p>
               W trakcie wizyt wykonuję badania USG, ze szczególnym
               uwzględnieniem nerek i dróg moczowych, a także:
@@ -78,7 +67,7 @@ export const Services = () => {
           icon={<KidneysIcon />}
           isOpen={true}
         >
-          <div className="text-sm desktop-2:text-2xl">
+          <div className="text-sm desktop-lg:text-2xl">
             <p>
               Konsultacje w zakresie diagnostyki i wytwarzania dostępu do naczyń
               do hemodializy oraz dostępu do dializy otrzewnowej.
@@ -100,17 +89,17 @@ export const Services = () => {
           </div>
         </Accordion>
       </div>
-      <div className="flex flex-col desktop-2:flex-row gap-5 mt-5">
+      <div className="flex flex-col desktop-lg:flex-row gap-5 mt-5">
         <InfoLabel
           icon="transferGreen"
-          text="Ackeptuję płatność kartą lub przelewem"
-          className="bg-[#338075] flex-1"
+          text="Akceptuję płatność kartą lub przelewem"
+          className="bg-primary flex-1"
           textColor="white"
         />
         <InfoLabel
           icon="invoice"
           text="Wystawiam faktury"
-          className="bg-[#338075] flex-1"
+          className="bg-primary flex-1"
           textColor="white"
         />
       </div>

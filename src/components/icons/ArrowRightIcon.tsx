@@ -1,21 +1,21 @@
 export const ArrowRightIcon = () => {
   return (
     <svg
-      width="31"
-      height="32"
+      width="100%"
+      height="100%"
       viewBox="0 0 31 32"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
         d="M28.4173 3.53418L2.58398 29.3675"
-        stroke="#FCFCFC"
+        stroke="currentColor"
         strokeWidth="1.9375"
         strokeMiterlimit="10"
       />
       <path
         d="M28.4167 21.2946V3.53418H10.6562"
-        stroke="#FCFCFC"
+        stroke="currentColor"
         strokeWidth="1.9375"
         strokeMiterlimit="10"
       />

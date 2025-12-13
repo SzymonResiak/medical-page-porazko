@@ -10,7 +10,11 @@ const config: Config = {
   theme: {
     screens: {
       mobile: "320px",
+      "mobile-2": "390px",
+      "mobile-3": "430px",
       tablet: "700px",
+      desktop: "1024px",
+      "desktop-2": "1760px",
     },
     fontFamily: {
       "noto-ui": ['"Noto Sans Telugu UI"', "sans-serif"],
