@@ -4,9 +4,9 @@ import { CONTACT } from "@/data/constants";
 
 export const Footer = memo(function Footer() {
   return (
-    <footer className="bg-darker-gray text-off-white rounded-[1.875rem] p-[2.1875rem] min-w-[17.5rem] max-w-full flex flex-wrap justify-between items-center gap-4">
+    <footer className="bg-darker-gray text-off-white rounded-[1.875rem] p-4 tablet:p-[2.1875rem] min-w-0 max-w-full flex flex-wrap justify-between items-center gap-4 mb-[env(safe-area-inset-bottom)]">
       {/* Left side - contact information */}
-      <div className="min-w-[360px]">
+      <div className="min-w-0 w-full tablet:w-auto tablet:min-w-[360px]">
         <p className={`${typography["Body-Small-Regular"]}`}>
           Adres: {CONTACT.address.full}
         </p>

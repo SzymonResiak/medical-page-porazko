@@ -58,6 +58,7 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 5,
   themeColor: "#FCFCFC",
+  viewportFit: "cover",
 };
 
 interface RootLayoutProps {
