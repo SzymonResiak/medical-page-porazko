@@ -31,12 +31,14 @@
   --background-rgb: 255, 255, 255;
 }
 
-html,
-body {
+html {
   overflow-x: hidden;
 }
 
 body {
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   color: #2e2e2e;
   background: rgb(var(--background-rgb));
   font-family: "Noto Sans Telugu UI", system-ui, -apple-system,
