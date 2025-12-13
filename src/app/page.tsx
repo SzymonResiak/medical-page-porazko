@@ -1,7 +1,9 @@
 export default function Home() {
   return (
-    <h1 className="text-xl tablet:text-4xl desktop:text-[3.5rem] font-bold text-center p-3 text-dark-gray">
-      Jakiego wsparcia zdrowotnego potrzebujesz?
-    </h1>
+    <div className="py-2 tablet:h-[15vh] flex items-center justify-center flex-shrink-0">
+      <h1 className="text-lg tablet:text-[clamp(1.25rem,4vh,5rem)] font-bold text-center text-dark-gray">
+        Jakiego wsparcia zdrowotnego potrzebujesz?
+      </h1>
+    </div>
   );
 }

@@ -22,6 +22,7 @@ export const InternistCard = ({
       link="/internist"
       showBackButton={showBackButton}
       priority={priority}
+      imagePosition="left-bottom"
     />
   );
 };

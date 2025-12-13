@@ -19,6 +19,7 @@ interface SpecialistCardProps {
   link: string;
   showBackButton?: boolean;
   priority?: boolean;
+  imagePosition?: "right-top" | "left-bottom" | "center";
 }
 
 export const SpecialistCard = ({
@@ -32,45 +33,57 @@ export const SpecialistCard = ({
   link,
   showBackButton = false,
   priority = false,
+  imagePosition = "right-top",
 }: SpecialistCardProps) => {
   return (
     <div className="group relative w-full h-full">
-      <div className="rounded-[20px] p-4 tablet:p-5 desktop:p-6 desktop-lg:p-10 relative overflow-hidden h-full flex flex-col">
+      <div className="specialist-card-wrapper rounded-[20px] p-4 tablet:p-6 tablet-landscape:p-[clamp(0.75rem,1.5vh,1.25rem)] desktop:p-[clamp(1rem,2vh,2rem)] relative overflow-hidden h-full flex flex-col">
         <Image
           src={imageSrc}
           alt={imageAlt}
           fill
-          className="object-cover object-right-top"
+          className={`object-cover ${
+            imagePosition === "left-bottom"
+              ? "object-left-bottom"
+              : imagePosition === "center"
+                ? "object-center"
+                : "object-right-top"
+          }`}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           priority={priority}
         />
         <div className="relative flex flex-col h-full min-h-0">
-          {/* Header z ikonką - zawsze widoczny, stała wysokość */}
-          <div className="flex items-center gap-2 tablet:gap-3 mb-2 tablet:mb-3 desktop:mb-4 flex-shrink-0">
-            <div className="hidden tablet:block flex-shrink-0">
-              <IconCircle icon={icon} size="md" />
+          {/* Header z ikonką - skalowalna - ukryta na phone-landscape */}
+          <div className="specialist-card-header flex items-center gap-2 tablet:gap-3 tablet-landscape:gap-[1vh] mb-1 tablet:mb-2 tablet-landscape:mb-[2vh] flex-shrink-0">
+            <div
+              className="hidden tablet:flex items-center justify-center rounded-full bg-white flex-shrink-0 aspect-square w-14 h-14 tablet-landscape:w-auto tablet-landscape:h-auto"
+              style={{ height: 'clamp(2.5rem, 5vh, 8rem)', width: 'clamp(2.5rem, 5vh, 8rem)' }}
+            >
+              <div className="[&_svg]:w-full [&_svg]:h-full" style={{ width: '50%', height: '50%' }}>
+                {icon}
+              </div>
             </div>
             <div className="block tablet:hidden flex-shrink-0">
               <IconCircle icon={icon} size="xs" />
             </div>
-            <p className="text-dark-gray text-xs tablet:text-sm desktop:text-sm desktop-lg:text-base line-clamp-2">
+            <p className="text-dark-gray text-[10px] tablet:text-base desktop:text-lg desktop-lg:text-xl desktop-2:text-2xl desktop-3:text-5xl leading-tight line-clamp-2">
               {shortDescription}
             </p>
           </div>
 
-          {/* Content - rozciąga się */}
-          <div className="flex-grow min-h-0 overflow-hidden">
-            <h2 className="text-xl tablet:text-2xl font-bold text-dark-gray desktop:text-3xl desktop-lg:text-4xl">
+          {/* Content - zajmuje ~40% karty */}
+          <div className="specialist-card-content flex-grow min-h-0 overflow-hidden tablet-landscape:h-[40%] desktop:h-[40%] flex flex-col justify-center">
+            <h2 className="text-base phone-landscape:text-base tablet:text-3xl desktop:text-4xl desktop-lg:text-5xl desktop-2:text-6xl desktop-3:text-9xl font-bold text-dark-gray">
               {title}
             </h2>
-            <h3 className="text-lg tablet:text-xl text-dark-gray desktop:text-2xl desktop-lg:text-3xl">{name}</h3>
-            <p className="mt-1 text-dark-gray text-xs tablet:text-sm desktop:text-sm desktop-lg:text-base line-clamp-3">
+            <h3 className="text-sm phone-landscape:text-sm tablet:text-2xl desktop:text-3xl desktop-lg:text-4xl desktop-2:text-5xl desktop-3:text-8xl text-dark-gray">{name}</h3>
+            <p className="mt-[0.5vh] pb-1 desktop-3:pb-3 text-dark-gray text-xs phone-landscape:text-[10px] tablet:text-base desktop:text-lg desktop-lg:text-xl desktop-2:text-2xl desktop-3:text-5xl line-clamp-3 phone-landscape:line-clamp-2">
               {description}
             </p>
           </div>
 
           {/* Button - zawsze na dole */}
-          <div className="flex justify-end mt-auto pt-2 tablet:pt-3 desktop:pt-4 flex-shrink-0">
+          <div className="flex justify-end mt-auto pt-2 tablet:pt-[0.5vh] flex-shrink-0">
             {showBackButton ? (
               <Link href="/">
                 <Button rightIcon={<BackIcon />} />

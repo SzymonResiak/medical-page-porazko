@@ -49,7 +49,7 @@ export const Accordion = memo(function Accordion({
 
       <div
         className={`overflow-hidden transition-all duration-300 ease-in-out ${
-          isExpanded ? "max-h-96" : "max-h-0"
+          isExpanded ? "max-h-[2000px]" : "max-h-0"
         }`}
       >
         <div className="p-2 tablet:p-5 bg-white border border-light-gray rounded-b-[20px] text-dark-gray">

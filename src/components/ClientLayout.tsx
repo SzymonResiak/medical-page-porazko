@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { ScrollAnimation } from "@/components/ScrollAnimation";
 import { StaticCards } from "@/components/StaticCards";
 import { PageTransition } from "@/components/PageTransition";
+import { FloatingIsland } from "@/components/FloatingIsland";
 
 interface ClientLayoutProps {
   children: React.ReactNode;
@@ -14,8 +15,10 @@ interface ClientLayoutProps {
 // Lista poprawnych ścieżek - 404 będzie miała inną ścieżkę
 const VALID_ROUTES = ["/", "/dentist", "/internist"];
 
-const MainContent = ({ children }: { children: React.ReactNode }) => (
-  <div className="min-h-screen p-3 desktop:p-12 bg-off-white desktop-lg:px-20 desktop-lg:pt-16 desktop-lg:pb-8 flex flex-col">
+const MainContent = ({ children, isMainPage }: { children: React.ReactNode; isMainPage: boolean }) => (
+  <div className={`p-2 tablet-landscape:p-4 desktop:p-6 desktop-lg:px-20 desktop-lg:py-8 bg-off-white flex flex-col ${
+    isMainPage ? "h-[100dvh] overflow-hidden main-content-homepage" : "min-h-screen"
+  }`}>
     {children}
   </div>
 );
@@ -27,7 +30,7 @@ const ConditionalFooter = ({ isValidRoute }: { isValidRoute: boolean }) => {
   // Dla stron 404/błędów nie pokazujemy footera
   if (!isValidRoute) {
     return (
-      <div className="mt-8 desktop-lg:mt-24">
+      <div className="mt-auto pt-3 flex-shrink-0">
         <p className="text-center text-sm text-dark-gray mt-1">
           © 2025 SPLIN – Wszelkie prawa zastrzeżone.
         </p>
@@ -37,9 +40,9 @@ const ConditionalFooter = ({ isValidRoute }: { isValidRoute: boolean }) => {
 
   if (isMainPage) {
     return (
-      <div className="mt-8 desktop-lg:mt-24">
+      <div className="flex-grow flex flex-col justify-end pt-2 desktop:pt-3">
         <FooterLandingPage />
-        <p className="text-right text-sm text-dark-gray mt-1">
+        <p className="text-right text-xs tablet:text-sm text-dark-gray mt-1">
           © 2025 SPLIN – Wszelkie prawa zastrzeżone.
         </p>
       </div>
@@ -59,11 +62,28 @@ const ConditionalFooter = ({ isValidRoute }: { isValidRoute: boolean }) => {
 export const ClientLayout = ({ children }: ClientLayoutProps) => {
   const pathname = usePathname();
   const isValidRoute = VALID_ROUTES.includes(pathname);
+  const isMainPage = pathname === "/";
+  const isSubpage = pathname === "/dentist" || pathname === "/internist";
 
   return (
-    <MainContent>
-      <div className="w-full flex flex-col gap-8 desktop-lg:gap-24 flex-grow">
-        {isValidRoute && <StaticCards />}
+    <MainContent isMainPage={isMainPage}>
+      {/* FloatingIsland - na podstronach: mobile + tablet portrait */}
+      {isSubpage && <FloatingIsland />}
+
+      {/* Mobile + tablet portrait: treść na górze */}
+      <div className="tablet-landscape:hidden desktop:hidden">
+        <PageTransition>{children}</PageTransition>
+      </div>
+
+      {/* Karty: homepage = zawsze, podstrony = tylko tablet landscape+ / desktop */}
+      {isValidRoute && (
+        <div className={isSubpage ? "hidden tablet-landscape:block desktop:block" : ""}>
+          <StaticCards />
+        </div>
+      )}
+
+      {/* Tablet landscape + desktop: treść pod kartami */}
+      <div className="hidden tablet-landscape:block desktop:block mt-4 desktop:mt-6">
         <PageTransition>{children}</PageTransition>
       </div>
       <ConditionalFooter isValidRoute={isValidRoute} />

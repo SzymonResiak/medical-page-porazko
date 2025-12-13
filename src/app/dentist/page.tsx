@@ -20,9 +20,12 @@ export default function DentistPage() {
       <ScrollAnimation>
         <Services />
       </ScrollAnimation>
-      <ScrollAnimation>
-        <About />
-      </ScrollAnimation>
+      {/* About section - hidden on tablet+ where it's shown in the card */}
+      <div className="tablet:hidden">
+        <ScrollAnimation>
+          <About />
+        </ScrollAnimation>
+      </div>
       <ScrollAnimation>
         <Certificates />
       </ScrollAnimation>

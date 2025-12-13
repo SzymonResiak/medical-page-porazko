@@ -8,6 +8,8 @@
   --breakpoint-tablet: 768px;
   --breakpoint-desktop: 1024px;
   --breakpoint-desktop-lg: 1280px;
+  --breakpoint-desktop-2: 1440px;
+  --breakpoint-desktop-3: 2560px;
 
   /* Neutralne */
   --color-off-white: #FCFCFC;
@@ -53,4 +55,60 @@ body {
 .page-fade-in {
   opacity: 0;
   animation: fadeIn 0.3s ease-out forwards;
+}
+
+/* Phone landscape - enable scroll on homepage */
+@media (orientation: landscape) and (max-height: 500px) {
+  .main-content-homepage {
+    height: auto !important;
+    min-height: 100dvh;
+    overflow: auto !important;
+  }
+
+  /* Karty - kompaktowe dla phone landscape */
+  .specialist-card-header {
+    display: none !important;
+  }
+
+  .specialist-card-content h2 {
+    font-size: 0.875rem !important; /* text-sm */
+    line-height: 1.25rem !important;
+  }
+
+  .specialist-card-content h3 {
+    font-size: 0.75rem !important; /* text-xs */
+    line-height: 1rem !important;
+  }
+
+  .specialist-card-content p {
+    font-size: 0.625rem !important; /* 10px */
+    line-height: 0.875rem !important;
+    -webkit-line-clamp: 2 !important;
+  }
+
+  .specialist-card-wrapper {
+    padding: 0.5rem !important;
+  }
+
+  .about-card-wrapper {
+    padding: 0.5rem !important;
+  }
+
+  .about-card-content h2 {
+    font-size: 0.875rem !important;
+    line-height: 1.25rem !important;
+    margin-bottom: 0.25rem !important;
+  }
+
+  .about-card-content > p {
+    font-size: 0.75rem !important;
+    line-height: 1rem !important;
+    margin-bottom: 0.25rem !important;
+  }
+
+  .about-card-description p {
+    font-size: 0.625rem !important;
+    line-height: 0.875rem !important;
+    -webkit-line-clamp: 2 !important;
+  }
 }
