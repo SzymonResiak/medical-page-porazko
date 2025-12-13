@@ -40,7 +40,7 @@ const ConditionalFooter = ({ isValidRoute }: { isValidRoute: boolean }) => {
 
   if (isMainPage) {
     return (
-      <div className="flex-grow flex flex-col justify-end pt-2 desktop:pt-3">
+      <div className="flex-grow flex flex-col justify-end pt-2 desktop:pt-3 pb-[env(safe-area-inset-bottom)]">
         <FooterLandingPage />
         <p className="text-right text-xs tablet:text-sm text-dark-gray mt-1">
           © 2025 SPLIN – Wszelkie prawa zastrzeżone.
