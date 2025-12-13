@@ -4,8 +4,8 @@ import { ClientLayout } from "@/components/ClientLayout";
 
 export const metadata: Metadata = {
   title: {
-    default: "Dom Medyczny Pro Corde | Stomatologia i Nefrologia w Opolu",
-    template: "%s | Dom Medyczny Pro Corde",
+    default: "Porażko | Stomatologia i Nefrologia w Opolu",
+    template: "%s | Porażko",
   },
   description:
     "Profesjonalne usługi stomatologiczne i nefrologiczne w Opolu. Lek. stom. Justyna Porażko (stomatologia) oraz dr hab. n. med. Tomasz Porażko (nefrologia, choroby wewnętrzne).",
@@ -14,15 +14,15 @@ export const metadata: Metadata = {
     "dentysta Opole",
     "nefrolog Opole",
     "internista Opole",
-    "Dom Medyczny Pro Corde",
+    "Porażko",
     "Justyna Porażko",
     "Tomasz Porażko",
     "leczenie zębów Opole",
     "choroby nerek Opole",
   ],
-  authors: [{ name: "Dom Medyczny Pro Corde" }],
-  creator: "Dom Medyczny Pro Corde",
-  publisher: "Dom Medyczny Pro Corde",
+  authors: [{ name: "Porażko" }],
+  creator: "Porażko",
+  publisher: "Porażko",
   robots: {
     index: true,
     follow: true,
@@ -37,14 +37,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "pl_PL",
-    siteName: "Dom Medyczny Pro Corde",
-    title: "Dom Medyczny Pro Corde | Stomatologia i Nefrologia w Opolu",
+    siteName: "Porażko",
+    title: "Porażko | Stomatologia i Nefrologia w Opolu",
     description:
       "Profesjonalne usługi stomatologiczne i nefrologiczne w Opolu. Zapraszamy do naszego gabinetu przy ul. Piłsudskiego 11A.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dom Medyczny Pro Corde",
+    title: "Porażko",
     description: "Stomatologia i Nefrologia w Opolu",
   },
   alternates: {
