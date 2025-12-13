@@ -32,12 +32,17 @@
 }
 
 html {
-  overflow-x: hidden;
+  overflow: hidden;
+  height: 100%;
+  position: fixed;
+  width: 100%;
 }
 
 body {
+  overflow-y: scroll;
   overflow-x: hidden;
-  overflow-y: auto;
+  height: 100%;
+  position: relative;
   -webkit-overflow-scrolling: touch;
   color: #2e2e2e;
   background: rgb(var(--background-rgb));
