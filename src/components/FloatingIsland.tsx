@@ -35,10 +35,10 @@ const PhoneIcon = () => (
 );
 
 export const FloatingIsland = () => {
-  const { scrollDirection, isAtTop } = useScrollDirection(20);
+  const { scrollDirection, isAtTop, isIdle } = useScrollDirection(20, 3000);
 
-  // Show when: at top, or scrolling up
-  const isVisible = isAtTop || scrollDirection === "up";
+  // Show when: at top, scrolling up, or idle for 3 seconds
+  const isVisible = isAtTop || scrollDirection === "up" || isIdle;
 
   return (
     <div

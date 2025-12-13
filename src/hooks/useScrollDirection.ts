@@ -1,19 +1,34 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 type ScrollDirection = "up" | "down" | null;
 
-export function useScrollDirection(threshold = 10) {
+export function useScrollDirection(threshold = 10, idleTimeout = 3000) {
   const [scrollDirection, setScrollDirection] = useState<ScrollDirection>(null);
   const [isAtTop, setIsAtTop] = useState(true);
+  const [isIdle, setIsIdle] = useState(true);
+  const idleTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
-    let lastScrollY = window.scrollY;
+    // Use body.scrollTop because html is position:fixed (iOS scroll fix)
+    const getScrollY = () => document.body.scrollTop || window.scrollY || 0;
+
+    let lastScrollY = getScrollY();
     let ticking = false;
 
+    const resetIdleTimer = () => {
+      setIsIdle(false);
+      if (idleTimerRef.current) {
+        clearTimeout(idleTimerRef.current);
+      }
+      idleTimerRef.current = setTimeout(() => {
+        setIsIdle(true);
+      }, idleTimeout);
+    };
+
     const updateScrollDirection = () => {
-      const scrollY = window.scrollY;
+      const scrollY = getScrollY();
       const difference = Math.abs(scrollY - lastScrollY);
 
       // Check if at top
@@ -36,16 +51,25 @@ export function useScrollDirection(threshold = 10) {
     };
 
     const onScroll = () => {
+      resetIdleTimer();
       if (!ticking) {
         window.requestAnimationFrame(updateScrollDirection);
         ticking = true;
       }
     };
 
+    // Listen on body (where scroll actually happens) and window as fallback
+    document.body.addEventListener("scroll", onScroll);
     window.addEventListener("scroll", onScroll);
 
-    return () => window.removeEventListener("scroll", onScroll);
-  }, [scrollDirection, threshold]);
+    return () => {
+      document.body.removeEventListener("scroll", onScroll);
+      window.removeEventListener("scroll", onScroll);
+      if (idleTimerRef.current) {
+        clearTimeout(idleTimerRef.current);
+      }
+    };
+  }, [scrollDirection, threshold, idleTimeout]);
 
-  return { scrollDirection, isAtTop };
+  return { scrollDirection, isAtTop, isIdle };
 }
