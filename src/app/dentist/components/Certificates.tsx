@@ -32,6 +32,7 @@ export const Certificates = () => {
                 src={certificate}
                 alt={`Certyfikat ${index + 1}`}
                 fill
+                unoptimized
                 className="object-contain p-[0.5rem]"
                 sizes="(max-width: 320px) 140px, (max-width: 640px) 200px, (max-width: 1024px) 50vw, 33vw"
                 loading="lazy"
