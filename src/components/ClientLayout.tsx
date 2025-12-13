@@ -16,8 +16,8 @@ interface ClientLayoutProps {
 const VALID_ROUTES = ["/", "/dentist", "/internist"];
 
 const MainContent = ({ children, isMainPage }: { children: React.ReactNode; isMainPage: boolean }) => (
-  <div className={`p-2 tablet-landscape:p-4 desktop:p-6 desktop-lg:px-20 desktop-lg:py-8 bg-off-white flex flex-col ${
-    isMainPage ? "h-[100dvh] overflow-hidden main-content-homepage" : "min-h-screen"
+  <div className={`p-2 tablet-landscape:p-4 desktop:p-6 desktop-lg:px-20 desktop-lg:py-8 bg-off-white ${
+    isMainPage ? "h-[100dvh] overflow-hidden flex flex-col main-content-homepage" : ""
   }`}>
     {children}
   </div>
