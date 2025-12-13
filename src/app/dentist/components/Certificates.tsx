@@ -2,13 +2,13 @@ import Image from "next/image";
 
 // Stała tablica - nie tworzona przy każdym renderze
 const CERTIFICATES = [
-  "/images/certificate-stom-1.png",
-  "/images/certificate-stom-2.png",
-  "/images/certificate-stom-3.png",
-  "/images/certificate-stom-4.png",
-  "/images/certificate-stom-5.png",
-  "/images/certificate-stom-6.png",
-  "/images/certificate-stom-7.png",
+  "/images/certificate-stom-1.jpg",
+  "/images/certificate-stom-2.jpg",
+  "/images/certificate-stom-3.jpg",
+  "/images/certificate-stom-4.jpg",
+  "/images/certificate-stom-5.jpg",
+  "/images/certificate-stom-6.jpg",
+  "/images/certificate-stom-7.jpg",
 ] as const;
 
 export const Certificates = () => {
