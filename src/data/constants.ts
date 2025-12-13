@@ -3,7 +3,7 @@
 export const CONTACT = {
   phone: "+48 735 239 795",
   phoneLink: "tel:+48735239795",
-  email: "kontakt@procorde.pl",
+  email: "porazko@poczta.onet.pl",
   address: {
     street: "ul. Piłsudskiego 11A",
     city: "45-706 Opole",
