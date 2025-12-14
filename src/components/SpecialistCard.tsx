@@ -66,18 +66,18 @@ export const SpecialistCard = ({
             <div className="block tablet:hidden flex-shrink-0">
               <IconCircle icon={icon} size="xs" />
             </div>
-            <p className="text-dark-gray text-[10px] tablet:text-base desktop:text-lg desktop-lg:text-xl desktop-2:text-2xl desktop-3:text-5xl leading-tight line-clamp-2">
+            <p className="text-dark-gray text-[clamp(0.625rem,0.3rem+1.4vw,3rem)] leading-tight line-clamp-2">
               {shortDescription}
             </p>
           </div>
 
           {/* Content - zajmuje ~40% karty */}
           <div className="specialist-card-content flex-grow min-h-0 overflow-hidden tablet-landscape:h-[40%] desktop:h-[40%] flex flex-col justify-center">
-            <h2 className="text-base phone-landscape:text-base tablet:text-3xl desktop:text-4xl desktop-lg:text-5xl desktop-2:text-6xl desktop-3:text-9xl font-bold text-dark-gray">
+            <h2 className="text-[clamp(1rem,0.25rem+4vw,8rem)] font-bold text-dark-gray truncate leading-normal">
               {title}
             </h2>
-            <h2 className="text-sm phone-landscape:text-sm tablet:text-2xl desktop:text-3xl desktop-lg:text-4xl desktop-2:text-5xl desktop-3:text-8xl text-dark-gray">{name}</h2>
-            <p className="mt-[0.5vh] pb-1 desktop-3:pb-3 text-dark-gray text-xs phone-landscape:text-[10px] tablet:text-base desktop:text-lg desktop-lg:text-xl desktop-2:text-2xl desktop-3:text-5xl line-clamp-3 phone-landscape:line-clamp-2">
+            <h3 className="text-[clamp(0.875rem,0.2rem+3.5vw,6rem)] text-dark-gray truncate leading-normal">{name}</h3>
+            <p className="mt-[0.5vh] pb-[clamp(0.25rem,0.5vh,0.75rem)] text-dark-gray text-[clamp(0.75rem,0.4rem+1.4vw,3rem)] line-clamp-3 phone-landscape:line-clamp-2">
               {description}
             </p>
           </div>

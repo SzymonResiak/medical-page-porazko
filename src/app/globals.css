@@ -9,7 +9,8 @@
   --breakpoint-desktop: 1024px;
   --breakpoint-desktop-lg: 1280px;
   --breakpoint-desktop-2: 1440px;
-  --breakpoint-desktop-3: 2560px;
+  --breakpoint-desktop-3: 1800px; /* 2K monitory */
+  --breakpoint-desktop-4k: 2400px; /* 4K monitory */
 
   /* Neutralne */
   --color-off-white: #FCFCFC;
@@ -78,17 +79,17 @@ body {
   }
 
   .specialist-card-content h2 {
-    font-size: 0.875rem !important; /* text-sm */
+    font-size: 0.875rem !important;
     line-height: 1.25rem !important;
   }
 
   .specialist-card-content h3 {
-    font-size: 0.75rem !important; /* text-xs */
+    font-size: 0.75rem !important;
     line-height: 1rem !important;
   }
 
   .specialist-card-content p {
-    font-size: 0.625rem !important; /* 10px */
+    font-size: 0.625rem !important;
     line-height: 0.875rem !important;
     -webkit-line-clamp: 2 !important;
   }

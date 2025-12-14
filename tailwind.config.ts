@@ -17,7 +17,8 @@ const config: Config = {
       desktop: "1024px",
       "desktop-lg": "1280px",
       "desktop-2": "1440px",
-      "desktop-3": "2560px",
+      "desktop-3": "1800px", // 2K monitory (także z 125% skalowaniem)
+      "desktop-4k": "2400px", // 4K monitory (ze skalowaniem 150%+)
     },
     fontFamily: {
       "noto-ui": ['"Noto Sans Telugu UI"', "sans-serif"],

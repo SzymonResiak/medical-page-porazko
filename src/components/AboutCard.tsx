@@ -24,20 +24,20 @@ export const AboutCard = ({ variant }: AboutCardProps) => {
       <div className="about-card-wrapper rounded-[20px] p-4 tablet:p-6 tablet-landscape:p-[clamp(0.75rem,1.5vh,1.25rem)] desktop:p-[clamp(1rem,2vh,2rem)] relative overflow-hidden h-full flex flex-col bg-light-gray">
         <div className="about-card-content relative flex flex-col h-full min-h-0">
           {/* Header */}
-          <div className="flex items-center gap-2 tablet:gap-3 desktop:gap-3 desktop-2:gap-[1vh] mb-1 tablet:mb-2 desktop:mb-3 desktop-2:mb-[2vh] flex-shrink-0">
-            <h2 className="text-base tablet:text-3xl desktop:text-4xl desktop-lg:text-5xl desktop-2:text-6xl desktop-3:text-9xl font-bold text-dark-gray">
+          <div className="flex items-center gap-[clamp(0.5rem,1vw,1.5rem)] mb-[clamp(0.25rem,1vh,1.5rem)] flex-shrink-0">
+            <h2 className="text-[clamp(1rem,0.25rem+4vw,8rem)] font-bold text-dark-gray truncate leading-normal">
               {content.title}
             </h2>
           </div>
 
           {/* Subtitle */}
-          <p className="text-sm tablet:text-2xl desktop:text-3xl desktop-lg:text-4xl desktop-2:text-5xl desktop-3:text-8xl text-dark-gray mb-1 tablet:mb-2 desktop:mb-3 desktop-2:mb-[2vh]">
+          <p className="text-[clamp(0.875rem,0.2rem+3.5vw,6rem)] text-dark-gray mb-[clamp(0.25rem,1vh,1.5rem)] truncate leading-normal">
             {content.subtitle}
           </p>
 
           {/* Description */}
           <div className="about-card-description flex-grow min-h-0 overflow-hidden">
-            <p className="text-dark-gray text-xs tablet:text-base desktop:text-lg desktop-lg:text-xl desktop-2:text-2xl desktop-3:text-5xl leading-relaxed">
+            <p className="text-dark-gray text-[clamp(0.75rem,0.4rem+1.4vw,3rem)] leading-relaxed line-clamp-6">
               {content.description}
             </p>
           </div>
