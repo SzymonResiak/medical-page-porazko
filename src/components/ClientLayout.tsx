@@ -70,22 +70,21 @@ export const ClientLayout = ({ children }: ClientLayoutProps) => {
       {/* FloatingIsland - na podstronach: mobile + tablet portrait */}
       {isSubpage && <FloatingIsland />}
 
-      {/* Mobile + tablet portrait: treść na górze */}
-      <div className="tablet-landscape:hidden desktop:hidden">
-        <PageTransition>{children}</PageTransition>
-      </div>
-
-      {/* Karty: homepage = zawsze, podstrony = tylko tablet landscape+ / desktop */}
-      {isValidRoute && (
-        <div className={isSubpage ? "hidden tablet-landscape:block desktop:block" : ""}>
-          <StaticCards />
+      {/* Wrapper z flexbox - order zmienia kolejność na różnych breakpointach */}
+      <div className="flex flex-col">
+        {/* Children: na mobile order-1 (na górze), na desktop order-2 (pod kartami) */}
+        <div className="order-1 tablet-landscape:order-2 desktop:order-2 tablet-landscape:mt-4 desktop:mt-6">
+          <PageTransition>{children}</PageTransition>
         </div>
-      )}
 
-      {/* Tablet landscape + desktop: treść pod kartami */}
-      <div className="hidden tablet-landscape:block desktop:block mt-4 desktop:mt-6">
-        <PageTransition>{children}</PageTransition>
+        {/* Karty: na mobile order-2 (na dole), na desktop order-1 (na górze) */}
+        {isValidRoute && (
+          <div className={`order-2 tablet-landscape:order-1 desktop:order-1 ${isSubpage ? "hidden tablet-landscape:block desktop:block" : ""}`}>
+            <StaticCards />
+          </div>
+        )}
       </div>
+
       <ConditionalFooter isValidRoute={isValidRoute} />
     </MainContent>
   );

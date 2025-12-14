@@ -5,9 +5,9 @@ export const CONTACT = {
   phoneLink: "tel:+48735239795",
   email: "porazko@poczta.onet.pl",
   address: {
-    street: "ul. Piłsudskiego 11A",
+    street: "plac Piłsudskiego 11A",
     city: "45-706 Opole",
-    full: "ul. Piłsudskiego 11A, 45-706 Opole",
+    full: "plac Piłsudskiego 11A, 45-706 Opole",
   },
   workingHours: "Pon–Pt: 9:00–18:00",
 } as const;
