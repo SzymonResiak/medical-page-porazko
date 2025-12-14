@@ -41,11 +41,20 @@ export const metadata: Metadata = {
     title: "Porażko | Stomatolog i Nefrolog w Opolu - Gabinet Lekarski",
     description:
       "Gabinet stomatologiczny i nefrologiczny w Opolu. Justyna Porażko - dentysta. Tomasz Porażko - nefrolog, internista.",
+    images: [
+      {
+        url: "https://porazko.pl/images/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Porażko - Gabinet Stomatologiczny i Nefrologiczny w Opolu",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Porażko | Stomatolog i Nefrolog w Opolu",
     description: "Gabinet stomatologiczny i nefrologiczny w Opolu. Justyna i Tomasz Porażko.",
+    images: ["https://porazko.pl/images/og-image.png"],
   },
   alternates: {
     canonical: "/",

@@ -73,9 +73,9 @@ export const SpecialistCard = ({
 
           {/* Content - zajmuje ~40% karty */}
           <div className="specialist-card-content flex-grow min-h-0 overflow-hidden tablet-landscape:h-[40%] desktop:h-[40%] flex flex-col justify-center">
-            <h1 className="text-base phone-landscape:text-base tablet:text-3xl desktop:text-4xl desktop-lg:text-5xl desktop-2:text-6xl desktop-3:text-9xl font-bold text-dark-gray">
+            <h2 className="text-base phone-landscape:text-base tablet:text-3xl desktop:text-4xl desktop-lg:text-5xl desktop-2:text-6xl desktop-3:text-9xl font-bold text-dark-gray">
               {title}
-            </h1>
+            </h2>
             <h2 className="text-sm phone-landscape:text-sm tablet:text-2xl desktop:text-3xl desktop-lg:text-4xl desktop-2:text-5xl desktop-3:text-8xl text-dark-gray">{name}</h2>
             <p className="mt-[0.5vh] pb-1 desktop-3:pb-3 text-dark-gray text-xs phone-landscape:text-[10px] tablet:text-base desktop:text-lg desktop-lg:text-xl desktop-2:text-2xl desktop-3:text-5xl line-clamp-3 phone-landscape:line-clamp-2">
               {description}

@@ -27,6 +27,14 @@ export const metadata: Metadata = {
     description:
       "Nefrolog i internista w Opolu - dr hab. n. med. Tomasz Porażko. Diagnostyka i leczenie chorób nerek.",
     url: "https://porazko.pl/internist",
+    images: [
+      {
+        url: "https://porazko.pl/images/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Porażko - Stomatolog i Nefrolog w Opolu",
+      },
+    ],
   },
   alternates: {
     canonical: "/internist",
@@ -36,6 +44,7 @@ export const metadata: Metadata = {
 export default function InternistPage() {
   return (
     <>
+      <h1 className="sr-only">Nefrolog Internista Opole - dr hab. Tomasz Porażko</h1>
       <Breadcrumbs
         items={[
           { label: "Strona główna", href: "/" },

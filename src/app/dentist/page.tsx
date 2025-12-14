@@ -29,6 +29,14 @@ export const metadata: Metadata = {
     description:
       "Stomatolog w Opolu - lek. stom. Justyna Porażko. Kompleksowa opieka stomatologiczna dla całej rodziny.",
     url: "https://porazko.pl/dentist",
+    images: [
+      {
+        url: "https://porazko.pl/images/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Porażko - Stomatolog i Nefrolog w Opolu",
+      },
+    ],
   },
   alternates: {
     canonical: "/dentist",
@@ -38,6 +46,7 @@ export const metadata: Metadata = {
 export default function DentistPage() {
   return (
     <>
+      <h1 className="sr-only">Stomatolog Opole - Justyna Porażko | Dentysta</h1>
       <Breadcrumbs
         items={[
           { label: "Strona główna", href: "/" },

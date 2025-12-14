@@ -12,7 +12,7 @@ export const About = () => {
       <div className="flex flex-col md:flex-row md:gap-5 items-center">
         <Image
           src="/images/tools.png"
-          alt="About"
+          alt="Sprzęt medyczny do diagnostyki nefrologicznej - stetoskop i narzędzia lekarskie"
           width={500}
           height={500}
           style={{ width: "auto", height: "auto" }}
