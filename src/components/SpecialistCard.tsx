@@ -72,7 +72,7 @@ export const SpecialistCard = ({
           </div>
 
           {/* Content - zajmuje ~40% karty */}
-          <div className="specialist-card-content flex-grow min-h-0 overflow-hidden tablet-landscape:h-[40%] desktop:h-[40%] flex flex-col justify-center">
+          <div className="specialist-card-content flex-grow min-h-0 overflow-hidden tablet-landscape:h-[40%] desktop:h-[40%] flex flex-col justify-center pb-1">
             <h2 className="text-[clamp(1rem,0.25rem+4vw,8rem)] font-bold text-dark-gray truncate leading-normal">
               {title}
             </h2>

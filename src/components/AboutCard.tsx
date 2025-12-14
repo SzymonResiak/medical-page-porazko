@@ -36,7 +36,7 @@ export const AboutCard = ({ variant }: AboutCardProps) => {
           </p>
 
           {/* Description */}
-          <div className="about-card-description flex-grow min-h-0 overflow-hidden">
+          <div className="about-card-description flex-grow min-h-0 overflow-hidden pb-1">
             <p className="text-dark-gray text-[clamp(0.75rem,0.4rem+1.4vw,3rem)] leading-relaxed line-clamp-6">
               {content.description}
             </p>
