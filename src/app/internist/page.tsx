@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "/internist",
+    canonical: "https://porazko.pl/internist",
   },
 };
 

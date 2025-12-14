@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "/dentist",
+    canonical: "https://porazko.pl/dentist",
   },
 };
 

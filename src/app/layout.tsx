@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     images: ["https://porazko.pl/images/og-image.png"],
   },
   alternates: {
-    canonical: "/",
+    canonical: "https://porazko.pl/",
   },
   category: "health",
 };
