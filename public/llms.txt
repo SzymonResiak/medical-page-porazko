@@ -1,0 +1,36 @@
+# porazko.pl
+
+> Gabinet lekarski Porażko w Opolu oferuje usługi stomatologiczne i nefrologiczne. Prowadzony przez dwoje lekarzy: lek. stom. Justynę Porażko (stomatolog) oraz dr hab. n. med. Tomasza Porażko (nefrolog, internista).
+
+## Specjaliści
+
+### Justyna Porażko - Stomatolog
+- Leczenie zachowawcze (próchnica, wypełnienia estetyczne)
+- Profilaktyka i higienizacja (skaling, piaskowanie, fluoryzacja)
+- Stomatologia dziecięca
+- Stomatologia estetyczna (wybielanie)
+- Endodoncja (leczenie kanałowe)
+- Chirurgia stomatologiczna (ekstrakcje)
+- Protetyka (korony, mosty, protezy)
+
+### Tomasz Porażko - Nefrolog, Internista
+- Diagnostyka i leczenie chorób nerek
+- Przewlekła choroba nerek
+- Kłębuszkowe zapalenie nerek
+- Kamica układu moczowego
+- USG jamy brzusznej, nerek, dróg moczowych
+- Konsultacje dotyczące hemodializy i dializy otrzewnowej
+- Przygotowanie do przeszczepienia nerki
+
+## Kontakt
+
+- Adres: plac Piłsudskiego 11A, 45-706 Opole, Polska
+- Telefon: +48 735 239 795
+- Email: porazko@poczta.onet.pl
+- Godziny otwarcia: Poniedziałek-Piątek 09:00-18:00
+
+## Strony
+
+- /: Strona główna - wybór specjalisty
+- /dentist: Stomatolog Justyna Porażko - pełna oferta stomatologiczna
+- /internist: Nefrolog i internista Tomasz Porażko - diagnostyka i leczenie chorób nerek

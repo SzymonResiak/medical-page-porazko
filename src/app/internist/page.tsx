@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ScrollAnimation } from "@/components/ScrollAnimation";
 import { Contact } from "@/components/Contact";
 import { Services } from "./components/Services";
@@ -6,9 +8,40 @@ import { Opinions } from "./components/Opinions";
 import { Location } from "@/components/Location";
 import { FAQ } from "./components/FAQ";
 
+export const metadata: Metadata = {
+  title: "Nefrolog Internista Opole - dr hab. Tomasz Porażko",
+  description:
+    "Nefrolog i internista w Opolu - dr hab. n. med. Tomasz Porażko. Diagnostyka i leczenie chorób nerek, USG, leczenie nerkozastępcze. Umów wizytę!",
+  keywords: [
+    "nefrolog Opole",
+    "internista Opole",
+    "Tomasz Porażko",
+    "choroby nerek Opole",
+    "USG nerek Opole",
+    "dializa Opole",
+    "lekarz nefrolog",
+    "przewlekła choroba nerek",
+  ],
+  openGraph: {
+    title: "Nefrolog Internista Opole - dr hab. Tomasz Porażko",
+    description:
+      "Nefrolog i internista w Opolu - dr hab. n. med. Tomasz Porażko. Diagnostyka i leczenie chorób nerek.",
+    url: "https://porazko.pl/internist",
+  },
+  alternates: {
+    canonical: "/internist",
+  },
+};
+
 export default function InternistPage() {
   return (
     <>
+      <Breadcrumbs
+        items={[
+          { label: "Strona główna", href: "/" },
+          { label: "Internista, Nefrolog" },
+        ]}
+      />
       <ScrollAnimation>
         <Contact />
       </ScrollAnimation>

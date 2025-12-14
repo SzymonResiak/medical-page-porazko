@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import { FooterLandingPage } from "@/components/FooterLandingPage";
 import { Footer } from "@/components/Footer";
 import { usePathname } from "next/navigation";
@@ -65,6 +66,16 @@ export const ClientLayout = ({ children }: ClientLayoutProps) => {
   const isMainPage = pathname === "/";
   const isSubpage = pathname === "/dentist" || pathname === "/internist";
 
+  // Scroll to content on route change (on desktop, cards are at top)
+  useEffect(() => {
+    const contentElement = document.getElementById("page-content");
+    if (contentElement && isSubpage) {
+      contentElement.scrollIntoView({ behavior: "instant" });
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [pathname, isSubpage]);
+
   return (
     <MainContent isMainPage={isMainPage}>
       {/* FloatingIsland - na podstronach: mobile + tablet portrait */}
@@ -73,7 +84,7 @@ export const ClientLayout = ({ children }: ClientLayoutProps) => {
       {/* Wrapper z flexbox - order zmienia kolejność na różnych breakpointach */}
       <div className="flex flex-col">
         {/* Children: na mobile order-1 (na górze), na desktop order-2 (pod kartami) */}
-        <div className="order-1 tablet-landscape:order-2 desktop:order-2 tablet-landscape:mt-4 desktop:mt-6">
+        <div id="page-content" className="order-1 tablet-landscape:order-2 desktop:order-2 tablet-landscape:mt-4 desktop:mt-6">
           <PageTransition>{children}</PageTransition>
         </div>
 

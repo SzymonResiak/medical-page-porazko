@@ -1,4 +1,5 @@
 import { memo } from "react";
+import Link from "next/link";
 import { typography } from "../styles/typography";
 import { CONTACT } from "@/data/constants";
 
@@ -20,6 +21,36 @@ export const Footer = memo(function Footer() {
           Godziny otwarcia: {CONTACT.workingHours}
         </p>
       </div>
+
+      {/* Middle - internal links */}
+      <nav aria-label="Nawigacja stopki">
+        <ul className="flex flex-col gap-1">
+          <li>
+            <Link
+              href="/"
+              className={`${typography["Body-Small-Regular"]} hover:underline`}
+            >
+              Strona główna
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/dentist"
+              className={`${typography["Body-Small-Regular"]} hover:underline`}
+            >
+              Stomatolog
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/internist"
+              className={`${typography["Body-Small-Regular"]} hover:underline`}
+            >
+              Internista, Nefrolog
+            </Link>
+          </li>
+        </ul>
+      </nav>
 
       {/* Right side - information about creators */}
       <div>
