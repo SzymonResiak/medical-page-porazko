@@ -61,15 +61,15 @@ const ServicesList = () => {
 export const Services = () => {
   return (
     <div>
-      <p className="text-2xl desktop-lg:text-7xl">
+      <h1 className="heading-h1-regular">
         Kompleksowa opieka stomatologiczna <br />
-        <span className="font-bold block md:inline">
+        <span className="heading-h1-bold block md:inline">
           znajdź usługę dla siebie
         </span>
-      </p>
-      <p className="mt-5 text-lg desktop-lg:text-4xl">
+      </h1>
+      <h4 className="heading-h4-regular">
         Pełna oferta stomatologiczna dopasowana do Twoich potrzeb
-      </p>
+      </h4>
       <ServicesList />
     </div>
   );

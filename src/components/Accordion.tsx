@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, memo, useCallback } from "react";
+import { useState, memo } from "react";
 import { IconCircle } from "./IconCircle";
 import { TopIcon } from "./icons/TopIcon";
 import { DownIcon } from "./icons/DownIcon";
@@ -23,37 +23,38 @@ export const Accordion = memo(function Accordion({
   className = "",
 }: AccordionProps) {
   const [isExpanded, setIsExpanded] = useState(isOpen);
+  const [isHovered, setIsHovered] = useState(false);
   const isMobile = useMediaQuery(BREAKPOINTS.TABLET - 1);
-
-  const handleToggle = useCallback(() => {
-    setIsExpanded((prev) => !prev);
-  }, []);
 
   return (
     <div className={`w-full rounded-[20px] bg-light-gray ${className}`}>
       <button
-        onClick={handleToggle}
-        className="flex w-full items-center justify-between p-2.5 tablet:p-5 text-left"
+        onClick={() => setIsExpanded((v) => !v)}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        className="flex w-full items-center justify-between p-2.5 tablet:p-5 text-left cursor-pointer"
         aria-expanded={isExpanded}
       >
         {icon && <IconCircle icon={icon} size={isMobile ? "2xs" : "lg"} />}
-        <h3 className="text-sm tablet:text-3xl font-normal text-dark-gray flex-1 mx-2 tablet:mx-5">
-          {header}
-        </h3>
+        <h3 className="heading-h5-regular flex-1">{header}</h3>
         <IconCircle
           icon={isExpanded ? <TopIcon /> : <DownIcon />}
-          backgroundColor={isExpanded ? "#2E2E2E" : "#FFFFFF"}
+          backgroundColor={
+            isHovered ? "#2E2E2E" : isExpanded ? "#2E2E2E" : "#FFFFFF"
+          }
           size={isMobile ? "2xs" : "sm"}
         />
       </button>
 
       <div
-        className={`overflow-hidden transition-all duration-300 ease-in-out ${
-          isExpanded ? "max-h-[2000px]" : "max-h-0"
+        className={`grid overflow-hidden transition-[grid-template-rows] duration-300 ease-in-out ${
+          isExpanded ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
         }`}
       >
-        <div className="p-2 tablet:p-5 bg-white border border-light-gray rounded-b-[20px] text-dark-gray">
-          {children}
+        <div className="overflow-hidden">
+          <div className="p-2 tablet:p-5 bg-white border border-light-gray rounded-b-[20px] text-dark-gray">
+            {children}
+          </div>
         </div>
       </div>
     </div>

@@ -5,10 +5,10 @@ export const Opinions = () => {
   return (
     <SharedOpinions
       title={
-        <>
-          Opinie pacjentów to <br /> moja{" "}
-          <span className="font-bold">najlepsza rekomendacja</span>
-        </>
+        <span className="heading-h1-regular">
+          Opinie pacjentów to moja{" "}
+          <span className="heading-h1-bold">najlepsza rekomendacja</span>
+        </span>
       }
       opinions={INTERNIST_OPINIONS}
       keyPrefix="internist"
