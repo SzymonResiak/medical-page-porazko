@@ -90,7 +90,7 @@ export const InfoLabel = memo(function InfoLabel({
         </div>
       )}
       <span
-        className={`text-[0.75rem] tablet:text-[1.25rem] font-normal leading-none ${
+        className={`body-medium-regular ${
           textColor === "white" ? "text-white" : "text-black"
         }`}
       >

@@ -23,17 +23,14 @@ export const AboutCard = ({ variant }: AboutCardProps) => {
     <div className="group relative w-full h-full min-h-[540px]">
       <div className="about-card-wrapper rounded-[20px] p-4 tablet:p-6 tablet-landscape:p-[clamp(0.75rem,1.5vh,1.25rem)] desktop:p-[clamp(1rem,2vh,2rem)] relative overflow-hidden h-full flex flex-col bg-light-gray">
         <div className="about-card-content relative flex flex-col h-full min-h-0">
-          {/* Header */}
           <h2 className="text-[clamp(1rem,0.25rem+4vw,4rem)] font-bold text-dark-gray">
             {content.title}
           </h2>
 
-          {/* Subtitle */}
           <p className="text-[clamp(0.875rem,0.2rem+3.5vw,3rem)] text-dark-gray mb-[clamp(0.25rem,1vh,1.5rem)]">
             {content.subtitle}
           </p>
 
-          {/* Description */}
           <div className="about-card-description flex-grow min-h-0 overflow-hidden pb-1">
             <p className="text-dark-gray text-[clamp(0.75rem,0.4rem+1.4vw,2rem)]">
               {content.description}

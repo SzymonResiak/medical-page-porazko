@@ -54,12 +54,8 @@ export const CardImage = ({
         />
       </div>
       <div className="flex flex-col w-full">
-        <h3 className="text-[1rem] tablet:text-[1.25rem] font-semibold text-gray-900 mb-[0.5rem]">
-          {message}
-        </h3>
-        <p className="text-[0.75rem] tablet:text-[1rem] font-normal text-gray-600">
-          {description}
-        </p>
+        <h3 className="body-medium-bold mb-[0.625rem]">{message}</h3>
+        <p className="body-small-regular text-gray-600">{description}</p>
       </div>
     </div>
   );

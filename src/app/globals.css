@@ -13,18 +13,18 @@
   --breakpoint-desktop-4k: 2400px; /* 4K monitory */
 
   /* Neutralne */
-  --color-off-white: #FCFCFC;
-  --color-light-gray: #EAEAEA;
-  --color-dark-gray: #2E2E2E;
-  --color-darker-gray: #2A2A2A;
+  --color-off-white: #fcfcfc;
+  --color-light-gray: #eaeaea;
+  --color-dark-gray: #2e2e2e;
+  --color-darker-gray: #2a2a2a;
 
   /* Marka / Akcent */
   --color-primary: #338075;
-  --color-primary-dark: #17554C;
-  --color-accent: #006AFF;
+  --color-primary-dark: #17554c;
+  --color-accent: #006aff;
 
   /* Status */
-  --color-success: #7EE081;
+  --color-success: #7ee081;
 }
 
 :root {
@@ -65,37 +65,66 @@ body {
   animation: fadeIn 0.3s ease-out forwards;
 }
 
+@layer components {
+  .heading-h1-regular {
+    @apply text-[1.5625rem] tablet:text-[3.125rem] desktop-lg:text-[4.375rem] font-normal leading-[150%] desktop-lg:leading-none;
+  }
+
+  .heading-h1-bold {
+    @apply text-[1.5625rem] tablet:text-[3.125rem] desktop-lg:text-[4.375rem] font-bold leading-[150%] desktop-lg:leading-[150%];
+  }
+
+  .heading-h2-regular {
+    @apply text-[1.25rem] tablet:text-[2.8125rem] desktop-lg:text-[4rem] font-normal leading-none;
+  }
+
+  .heading-h2-bold {
+    @apply text-[1.25rem] tablet:text-[2.8125rem] desktop-lg:text-[4rem] font-bold leading-none;
+  }
+
+  .heading-h3-regular {
+    @apply text-[1.125rem] tablet:text-[2.1875rem] desktop-lg:text-[3.125rem] font-normal leading-none desktop-lg:leading-[150%];
+  }
+
+  .heading-h3-bold {
+    @apply text-[1.125rem] tablet:text-[2.1875rem] desktop-lg:text-[3.125rem] font-bold leading-none desktop-lg:leading-[150%];
+  }
+
+  .heading-h4-regular {
+    @apply text-[1rem] tablet:text-[1.75rem] desktop-lg:text-[2.5rem] font-normal leading-none;
+  }
+
+  .heading-h4-bold {
+    @apply text-[1rem] tablet:text-[1.75rem] desktop-lg:text-[2.5rem] font-bold leading-none;
+  }
+
+  .heading-h5-regular {
+    @apply text-[0.875rem] tablet:text-[1.375rem] desktop-lg:text-[1.875rem] font-normal leading-none;
+  }
+
+  .heading-h5-bold {
+    @apply text-[0.875rem] tablet:text-[1.375rem] desktop-lg:text-[1.875rem] font-bold leading-none;
+  }
+
+  .body-medium-regular {
+    @apply text-[0.875rem] tablet:text-[1.125rem] desktop-lg:text-[1.5625rem] font-normal leading-none;
+  }
+
+  .body-medium-bold {
+    @apply text-[0.875rem] tablet:text-[1.125rem] desktop-lg:text-[1.5625rem] font-bold leading-none;
+  }
+
+  .body-small-regular {
+    @apply text-[0.75rem] tablet:text-[1rem] desktop-lg:text-[1.25rem] font-normal leading-normal;
+  }
+}
+
 /* Phone landscape - enable scroll on homepage */
 @media (orientation: landscape) and (max-height: 500px) {
   .main-content-homepage {
     height: auto !important;
     min-height: 100dvh;
     overflow: auto !important;
-  }
-
-  /* Karty - kompaktowe dla phone landscape */
-  .specialist-card-header {
-    display: none !important;
-  }
-
-  .specialist-card-content h2 {
-    font-size: 0.875rem !important;
-    line-height: 1.25rem !important;
-  }
-
-  .specialist-card-content h3 {
-    font-size: 0.75rem !important;
-    line-height: 1rem !important;
-  }
-
-  .specialist-card-content p {
-    font-size: 0.625rem !important;
-    line-height: 0.875rem !important;
-    -webkit-line-clamp: 2 !important;
-  }
-
-  .specialist-card-wrapper {
-    padding: 0.5rem !important;
   }
 
   .about-card-wrapper {

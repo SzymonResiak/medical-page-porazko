@@ -32,16 +32,19 @@ export const StaticCards = () => {
   const isSubpage = isDentist || isInternist;
 
   return (
-    <div className="w-full flex-grow tablet-landscape:flex-grow-0 desktop:flex-grow-0 flex-shrink-0 min-h-0">
-      <div className="grid gap-3 tablet-landscape:gap-4 desktop:gap-4 desktop-lg:gap-6 grid-cols-1 tablet-landscape:grid-cols-2 desktop:grid-cols-2 w-full tablet-landscape:min-h-[540px] desktop:min-h-[540px] overflow-hidden">
-        <div className="w-full h-[35vh] phone-landscape:h-[40vh] tablet-landscape:min-h-[540px] desktop:min-h-[540px] min-h-[540px] overflow-hidden">
-          {renderLeftCard()}
+    <>
+      {isMainPage && (
+        <div className="p-3 flex items-center justify-center mb-4 tablet-landscape:mb-6 desktop-lg:mb-[1.875rem]">
+          <h1 className="text-lg desktop:text-[3.4375rem] font-bold">
+            Jakiego wsparcia zdrowotnego potrzebujesz?
+          </h1>
         </div>
-        <div className="w-full h-[35vh] phone-landscape:h-[40vh] tablet-landscape:min-h-[540px] desktop:min-h-[540px] min-h-[540px] overflow-hidden">
-          {renderRightCard()}
-        </div>
+      )}
+      <div className="grid gap-3 desktop-lg:gap-4 desktop-lg:gap-6 grid-cols-1 tablet-landscape:grid-cols-2 desktop-lg:grid-cols-2 w-full overflow-hidden">
+        <div>{renderLeftCard()}</div>
+        <div>{renderRightCard()}</div>
       </div>
-      {isSubpage && <Animation className="mt-3 desktop:mt-4" />}
-    </div>
+      {isSubpage && <Animation className="my-3 desktop-lg:my-12" />}
+    </>
   );
 };
