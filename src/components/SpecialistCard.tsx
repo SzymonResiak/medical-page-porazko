@@ -36,7 +36,7 @@ export const SpecialistCard = ({
   imagePosition = "right-top",
 }: SpecialistCardProps) => {
   return (
-    <div className="w-full h-full desktop-lg:min-h-[700px]">
+    <div className="w-full h-full min-h-[400px] desktop-lg:min-h-[700px]">
       <div className="rounded-[20px] p-4 tablet:p-6 desktop-lg:p-[4.375rem] relative overflow-hidden h-full flex flex-col">
         <Image
           src={imageSrc}

@@ -33,7 +33,7 @@ export const Button = memo(function Button({
             <div>
               <IconCircle
                 icon={leftIcon}
-                size={isMobile ? "lg" : "xl"}
+                size={isMobile ? "sm" : "xl"}
                 backgroundColor={iconBg}
                 hoverBackgroundColor={iconHoverBg}
               />
@@ -56,7 +56,7 @@ export const Button = memo(function Button({
             <div>
               <IconCircle
                 icon={rightIcon}
-                size={isMobile ? "lg" : "xl"}
+                size={isMobile ? "sm" : "xl"}
                 backgroundColor={iconBg}
                 hoverBackgroundColor={iconHoverBg}
               />
