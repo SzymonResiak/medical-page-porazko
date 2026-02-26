@@ -4,8 +4,7 @@ import { useState, memo, useCallback } from "react";
 import { IconCircle } from "./IconCircle";
 import { TopIcon } from "./icons/TopIcon";
 import { DownIcon } from "./icons/DownIcon";
-import { useMediaQuery } from "@/hooks/useMediaQuery";
-import { BREAKPOINTS } from "@/data/constants";
+import { useIsMobile } from "@/hooks/useMediaQuery";
 
 interface AccordionProps {
   header: string;
@@ -23,7 +22,7 @@ export const Accordion = memo(function Accordion({
   className = "",
 }: AccordionProps) {
   const [isExpanded, setIsExpanded] = useState(isOpen);
-  const isMobile = useMediaQuery(BREAKPOINTS.TABLET - 1);
+  const isMobile = useIsMobile();
 
   const handleToggle = useCallback(() => {
     setIsExpanded((prev) => !prev);

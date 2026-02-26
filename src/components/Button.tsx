@@ -2,8 +2,7 @@
 
 import { ReactNode, memo } from "react";
 import { IconCircle } from "./IconCircle";
-import { useMediaQuery } from "@/hooks/useMediaQuery";
-import { BREAKPOINTS } from "@/data/constants";
+import { useIsMobile } from "@/hooks/useMediaQuery";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children?: ReactNode;
@@ -44,7 +43,7 @@ export const Button = memo(function Button({
   className = "",
   ...props
 }: ButtonProps) {
-  const isMobile = useMediaQuery(BREAKPOINTS.TABLET - 1);
+  const isMobile = useIsMobile();
   const variantClasses =
     variant === "default" ? "bg-dark-gray" : "bg-accent";
   const iconBg = variant === "default" ? "#2E2E2E" : "#006AFF";

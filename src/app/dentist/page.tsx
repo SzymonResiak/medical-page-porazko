@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
-import { Contact } from "../../components/Contact";
+import { Contact } from "@/components/Contact";
+import { ScrollAnimation } from "@/components/ScrollAnimation";
+import { Location } from "@/components/Location";
 import { XRay } from "./components/XRay";
 import { Services } from "./components/Services";
 import { About } from "./components/About";
 import { Certificates } from "./components/Certificates";
 import { Opinions } from "./components/Opinions";
-import { Location } from "../../components/Location";
 import { FAQ } from "./components/FAQ";
-import { ScrollAnimation } from "../../components/ScrollAnimation";
 
 export const metadata: Metadata = {
   title: "Stomatolog Opole - Justyna Porażko | Dentysta",

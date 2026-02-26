@@ -16,6 +16,12 @@ interface ClientLayoutProps {
 // Lista poprawnych ścieżek - 404 będzie miała inną ścieżkę
 const VALID_ROUTES = ["/", "/dentist", "/internist"];
 
+const Copyright = ({ className = "" }: { className?: string }) => (
+  <p className={`text-sm text-dark-gray ${className}`}>
+    © 2025 SPLIN – Wszelkie prawa zastrzeżone.
+  </p>
+);
+
 const MainContent = ({ children, isMainPage }: { children: React.ReactNode; isMainPage: boolean }) => (
   <div className={`p-2 tablet-landscape:p-4 desktop:p-6 desktop-lg:px-20 desktop-lg:py-8 pb-[calc(0.5rem+env(safe-area-inset-bottom))] bg-off-white ${
     isMainPage ? "min-h-[100dvh] flex flex-col main-content-homepage tablet-landscape:h-[100dvh] tablet-landscape:overflow-hidden desktop:h-[100dvh] desktop:overflow-hidden" : ""
@@ -32,9 +38,7 @@ const ConditionalFooter = ({ isValidRoute }: { isValidRoute: boolean }) => {
   if (!isValidRoute) {
     return (
       <div className="mt-auto pt-3 flex-shrink-0">
-        <p className="text-center text-sm text-dark-gray mt-1">
-          © 2025 SPLIN – Wszelkie prawa zastrzeżone.
-        </p>
+        <Copyright className="text-center mt-1" />
       </div>
     );
   }
@@ -43,9 +47,7 @@ const ConditionalFooter = ({ isValidRoute }: { isValidRoute: boolean }) => {
     return (
       <div className="flex-grow flex flex-col justify-end pt-2 desktop:pt-3 pb-[env(safe-area-inset-bottom)]">
         <FooterLandingPage />
-        <p className="text-right text-xs tablet:text-sm text-dark-gray mt-1">
-          © 2025 SPLIN – Wszelkie prawa zastrzeżone.
-        </p>
+        <Copyright className="text-right text-xs tablet:text-sm mt-1" />
       </div>
     );
   }
@@ -53,9 +55,7 @@ const ConditionalFooter = ({ isValidRoute }: { isValidRoute: boolean }) => {
   return (
     <ScrollAnimation>
       <Footer />
-      <p className="text-right text-sm text-[#2E2E2E] mt-1">
-        © 2025 SPLIN – Wszelkie prawa zastrzeżone.
-      </p>
+      <Copyright className="text-right mt-1" />
     </ScrollAnimation>
   );
 };
