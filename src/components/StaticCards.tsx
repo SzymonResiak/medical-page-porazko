@@ -9,47 +9,58 @@ import { Animation } from "@/components/Animation";
 import { ToothIcon } from "@/components/icons/ToothIcon";
 import { KidneysIcon } from "@/components/icons/KidneysIcon";
 
+const DentistSubpage = () => (
+  <div className="w-full">
+    {/* Mobile: compact hero bar (Option A) */}
+    <div className="tablet-landscape:hidden desktop:hidden">
+      <SpecialistHeroBar
+        imageSrc="/images/toothbrush-bg.png"
+        imageAlt="Stomatolog"
+        icon={<ToothIcon />}
+        title="Stomatolog"
+        name="Justyna Porażko"
+      />
+    </div>
+    {/* Desktop: full-width specialist card */}
+    <div className="hidden tablet-landscape:block desktop:block">
+      <div className="w-full min-h-[540px] overflow-hidden">
+        <DentistCard priority={true} showBackButton />
+      </div>
+    </div>
+    <Animation className="mt-3 desktop:mt-4" />
+  </div>
+);
+
+const InternistSubpage = () => (
+  <div className="w-full">
+    {/* Mobile: full-width hero card (Option B) */}
+    <div className="tablet-landscape:hidden desktop:hidden">
+      <SpecialistHeroCard
+        imageSrc="/images/medicine-bg.png"
+        imageAlt="Internista, nefrolog"
+        icon={<KidneysIcon />}
+        shortDescription="Diagnostyka i leczenie chorób wewnętrznych, z naciskiem na choroby nerek."
+        title="Internista, nefrolog"
+        name="Tomasz Porażko"
+        description="Badanie USG jamy brzusznej obejmujące nerki, drogi moczowe, płuca, naczynia oraz przetoki i grafty do hemodializ."
+        imagePosition="left-bottom"
+      />
+    </div>
+    {/* Desktop: full-width specialist card */}
+    <div className="hidden tablet-landscape:block desktop:block">
+      <div className="w-full min-h-[540px] overflow-hidden">
+        <InternistCard showBackButton />
+      </div>
+    </div>
+    <Animation className="mt-3 desktop:mt-4" />
+  </div>
+);
+
 export const StaticCards = () => {
   const pathname = usePathname();
 
-  const isMainPage = pathname === "/";
-  const isDentist = pathname === "/dentist";
-  const isInternist = pathname === "/internist";
-  const isSubpage = isDentist || isInternist;
-
-  // Subpage: single hero element
-  if (isDentist) {
-    return (
-      <div className="w-full">
-        <SpecialistHeroBar
-          imageSrc="/images/toothbrush-bg.png"
-          imageAlt="Stomatolog"
-          icon={<ToothIcon />}
-          title="Stomatolog"
-          name="Justyna Porażko"
-        />
-        <Animation className="mt-3 desktop:mt-4" />
-      </div>
-    );
-  }
-
-  if (isInternist) {
-    return (
-      <div className="w-full">
-        <SpecialistHeroCard
-          imageSrc="/images/medicine-bg.png"
-          imageAlt="Internista, nefrolog"
-          icon={<KidneysIcon />}
-          shortDescription="Diagnostyka i leczenie chorób wewnętrznych, z naciskiem na choroby nerek."
-          title="Internista, nefrolog"
-          name="Tomasz Porażko"
-          description="Badanie USG jamy brzusznej obejmujące nerki, drogi moczowe, płuca, naczynia oraz przetoki i grafty do hemodializ."
-          imagePosition="left-bottom"
-        />
-        <Animation className="mt-3 desktop:mt-4" />
-      </div>
-    );
-  }
+  if (pathname === "/dentist") return <DentistSubpage />;
+  if (pathname === "/internist") return <InternistSubpage />;
 
   // Main page: two cards side by side
   return (

@@ -1,7 +1,11 @@
 import { KidneysIcon } from "@/components/icons/KidneysIcon";
 import { SpecialistCard } from "@/components/SpecialistCard";
 
-export const InternistCard = () => {
+interface InternistCardProps {
+  showBackButton?: boolean;
+}
+
+export const InternistCard = ({ showBackButton = false }: InternistCardProps) => {
   return (
     <SpecialistCard
       imageSrc="/images/medicine-bg.png"
@@ -12,6 +16,7 @@ export const InternistCard = () => {
       name="Tomasz Porażko"
       description="Badanie USG jamy brzusznej obejmujące nerki, drogi moczowe, płuca, naczynia oraz przetoki i grafty do hemodializ."
       link="/internist"
+      showBackButton={showBackButton}
       imagePosition="left-bottom"
     />
   );
