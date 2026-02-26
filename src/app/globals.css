@@ -60,7 +60,7 @@ body {
 
 .page-fade-in {
   opacity: 0;
-  animation: fadeInUp 0.5s ease-out 0.4s forwards;
+  animation: fadeInUp 0.4s ease-out 0.35s forwards;
 }
 
 /* Phone landscape - enable scroll on homepage */

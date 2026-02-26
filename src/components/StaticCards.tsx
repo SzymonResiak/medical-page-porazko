@@ -32,13 +32,13 @@ const HERO_DATA = {
 };
 
 const cardEntrance = {
-  initial: { opacity: 0, y: 40 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.5, ease: [0.4, 0, 0.2, 1] },
+  initial: { opacity: 0, scale: 0.98 },
+  animate: { opacity: 1, scale: 1 },
+  transition: { duration: 0.4, ease: [0.4, 0, 0.2, 1], delay: 0.15 },
 };
 
 const cardExit = {
-  exit: { opacity: 0, y: -20, transition: { duration: 0.25 } },
+  exit: { opacity: 0, scale: 0.97, transition: { duration: 0.25 } },
 };
 
 export const StaticCards = () => {
@@ -57,7 +57,7 @@ export const StaticCards = () => {
             key="landing-cards"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            exit={{ opacity: 0, scale: 0.97, transition: { duration: 0.3 } }}
+            exit={{ opacity: 0, scale: 0.97, transition: { duration: 0.25 } }}
             className="grid gap-3 tablet-landscape:gap-4 desktop:gap-4 desktop-lg:gap-6 grid-cols-1 tablet-landscape:grid-cols-2 desktop:grid-cols-2 w-full tablet-landscape:min-h-[540px] desktop:min-h-[540px] overflow-hidden"
           >
             <div className="w-full h-[35vh] phone-landscape:h-[40vh] tablet-landscape:min-h-[540px] desktop:min-h-[540px] min-h-[540px] overflow-hidden">
