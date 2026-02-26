@@ -40,6 +40,7 @@ export const CardImage = ({
       className={
         "relative overflow-hidden rounded-[1.875rem] bg-white " +
         "border border-gray-300 transition-all duration-300 p-[1.875rem] " +
+        "hover:scale-[1.03] hover:shadow-lg " +
         className
       }
     >

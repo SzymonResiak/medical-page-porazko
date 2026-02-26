@@ -45,12 +45,12 @@ export const Button = memo(function Button({
 }: ButtonProps) {
   const isMobile = useIsMobile();
   const variantClasses =
-    variant === "default" ? "bg-dark-gray" : "bg-accent";
+    variant === "default" ? "bg-dark-gray group-hover/btn:bg-accent" : "bg-accent";
   const iconBg = variant === "default" ? "#2E2E2E" : "#006AFF";
 
   return (
-    <button className={`${className} cursor-pointer`} {...props}>
-      <div className="flex items-center justify-center">
+    <button className={`group/btn cursor-pointer ${className}`} {...props}>
+      <div className="flex items-center justify-center transition-all duration-300 group-hover/btn:flex-row-reverse">
         {leftIcon && (
           <>
             <ScalableIconCircle icon={leftIcon} backgroundColor={iconBg} />
@@ -65,7 +65,7 @@ export const Button = memo(function Button({
         )}
         {children && (
           <div
-            className={`${variantClasses} text-off-white rounded-[20px] p-3 tablet:p-[clamp(0.4rem,1vh,0.8rem)] text-xs tablet:text-[clamp(0.7rem,1.6vh,1.2rem)]`}
+            className={`${variantClasses} text-off-white rounded-[20px] p-3 tablet:p-[clamp(0.4rem,1vh,0.8rem)] text-xs tablet:text-[clamp(0.7rem,1.6vh,1.2rem)] transition-colors duration-300`}
           >
             {children}
           </div>

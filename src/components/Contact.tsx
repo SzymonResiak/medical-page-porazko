@@ -7,8 +7,12 @@ export const Contact = () => {
     <div>
       {/* Desktop: telefon na górze */}
       <div className="hidden tablet:block">
-        <a href={CONTACT.phoneLink}>
-          <Button leftIcon={<PhoneIcon />}>{CONTACT.phone}</Button>
+        <a href={CONTACT.phoneLink} className="group/phone inline-block">
+          <Button leftIcon={<PhoneIcon />}>
+            <span className="group-hover/phone:bg-yellow-200/60 group-hover/phone:px-1 transition-all duration-200 rounded">
+              {CONTACT.phone}
+            </span>
+          </Button>
         </a>
       </div>
 
