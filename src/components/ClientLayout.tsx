@@ -98,17 +98,17 @@ export const ClientLayout = ({ children }: ClientLayoutProps) => {
 
       {/* Wrapper z flexbox - order zmienia kolejność na różnych breakpointach */}
       <div className="flex flex-col">
-        {/* Children: na mobile order-1 (na górze), na desktop order-2 (pod kartami) */}
-        <div id="page-content" className="order-1 tablet-landscape:order-2 desktop:order-2 tablet-landscape:mt-4 desktop:mt-6">
-          <PageTransition>{children}</PageTransition>
-        </div>
-
-        {/* Karty: na mobile order-2 (na dole), na desktop order-1 (na górze) */}
+        {/* Karty: zawsze na górze na subpages, na homepage: mobile=dół, desktop=góra */}
         {isValidRoute && (
-          <div className={`order-2 tablet-landscape:order-1 desktop:order-1 ${isMainPage ? "" : "mb-4"}`}>
+          <div className={`${isSubpage ? "order-1 mb-4" : "order-2 tablet-landscape:order-1 desktop:order-1"}`}>
             <StaticCards />
           </div>
         )}
+
+        {/* Children: na subpages zawsze pod kafelkiem */}
+        <div id="page-content" className={`${isSubpage ? "order-2" : "order-1 tablet-landscape:order-2 desktop:order-2"} tablet-landscape:mt-4 desktop:mt-6`}>
+          <PageTransition>{children}</PageTransition>
+        </div>
       </div>
 
       <ConditionalFooter isValidRoute={isValidRoute} />
