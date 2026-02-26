@@ -31,10 +31,15 @@ export const Certificates = () => {
   useEffect(() => {
     if (selectedCert) {
       document.body.setAttribute("data-lightbox", "true");
+      document.body.style.overflow = "hidden";
     } else {
       document.body.removeAttribute("data-lightbox");
+      document.body.style.overflow = "";
     }
-    return () => document.body.removeAttribute("data-lightbox");
+    return () => {
+      document.body.removeAttribute("data-lightbox");
+      document.body.style.overflow = "";
+    };
   }, [selectedCert]);
 
   return (
