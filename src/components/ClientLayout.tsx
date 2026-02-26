@@ -65,31 +65,12 @@ export const ClientLayout = ({ children }: ClientLayoutProps) => {
   const isMainPage = pathname === "/";
   const isSubpage = pathname === "/dentist" || pathname === "/internist";
 
-  // Scroll to content on route change
-  // Cards visible: desktop (≥1024px) or tablet-landscape (≥700px + landscape + ≥500px height)
-  // Cards hidden: mobile/tablet portrait → scroll to content
-  // Note: scroll is on body (not window) due to html { overflow: hidden; position: fixed }
   useEffect(() => {
     requestAnimationFrame(() => {
-      const isDesktop = window.matchMedia("(min-width: 1024px)").matches;
-      const isTabletLandscape = window.matchMedia(
-        "(min-width: 700px) and (orientation: landscape) and (min-height: 500px)"
-      ).matches;
-      const areCardsVisible = isDesktop || isTabletLandscape;
-
-      if (isSubpage && !areCardsVisible) {
-        // Mobile/tablet portrait: scroll to content (cards are hidden)
-        const contentElement = document.getElementById("page-content");
-        if (contentElement) {
-          contentElement.scrollIntoView({ behavior: "instant" });
-        }
-      } else {
-        // Desktop/tablet-landscape or main page: scroll to top (show cards)
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-      }
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
     });
-  }, [pathname, isSubpage]);
+  }, [pathname]);
 
   return (
     <MainContent isMainPage={isMainPage}>
