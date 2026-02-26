@@ -18,7 +18,7 @@ const VALID_ROUTES = ["/", "/dentist", "/internist"];
 
 const Copyright = ({ className = "" }: { className?: string }) => (
   <p className={`text-sm text-dark-gray ${className}`}>
-    © 2025 SPLIN – Wszelkie prawa zastrzeżone.
+    © 2026 SPLIN – Wszelkie prawa zastrzeżone.
   </p>
 );
 

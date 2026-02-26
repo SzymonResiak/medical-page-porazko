@@ -1,5 +1,7 @@
 import Image from "next/image";
 import { InfoLabel } from "@/components/InfoLabel";
+import { TranslateIcon } from "@/components/icons/TranslateIcon";
+import { TransferIcon } from "@/components/icons/TransferIcon";
 
 export const About = () => {
   return (
@@ -31,13 +33,13 @@ export const About = () => {
       </div>
       <div className="flex flex-col desktop-lg:flex-row gap-5 mt-5">
         <InfoLabel
-          icon="translate"
+          icon={<TranslateIcon />}
           text="Biegle komunikuję się po angielsku"
           className="bg-light-gray flex-1"
           textColor="black"
         />
         <InfoLabel
-          icon="transferWhite"
+          icon={<TransferIcon variant="white" />}
           text="Akceptuję płatność kartą"
           className="bg-light-gray flex-1"
           textColor="black"

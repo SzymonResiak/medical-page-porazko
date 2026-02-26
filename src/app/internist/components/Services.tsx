@@ -1,6 +1,8 @@
 import { Accordion } from "@/components/Accordion";
 import { KidneysIcon } from "@/components/icons/KidneysIcon";
 import { InfoLabel } from "@/components/InfoLabel";
+import { TransferIcon } from "@/components/icons/TransferIcon";
+import { InvoiceIcon } from "@/components/icons/InvoiceIcon";
 
 export const Services = () => {
   return (
@@ -91,13 +93,13 @@ export const Services = () => {
       </div>
       <div className="flex flex-col desktop-lg:flex-row gap-5 mt-5">
         <InfoLabel
-          icon="transferGreen"
+          icon={<TransferIcon variant="green" />}
           text="Akceptuję płatność kartą lub przelewem"
           className="bg-primary flex-1"
           textColor="white"
         />
         <InfoLabel
-          icon="invoice"
+          icon={<InvoiceIcon />}
           text="Wystawiam faktury"
           className="bg-primary flex-1"
           textColor="white"
