@@ -2,15 +2,36 @@
 
 import Link from "next/link";
 import { useScrollDirection } from "@/hooks/useScrollDirection";
+import { useEffect, useState } from "react";
 import { CONTACT } from "@/data/constants";
 import { BackIcon } from "./icons/BackIcon";
 import { PhoneIcon } from "./icons/PhoneIcon";
 
 export const FloatingIsland = () => {
-  const { scrollDirection, isAtTop, isIdle } = useScrollDirection(20, 3000);
+  const { scrollDirection, isIdle } = useScrollDirection(20, 5000);
+  const [scrollPercent, setScrollPercent] = useState(0);
 
-  // Show when: at top, scrolling up, or idle for 3 seconds
-  const isVisible = isAtTop || scrollDirection === "up" || isIdle;
+  useEffect(() => {
+    const getScrollPercent = () => {
+      const el = document.body;
+      const scrollTop = el.scrollTop || document.documentElement.scrollTop || 0;
+      const scrollHeight = el.scrollHeight - el.clientHeight;
+      return scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+    };
+
+    const onScroll = () => setScrollPercent(getScrollPercent());
+
+    document.body.addEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll);
+    return () => {
+      document.body.removeEventListener("scroll", onScroll);
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, []);
+
+  // Show when: past 20% of page AND (scrolling up OR idle for 5s)
+  const pastThreshold = scrollPercent >= 20;
+  const isVisible = pastThreshold && (scrollDirection === "up" || isIdle);
 
   return (
     <div
