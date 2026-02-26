@@ -25,14 +25,14 @@ type CardImageType = keyof typeof cardImages;
 
 interface CardImageProps {
   imageName: CardImageType;
-  message: string;
+  title: string;
   description: string;
   className?: string;
 }
 
 export const CardImage = ({
   imageName,
-  message,
+  title,
   description,
   className,
 }: CardImageProps) => {
@@ -47,7 +47,7 @@ export const CardImage = ({
       <div className="relative w-full h-auto aspect-[3/2] mb-[1.875rem] px-[1.875rem]">
         <Image
           src={cardImages[imageName]}
-          alt={message}
+          alt={title}
           fill
           className="object-contain rounded-[1.875rem]"
           sizes="(max-width: 48rem) 100vw, (max-width: 75rem) 50vw, 33vw"
@@ -55,7 +55,7 @@ export const CardImage = ({
       </div>
       <div className="flex flex-col w-full">
         <h3 className="text-[1rem] tablet:text-[1.25rem] font-semibold text-gray-900 mb-[0.5rem]">
-          {message}
+          {title}
         </h3>
         <p className="text-[0.75rem] tablet:text-[1rem] font-normal text-gray-600">
           {description}

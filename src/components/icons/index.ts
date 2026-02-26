@@ -1,0 +1,13 @@
+export { ArrowRightIcon } from "./ArrowRightIcon";
+export { BackIcon } from "./BackIcon";
+export { DownIcon } from "./DownIcon";
+export { InvoiceIcon } from "./InvoiceIcon";
+export { KidneysIcon } from "./KidneysIcon";
+export { PhoneIcon } from "./PhoneIcon";
+export { RadioactiveIcon } from "./RadioactiveIcon";
+export { StarIcon } from "./StarIcon";
+export { TickIcon } from "./TickIcon";
+export { ToothIcon } from "./ToothIcon";
+export { TopIcon } from "./TopIcon";
+export { TransferIcon } from "./TransferIcon";
+export { TranslateIcon } from "./TranslateIcon";
