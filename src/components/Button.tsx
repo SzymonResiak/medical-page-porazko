@@ -45,7 +45,6 @@ export const Button = memo(function Button({
   ...props
 }: ButtonProps) {
   const isMobile = useMediaQuery(BREAKPOINTS.TABLET - 1);
-  const isDesktop = useMediaQuery(BREAKPOINTS.DESKTOP);
   const variantClasses =
     variant === "default" ? "bg-dark-gray" : "bg-accent";
   const iconBg = variant === "default" ? "#2E2E2E" : "#006AFF";
