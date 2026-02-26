@@ -50,7 +50,7 @@ body {
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
@@ -60,7 +60,7 @@ body {
 
 .page-fade-in {
   opacity: 0;
-  animation: fadeInUp 0.5s ease-out 0.2s forwards;
+  animation: fadeInUp 0.5s ease-out 0.4s forwards;
 }
 
 /* Phone landscape - enable scroll on homepage */
