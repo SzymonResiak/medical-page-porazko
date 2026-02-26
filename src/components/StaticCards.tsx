@@ -3,7 +3,6 @@
 import { usePathname } from "next/navigation";
 import { DentistCard } from "@/components/DentistCard";
 import { InternistCard } from "@/components/InternistCard";
-import { SpecialistHeroBar } from "@/components/SpecialistHeroBar";
 import { SpecialistHeroCard } from "@/components/SpecialistHeroCard";
 import { Animation } from "@/components/Animation";
 import { ToothIcon } from "@/components/icons/ToothIcon";
@@ -11,17 +10,17 @@ import { KidneysIcon } from "@/components/icons/KidneysIcon";
 
 const DentistSubpage = () => (
   <div className="w-full">
-    {/* Mobile: compact hero bar (Option A) */}
     <div className="tablet-landscape:hidden desktop:hidden">
-      <SpecialistHeroBar
+      <SpecialistHeroCard
         imageSrc="/images/toothbrush-bg.png"
         imageAlt="Stomatolog"
         icon={<ToothIcon />}
+        shortDescription="Stomatologia dla całej Twojej rodziny – pełen zakres usług."
         title="Stomatolog"
         name="Justyna Porażko"
+        description="Dla każdego pacjenta przygotowywany jest indywidualny plan leczenia w oparciu o badanie kliniczne oraz badania obrazowe."
       />
     </div>
-    {/* Desktop: full-width specialist card */}
     <div className="hidden tablet-landscape:block desktop:block">
       <div className="w-full min-h-[540px] overflow-hidden">
         <DentistCard priority={true} showBackButton />
@@ -33,7 +32,6 @@ const DentistSubpage = () => (
 
 const InternistSubpage = () => (
   <div className="w-full">
-    {/* Mobile: full-width hero card (Option B) */}
     <div className="tablet-landscape:hidden desktop:hidden">
       <SpecialistHeroCard
         imageSrc="/images/medicine-bg.png"
@@ -46,7 +44,6 @@ const InternistSubpage = () => (
         imagePosition="left-bottom"
       />
     </div>
-    {/* Desktop: full-width specialist card */}
     <div className="hidden tablet-landscape:block desktop:block">
       <div className="w-full min-h-[540px] overflow-hidden">
         <InternistCard showBackButton />
