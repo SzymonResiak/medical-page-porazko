@@ -7,7 +7,7 @@ export const Services = () => {
     <div>
       <p className="text-2xl desktop-lg:text-7xl">
         Wszystko, czego potrzebujesz dla zdrowia nerek{" "}
-        <span className="font-bold block md:inline">
+        <span className="font-bold block tablet:inline">
           oferta diagnostyki i leczenia
         </span>
       </p>

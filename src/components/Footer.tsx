@@ -55,7 +55,7 @@ export const Footer = memo(function Footer() {
       {/* Right side - information about creators */}
       <div>
         <p className={`${typography["Body-Small-Regular"]}`}>
-          Project and development:
+          Projekt i rozwój:
         </p>
         <p className={`${typography["Body-Small-Regular"]}`}>
           UX/UI Design — Gabriela Wielgus

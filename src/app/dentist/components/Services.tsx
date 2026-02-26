@@ -63,7 +63,7 @@ export const Services = () => {
     <div>
       <p className="text-2xl desktop-lg:text-7xl">
         Kompleksowa opieka stomatologiczna <br />
-        <span className="font-bold block md:inline">
+        <span className="font-bold block tablet:inline">
           znajdź usługę dla siebie
         </span>
       </p>
