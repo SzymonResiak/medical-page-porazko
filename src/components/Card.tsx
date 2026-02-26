@@ -1,5 +1,5 @@
 import React, { memo } from "react";
-import { typography } from "../styles/typography";
+
 import { TickIcon } from "./icons/TickIcon";
 import { StarIcon } from "./icons/StarIcon";
 
@@ -18,7 +18,7 @@ export const Card: React.FC<CardProps> = memo(function Card({ name, rating, revi
       <div className="flex items-center w-full">
         <div className="flex-1">
           <div className="flex items-center gap-2">
-            <h3 className={`${typography["Body-Small-Regular"]} text-gray-800`}>
+            <h3 className="text-[0.75rem] tablet:text-[1rem] desktop-lg:text-[1.25rem] font-normal leading-none text-gray-800">
               {name}
             </h3>
             <div className="w-4 h-4 text-success">
@@ -39,7 +39,7 @@ export const Card: React.FC<CardProps> = memo(function Card({ name, rating, revi
           </div>
         </div>
       </div>
-      <p className={`${typography["Body-Small-Regular"]} text-gray-600 w-full leading-relaxed`}>
+      <p className="text-[0.75rem] tablet:text-[1rem] desktop-lg:text-[1.25rem] font-normal text-gray-600 w-full leading-relaxed">
         {review}
       </p>
     </div>

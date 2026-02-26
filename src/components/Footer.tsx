@@ -1,6 +1,6 @@
 import { memo } from "react";
 import Link from "next/link";
-import { typography } from "../styles/typography";
+
 import { CONTACT } from "@/data/constants";
 
 export const Footer = memo(function Footer() {
@@ -8,16 +8,16 @@ export const Footer = memo(function Footer() {
     <footer className="bg-darker-gray text-off-white rounded-[1.875rem] p-4 tablet:p-[2.1875rem] min-w-0 max-w-full flex flex-wrap justify-between items-center gap-4 mb-[env(safe-area-inset-bottom)]">
       {/* Left side - contact information */}
       <div className="min-w-0 w-full tablet:w-auto tablet:min-w-[360px]">
-        <p className={`${typography["Body-Small-Regular"]}`}>
+        <p className="text-[0.75rem] tablet:text-[1rem] desktop-lg:text-[1.25rem] font-normal leading-none">
           Adres: {CONTACT.address.full}
         </p>
-        <p className={`${typography["Body-Small-Regular"]}`}>
+        <p className="text-[0.75rem] tablet:text-[1rem] desktop-lg:text-[1.25rem] font-normal leading-none">
           Telefon: {CONTACT.phone}
         </p>
-        <p className={`${typography["Body-Small-Regular"]}`}>
+        <p className="text-[0.75rem] tablet:text-[1rem] desktop-lg:text-[1.25rem] font-normal leading-none">
           E-mail: {CONTACT.email}
         </p>
-        <p className={`${typography["Body-Small-Regular"]}`}>
+        <p className="text-[0.75rem] tablet:text-[1rem] desktop-lg:text-[1.25rem] font-normal leading-none">
           Godziny otwarcia: {CONTACT.workingHours}
         </p>
       </div>
@@ -28,7 +28,7 @@ export const Footer = memo(function Footer() {
           <li>
             <Link
               href="/"
-              className={`${typography["Body-Small-Regular"]} hover:underline`}
+              className="text-[0.75rem] tablet:text-[1rem] desktop-lg:text-[1.25rem] font-normal leading-none hover:underline"
             >
               Strona główna
             </Link>
@@ -36,7 +36,7 @@ export const Footer = memo(function Footer() {
           <li>
             <Link
               href="/dentist"
-              className={`${typography["Body-Small-Regular"]} hover:underline`}
+              className="text-[0.75rem] tablet:text-[1rem] desktop-lg:text-[1.25rem] font-normal leading-none hover:underline"
             >
               Stomatolog
             </Link>
@@ -44,7 +44,7 @@ export const Footer = memo(function Footer() {
           <li>
             <Link
               href="/internist"
-              className={`${typography["Body-Small-Regular"]} hover:underline`}
+              className="text-[0.75rem] tablet:text-[1rem] desktop-lg:text-[1.25rem] font-normal leading-none hover:underline"
             >
               Internista, Nefrolog
             </Link>
@@ -54,13 +54,13 @@ export const Footer = memo(function Footer() {
 
       {/* Right side - information about creators */}
       <div>
-        <p className={`${typography["Body-Small-Regular"]}`}>
+        <p className="text-[0.75rem] tablet:text-[1rem] desktop-lg:text-[1.25rem] font-normal leading-none">
           Projekt i realizacja:
         </p>
-        <p className={`${typography["Body-Small-Regular"]}`}>
+        <p className="text-[0.75rem] tablet:text-[1rem] desktop-lg:text-[1.25rem] font-normal leading-none">
           UX/UI Design — Gabriela Wielgus
         </p>
-        <p className={`${typography["Body-Small-Regular"]}`}>
+        <p className="text-[0.75rem] tablet:text-[1rem] desktop-lg:text-[1.25rem] font-normal leading-none">
           Development — Szymon Resiak, Mateusz Obłoza
         </p>
       </div>
