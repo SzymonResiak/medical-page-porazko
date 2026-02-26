@@ -28,7 +28,7 @@ const securityHeaders = [
   {
     key: "Content-Security-Policy",
     value:
-      "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' maps.googleapis.com; style-src 'self' 'unsafe-inline' fonts.googleapis.com; font-src 'self' fonts.gstatic.com; img-src 'self' data: https: blob:; connect-src 'self' maps.googleapis.com; frame-src 'self' www.google.com;",
+      "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' maps.googleapis.com www.googletagmanager.com www.google-analytics.com; style-src 'self' 'unsafe-inline' fonts.googleapis.com; font-src 'self' fonts.gstatic.com; img-src 'self' data: https: blob:; connect-src 'self' maps.googleapis.com www.googletagmanager.com www.google-analytics.com; frame-src 'self' www.google.com;",
   },
 ];
 

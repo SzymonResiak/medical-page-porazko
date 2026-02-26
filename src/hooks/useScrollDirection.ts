@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 
 type ScrollDirection = "up" | "down" | null;
 
@@ -9,44 +9,40 @@ export function useScrollDirection(threshold = 10, idleTimeout = 3000) {
   const [isAtTop, setIsAtTop] = useState(true);
   const [isIdle, setIsIdle] = useState(true);
   const idleTimerRef = useRef<NodeJS.Timeout | null>(null);
+  const scrollDirectionRef = useRef<ScrollDirection>(null);
+  const lastScrollYRef = useRef(0);
+
+  const resetIdleTimer = useCallback(() => {
+    setIsIdle(false);
+    if (idleTimerRef.current) {
+      clearTimeout(idleTimerRef.current);
+    }
+    idleTimerRef.current = setTimeout(() => {
+      setIsIdle(true);
+    }, idleTimeout);
+  }, [idleTimeout]);
 
   useEffect(() => {
-    // Use body.scrollTop because html is position:fixed (iOS scroll fix)
     const getScrollY = () => document.body.scrollTop || window.scrollY || 0;
-
-    let lastScrollY = getScrollY();
+    lastScrollYRef.current = getScrollY();
     let ticking = false;
-
-    const resetIdleTimer = () => {
-      setIsIdle(false);
-      if (idleTimerRef.current) {
-        clearTimeout(idleTimerRef.current);
-      }
-      idleTimerRef.current = setTimeout(() => {
-        setIsIdle(true);
-      }, idleTimeout);
-    };
 
     const updateScrollDirection = () => {
       const scrollY = getScrollY();
-      const difference = Math.abs(scrollY - lastScrollY);
+      const difference = Math.abs(scrollY - lastScrollYRef.current);
 
-      // Check if at top
       setIsAtTop(scrollY < 10);
 
-      // Only update if scrolled more than threshold
-      if (difference < threshold) {
-        ticking = false;
-        return;
+      if (difference >= threshold) {
+        const direction: ScrollDirection = scrollY > lastScrollYRef.current ? "down" : "up";
+
+        if (direction !== scrollDirectionRef.current) {
+          scrollDirectionRef.current = direction;
+          setScrollDirection(direction);
+        }
+
+        lastScrollYRef.current = scrollY > 0 ? scrollY : 0;
       }
-
-      const direction = scrollY > lastScrollY ? "down" : "up";
-
-      if (direction !== scrollDirection) {
-        setScrollDirection(direction);
-      }
-
-      lastScrollY = scrollY > 0 ? scrollY : 0;
       ticking = false;
     };
 
@@ -58,7 +54,6 @@ export function useScrollDirection(threshold = 10, idleTimeout = 3000) {
       }
     };
 
-    // Listen on body (where scroll actually happens) and window as fallback
     document.body.addEventListener("scroll", onScroll);
     window.addEventListener("scroll", onScroll);
 
@@ -69,7 +64,7 @@ export function useScrollDirection(threshold = 10, idleTimeout = 3000) {
         clearTimeout(idleTimerRef.current);
       }
     };
-  }, [scrollDirection, threshold, idleTimeout]);
+  }, [threshold, resetIdleTimer]);
 
   return { scrollDirection, isAtTop, isIdle };
 }
