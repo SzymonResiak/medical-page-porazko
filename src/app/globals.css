@@ -47,18 +47,20 @@ body {
     BlinkMacSystemFont, sans-serif;
 }
 
-@keyframes fadeIn {
+@keyframes fadeInUp {
   from {
     opacity: 0;
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
+    transform: translateY(0);
   }
 }
 
 .page-fade-in {
   opacity: 0;
-  animation: fadeIn 0.3s ease-out forwards;
+  animation: fadeInUp 0.5s ease-out 0.2s forwards;
 }
 
 /* Phone landscape - enable scroll on homepage */
