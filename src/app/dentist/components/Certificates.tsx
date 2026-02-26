@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback } from "react";
 
 const CERTIFICATES = [
   "/images/certificate-stom-1.jpg",
@@ -27,20 +27,6 @@ export const Certificates = () => {
   const [selectedCert, setSelectedCert] = useState<string | null>(null);
 
   const closeLightbox = useCallback(() => setSelectedCert(null), []);
-
-  useEffect(() => {
-    if (selectedCert) {
-      document.body.setAttribute("data-lightbox", "true");
-      document.body.style.overflowY = "hidden";
-    } else {
-      document.body.removeAttribute("data-lightbox");
-      document.body.style.overflowY = "scroll";
-    }
-    return () => {
-      document.body.removeAttribute("data-lightbox");
-      document.body.style.overflowY = "scroll";
-    };
-  }, [selectedCert]);
 
   return (
     <>
@@ -86,16 +72,6 @@ export const Certificates = () => {
           aria-modal="true"
           aria-label="Podgląd certyfikatu"
         >
-          <button
-            onClick={closeLightbox}
-            className="absolute top-4 right-4 w-10 h-10 flex items-center justify-center rounded-full bg-white/10 backdrop-blur-sm text-white/70 hover:text-white hover:bg-white/20 transition-all cursor-pointer z-10"
-            aria-label="Zamknij"
-          >
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
-              <line x1="4" y1="4" x2="14" y2="14" />
-              <line x1="14" y1="4" x2="4" y2="14" />
-            </svg>
-          </button>
           <div className="relative max-w-3xl max-h-[90vh] w-full h-full" onClick={(e) => e.stopPropagation()}>
             <Image
               src={selectedCert}

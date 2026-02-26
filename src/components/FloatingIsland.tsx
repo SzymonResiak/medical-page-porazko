@@ -10,7 +10,6 @@ import { PhoneIcon } from "./icons/PhoneIcon";
 export const FloatingIsland = () => {
   const { scrollDirection, isIdle } = useScrollDirection(20, 5000);
   const [scrollPercent, setScrollPercent] = useState(0);
-  const [lightboxOpen, setLightboxOpen] = useState(false);
 
   useEffect(() => {
     const getScrollPercent = () => {
@@ -22,23 +21,17 @@ export const FloatingIsland = () => {
 
     const onScroll = () => setScrollPercent(getScrollPercent());
 
-    const observer = new MutationObserver(() => {
-      setLightboxOpen(document.body.hasAttribute("data-lightbox"));
-    });
-    observer.observe(document.body, { attributes: true, attributeFilter: ["data-lightbox"] });
-
     document.body.addEventListener("scroll", onScroll);
     window.addEventListener("scroll", onScroll);
     return () => {
       document.body.removeEventListener("scroll", onScroll);
       window.removeEventListener("scroll", onScroll);
-      observer.disconnect();
     };
   }, []);
 
   // Show when: past 20% of page AND (scrolling up OR idle for 5s)
   const pastThreshold = scrollPercent >= 20;
-  const isVisible = !lightboxOpen && pastThreshold && (scrollDirection === "up" || isIdle);
+  const isVisible = pastThreshold && (scrollDirection === "up" || isIdle);
 
   return (
     <div
