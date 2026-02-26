@@ -50,7 +50,7 @@ export const Button = memo(function Button({
 
   return (
     <button className={`group/btn cursor-pointer ${className}`} {...props}>
-      <div className="flex items-center justify-center transition-all duration-300 group-hover/btn:flex-row-reverse">
+      <div className="flex items-center justify-center">
         {leftIcon && (
           <>
             <ScalableIconCircle icon={leftIcon} backgroundColor={iconBg} />
