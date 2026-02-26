@@ -22,7 +22,7 @@ export const FAQ = ({ items }: FAQProps) => {
       </p>
       <div className="mt-12 flex flex-col gap-5">
         {items.map((item, index) => (
-          <Accordion key={index} header={item.question} isOpen={false}>
+          <Accordion key={index} header={item.question}>
             <div className="text-sm desktop-lg:text-2xl">{item.answer}</div>
           </Accordion>
         ))}

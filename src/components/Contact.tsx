@@ -7,7 +7,9 @@ export const Contact = () => {
     <div>
       {/* Desktop: telefon na górze */}
       <div className="hidden tablet:block">
-        <Button leftIcon={<PhoneIcon />}>{CONTACT.phone}</Button>
+        <a href={CONTACT.phoneLink}>
+          <Button leftIcon={<PhoneIcon />}>{CONTACT.phone}</Button>
+        </a>
       </div>
 
       {/* Mobile: miejsce na FloatingIsland */}

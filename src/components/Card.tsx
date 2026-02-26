@@ -9,7 +9,6 @@ interface CardProps {
   review: string;
 }
 
-// Tablica gwiazdek - stała, nie tworzona przy każdym renderze
 const STARS_ARRAY = Array.from({ length: 5 }, (_, i) => i);
 
 export const Card: React.FC<CardProps> = memo(function Card({ name, rating, review }) {

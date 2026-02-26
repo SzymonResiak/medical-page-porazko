@@ -2,11 +2,13 @@ import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ScrollAnimation } from "@/components/ScrollAnimation";
 import { Contact } from "@/components/Contact";
+import { Location } from "@/components/Location";
+import { Opinions } from "@/components/Opinions";
+import { FAQ } from "@/components/FAQ";
+import { INTERNIST_OPINIONS } from "@/data/opinions";
+import { INTERNIST_FAQ_ITEMS } from "./data/faqItems";
 import { Services } from "./components/Services";
 import { About } from "./components/About";
-import { Opinions } from "./components/Opinions";
-import { Location } from "@/components/Location";
-import { FAQ } from "./components/FAQ";
 
 export const metadata: Metadata = {
   title: "Nefrolog Internista Opole - dr hab. Tomasz Porażko",
@@ -57,20 +59,22 @@ export default function InternistPage() {
       <ScrollAnimation>
         <Services />
       </ScrollAnimation>
-      {/* About section - hidden on tablet+ where it's shown in the card */}
       <div className="tablet:hidden">
         <ScrollAnimation>
           <About />
         </ScrollAnimation>
       </div>
       <ScrollAnimation>
-        <Opinions />
+        <Opinions
+          title={<>Opinie pacjentów to <br /> moja{" "}<span className="font-bold">najlepsza rekomendacja</span></>}
+          opinions={INTERNIST_OPINIONS}
+        />
       </ScrollAnimation>
       <ScrollAnimation>
         <Location />
       </ScrollAnimation>
       <ScrollAnimation>
-        <FAQ />
+        <FAQ items={INTERNIST_FAQ_ITEMS} />
       </ScrollAnimation>
     </>
   );

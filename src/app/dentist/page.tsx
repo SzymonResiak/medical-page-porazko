@@ -3,12 +3,14 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Contact } from "@/components/Contact";
 import { ScrollAnimation } from "@/components/ScrollAnimation";
 import { Location } from "@/components/Location";
+import { Opinions } from "@/components/Opinions";
+import { FAQ } from "@/components/FAQ";
+import { DENTIST_OPINIONS } from "@/data/opinions";
+import { DENTIST_FAQ_ITEMS } from "./data/faqItems";
 import { XRay } from "./components/XRay";
 import { Services } from "./components/Services";
 import { About } from "./components/About";
 import { Certificates } from "./components/Certificates";
-import { Opinions } from "./components/Opinions";
-import { FAQ } from "./components/FAQ";
 
 export const metadata: Metadata = {
   title: "Stomatolog Opole - Justyna Porażko | Dentysta",
@@ -62,7 +64,6 @@ export default function DentistPage() {
       <ScrollAnimation>
         <Services />
       </ScrollAnimation>
-      {/* About section - hidden on tablet+ where it's shown in the card */}
       <div className="tablet:hidden">
         <ScrollAnimation>
           <About />
@@ -72,13 +73,16 @@ export default function DentistPage() {
         <Certificates />
       </ScrollAnimation>
       <ScrollAnimation>
-        <Opinions />
+        <Opinions
+          title={<>Wasze uśmiechy to <br /> moja{" "}<span className="font-bold">najlepsza rekomendacja</span></>}
+          opinions={DENTIST_OPINIONS}
+        />
       </ScrollAnimation>
       <ScrollAnimation>
         <Location />
       </ScrollAnimation>
       <ScrollAnimation>
-        <FAQ />
+        <FAQ items={DENTIST_FAQ_ITEMS} />
       </ScrollAnimation>
     </>
   );

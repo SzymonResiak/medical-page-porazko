@@ -13,7 +13,6 @@ interface ClientLayoutProps {
   children: React.ReactNode;
 }
 
-// Lista poprawnych ścieżek - 404 będzie miała inną ścieżkę
 const VALID_ROUTES = ["/", "/dentist", "/internist"];
 
 const Copyright = ({ className = "" }: { className?: string }) => (

@@ -1,6 +1,5 @@
 import Image from "next/image";
 
-// Stała tablica - nie tworzona przy każdym renderze
 const CERTIFICATES = [
   "/images/certificate-stom-1.jpg",
   "/images/certificate-stom-2.jpg",

@@ -17,7 +17,6 @@ const sizeClasses = {
   xl: "w-[75px] h-[75px] [&_svg]:w-[37px] [&_svg]:h-[37px]",
 } as const;
 
-// Helper to determine if background is dark
 const isDarkBackground = (color: string): boolean => {
   const darkColors = ["#2E2E2E", "#2A2A2A", "#17554C", "#338075", "#006AFF"];
   return darkColors.some((c) => color.toUpperCase() === c.toUpperCase());

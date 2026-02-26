@@ -1,6 +1,5 @@
 import Image from "next/image";
 
-// Importujemy wszystkie obrazy z prefixem card-
 import cardKonsultacja from "../../public/images/card-konsultacja.png";
 import cardLeczenie from "../../public/images/card-leczenie.png";
 import cardProfilaktyka from "../../public/images/card-profilaktyka.png";
