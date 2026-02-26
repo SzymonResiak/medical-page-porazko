@@ -1,11 +1,7 @@
 @import "tailwindcss";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 @theme {
-  --breakpoint-tablet: 768px;
+  --breakpoint-tablet: 700px;
   --breakpoint-desktop: 1024px;
   --breakpoint-desktop-lg: 1280px;
   --breakpoint-desktop-2: 1440px;
