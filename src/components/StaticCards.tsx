@@ -51,13 +51,13 @@ export const StaticCards = () => {
 
   return (
     <div className={`w-full ${isMainPage ? "flex-grow tablet-landscape:flex-grow-0 desktop:flex-grow-0 flex-shrink-0 min-h-0" : ""}`}>
-      <AnimatePresence mode="wait">
+      <AnimatePresence mode="popLayout">
         {isMainPage && (
           <motion.div
             key="landing-cards"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            exit={{ opacity: 0, transition: { duration: 0.2 } }}
+            exit={{ opacity: 0, scale: 0.97, transition: { duration: 0.3 } }}
             className="grid gap-3 tablet-landscape:gap-4 desktop:gap-4 desktop-lg:gap-6 grid-cols-1 tablet-landscape:grid-cols-2 desktop:grid-cols-2 w-full tablet-landscape:min-h-[540px] desktop:min-h-[540px] overflow-hidden"
           >
             <div className="w-full h-[35vh] phone-landscape:h-[40vh] tablet-landscape:min-h-[540px] desktop:min-h-[540px] min-h-[540px] overflow-hidden">
