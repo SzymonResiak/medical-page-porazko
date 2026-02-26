@@ -2,14 +2,10 @@ import { ToothIcon } from "@/components/icons/ToothIcon";
 import { SpecialistCard } from "@/components/SpecialistCard";
 
 interface DentistCardProps {
-  showBackButton?: boolean;
   priority?: boolean;
 }
 
-export const DentistCard = ({
-  showBackButton = false,
-  priority = false,
-}: DentistCardProps) => {
+export const DentistCard = ({ priority = false }: DentistCardProps) => {
   return (
     <SpecialistCard
       imageSrc="/images/toothbrush-bg.png"
@@ -20,7 +16,6 @@ export const DentistCard = ({
       name="Justyna Porażko"
       description="Dla każdego pacjenta przygotowywany jest indywidualny plan leczenia w oparciu o badanie kliniczne oraz badania obrazowe."
       link="/dentist"
-      showBackButton={showBackButton}
       priority={priority}
     />
   );

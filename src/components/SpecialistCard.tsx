@@ -4,7 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { IconCircle } from "./IconCircle";
 import { ArrowRightIcon } from "./icons/ArrowRightIcon";
-import { BackIcon } from "./icons/BackIcon";
 import { Button } from "./Button";
 import { ReactNode } from "react";
 
@@ -17,7 +16,6 @@ interface SpecialistCardProps {
   name: string;
   description: string;
   link: string;
-  showBackButton?: boolean;
   priority?: boolean;
   imagePosition?: "right-top" | "left-bottom" | "center";
 }
@@ -31,7 +29,6 @@ export const SpecialistCard = ({
   name,
   description,
   link,
-  showBackButton = false,
   priority = false,
   imagePosition = "right-top",
 }: SpecialistCardProps) => {
@@ -92,17 +89,11 @@ export const SpecialistCard = ({
 
           {/* Button - zawsze na dole */}
           <div className="flex justify-end mt-auto pt-2 tablet:pt-[0.5vh] flex-shrink-0">
-            {showBackButton ? (
-              <Link href="/">
-                <Button rightIcon={<BackIcon />} />
-              </Link>
-            ) : (
-              <Link href={link}>
-                <Button rightIcon={<ArrowRightIcon />}>
-                  dowiedz się więcej
-                </Button>
-              </Link>
-            )}
+            <Link href={link}>
+              <Button rightIcon={<ArrowRightIcon />}>
+                dowiedz się więcej
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

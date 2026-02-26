@@ -59,11 +59,9 @@ export default function InternistPage() {
       <ScrollAnimation>
         <Services />
       </ScrollAnimation>
-      <div className="tablet:hidden">
-        <ScrollAnimation>
-          <About />
-        </ScrollAnimation>
-      </div>
+      <ScrollAnimation>
+        <About />
+      </ScrollAnimation>
       <ScrollAnimation>
         <Opinions
           title={<>Opinie pacjentów to <br /> moja{" "}<span className="font-bold">najlepsza rekomendacja</span></>}

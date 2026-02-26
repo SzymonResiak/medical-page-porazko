@@ -105,7 +105,7 @@ export const ClientLayout = ({ children }: ClientLayoutProps) => {
 
         {/* Karty: na mobile order-2 (na dole), na desktop order-1 (na górze) */}
         {isValidRoute && (
-          <div className={`order-2 tablet-landscape:order-1 desktop:order-1 ${isSubpage ? "hidden tablet-landscape:block desktop:block" : ""}`}>
+          <div className={`order-2 tablet-landscape:order-1 desktop:order-1 ${isMainPage ? "" : "mb-4"}`}>
             <StaticCards />
           </div>
         )}

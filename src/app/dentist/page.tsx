@@ -64,11 +64,9 @@ export default function DentistPage() {
       <ScrollAnimation>
         <Services />
       </ScrollAnimation>
-      <div className="tablet:hidden">
-        <ScrollAnimation>
-          <About />
-        </ScrollAnimation>
-      </div>
+      <ScrollAnimation>
+        <About />
+      </ScrollAnimation>
       <ScrollAnimation>
         <Certificates />
       </ScrollAnimation>
