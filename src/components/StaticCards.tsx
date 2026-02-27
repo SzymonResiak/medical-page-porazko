@@ -57,7 +57,7 @@ export const StaticCards = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0, scale: 0.97, transition: { duration: 0.25 } }}
-            className="grid grid-rows-2 tablet-landscape:grid-rows-1 tablet-landscape:grid-cols-2 desktop:grid-rows-1 desktop:grid-cols-2 gap-2 tablet:gap-3 tablet-landscape:gap-4 desktop-lg:gap-6 w-full flex-grow min-h-0 tablet-landscape:max-h-[55vh] desktop:max-h-[55vh]"
+            className="grid grid-rows-2 tablet-landscape:grid-rows-1 tablet-landscape:grid-cols-2 desktop:grid-rows-1 desktop:grid-cols-2 gap-2 tablet:gap-3 tablet-landscape:gap-4 desktop-lg:gap-6 desktop-3:gap-8 desktop-4k:gap-12 w-full flex-grow min-h-0 tablet-landscape:max-h-[55vh] desktop:max-h-[55vh]"
           >
             <div className="w-full min-h-0 tablet-landscape:min-h-[300px] desktop:min-h-[300px] overflow-hidden">
               <DentistCard priority />

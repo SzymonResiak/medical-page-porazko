@@ -25,7 +25,7 @@ const MainContent = ({ children, isMainPage }: { children: React.ReactNode; isMa
   <div className={`bg-off-white ${
     isMainPage ? "min-h-[100dvh] tablet-landscape:h-[100dvh] tablet-landscape:overflow-hidden desktop:h-[100dvh] desktop:overflow-hidden" : ""
   }`}>
-    <div className={`max-w-[1600px] mx-auto p-2 tablet-landscape:p-4 desktop:p-6 desktop-lg:px-12 desktop-lg:py-8 pb-[calc(0.5rem+env(safe-area-inset-bottom))] ${
+    <div className={`max-w-[1600px] mx-auto p-2 tablet-landscape:p-4 desktop:p-6 desktop-lg:px-12 desktop-lg:py-8 desktop-3:px-16 desktop-3:py-10 desktop-4k:py-12 pb-[calc(0.5rem+env(safe-area-inset-bottom))] ${
       isMainPage ? "h-full flex flex-col main-content-homepage" : ""
     }`}>
       {children}
@@ -48,7 +48,7 @@ const ConditionalFooter = ({ isValidRoute }: { isValidRoute: boolean }) => {
 
   if (isMainPage) {
     return (
-      <div className="flex-shrink-0 pt-2 desktop:pt-3 pb-[env(safe-area-inset-bottom)]">
+      <div className="flex-shrink-0 pt-2 desktop:pt-3 desktop-3:pt-5 desktop-4k:pt-6 pb-[env(safe-area-inset-bottom)]">
         <FooterLandingPage />
         <Copyright className="text-right text-xs tablet:text-sm mt-1" />
       </div>
