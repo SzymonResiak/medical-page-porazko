@@ -59,10 +59,10 @@ export const StaticCards = () => {
             exit={{ opacity: 0, scale: 0.97, transition: { duration: 0.25 } }}
             className="grid grid-rows-2 tablet-landscape:grid-rows-1 tablet-landscape:grid-cols-2 desktop:grid-rows-1 desktop:grid-cols-2 gap-2 tablet:gap-3 tablet-landscape:gap-4 desktop-lg:gap-6 w-full flex-grow min-h-0"
           >
-            <div className="w-full min-h-0 tablet-landscape:min-h-[540px] desktop:min-h-[540px] overflow-hidden">
+            <div className="w-full min-h-0 tablet-landscape:min-h-[400px] desktop:min-h-[400px] overflow-hidden">
               <DentistCard priority />
             </div>
-            <div className="w-full min-h-0 tablet-landscape:min-h-[540px] desktop:min-h-[540px] overflow-hidden">
+            <div className="w-full min-h-0 tablet-landscape:min-h-[400px] desktop:min-h-[400px] overflow-hidden">
               <InternistCard />
             </div>
           </motion.div>
@@ -73,7 +73,7 @@ export const StaticCards = () => {
             <div className="tablet-landscape:hidden desktop:hidden">
               <SpecialistHeroCard {...HERO_DATA.dentist} />
             </div>
-            <div className="hidden tablet-landscape:block desktop:block min-h-[540px]">
+            <div className="hidden tablet-landscape:block desktop:block min-h-[400px]">
               <DentistCard priority showBackButton />
             </div>
           </motion.div>
@@ -84,7 +84,7 @@ export const StaticCards = () => {
             <div className="tablet-landscape:hidden desktop:hidden">
               <SpecialistHeroCard {...HERO_DATA.internist} />
             </div>
-            <div className="hidden tablet-landscape:block desktop:block min-h-[540px]">
+            <div className="hidden tablet-landscape:block desktop:block min-h-[400px]">
               <InternistCard showBackButton />
             </div>
           </motion.div>

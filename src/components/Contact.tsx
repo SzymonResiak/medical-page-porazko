@@ -16,9 +16,6 @@ export const Contact = () => {
         </a>
       </div>
 
-      {/* Mobile: miejsce na FloatingIsland */}
-      <div className="h-12 tablet:hidden" />
-
       <p className="text-2xl desktop-lg:text-5xl mt-5">
         Zapraszam po wcześniejszej rejestracji telefonicznej <br />
         <span className="font-bold">{CONTACT.workingHours}</span>
