@@ -27,7 +27,7 @@ export const Breadcrumbs = ({ items }: BreadcrumbsProps) => {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
-      <nav aria-label="Breadcrumb" className="hidden tablet:block mb-4">
+      <nav aria-label="Breadcrumb" className="mb-4">
         <ol className="flex items-center gap-2 text-sm text-dark-gray">
           {items.map((item, index) => (
             <li key={index} className="flex items-center gap-2">

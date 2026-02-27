@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { DentistCard } from "@/components/DentistCard";
 import { InternistCard } from "@/components/InternistCard";
 import { SpecialistHeroCard } from "@/components/SpecialistHeroCard";
-import { Animation } from "@/components/Animation";
 import { ToothIcon } from "@/components/icons/ToothIcon";
 import { KidneysIcon } from "@/components/icons/KidneysIcon";
 
@@ -92,7 +91,6 @@ export const StaticCards = () => {
         )}
       </AnimatePresence>
 
-      {isSubpage && <Animation className="mt-3 desktop:mt-4" />}
     </div>
   );
 };
