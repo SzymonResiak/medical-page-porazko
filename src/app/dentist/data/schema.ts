@@ -1,11 +1,21 @@
 export const DENTIST_PAGE_SCHEMA = {
   "@context": "https://schema.org",
   "@type": "MedicalWebPage",
+  "@id": "https://porazko.pl/dentist/#webpage",
   name: "Stomatolog Opole - Justyna Porażko",
   description:
     "Stomatolog w Opolu - lek. stom. Justyna Porażko. Leczenie zachowawcze, protetyka, endodoncja, chirurgia stomatologiczna, stomatologia dziecięca.",
   url: "https://porazko.pl/dentist",
+  inLanguage: "pl-PL",
+  isPartOf: {
+    "@type": "WebSite",
+    "@id": "https://porazko.pl/#website",
+  },
   specialty: "Dentistry",
+  speakable: {
+    "@type": "SpeakableSpecification",
+    cssSelector: ["h1", "h2", "meta[name='description']"],
+  },
   about: {
     "@type": "Dentist",
     "@id": "https://porazko.pl/#justyna-porazko",

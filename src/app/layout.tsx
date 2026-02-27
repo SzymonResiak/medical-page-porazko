@@ -74,22 +74,32 @@ interface RootLayoutProps {
   children: React.ReactNode;
 }
 
-const structuredData = {
+// Global structured data — rendered on every page (Organization + WebSite + Persons)
+const globalStructuredData = {
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "MedicalBusiness",
       "@id": "https://porazko.pl/#clinic",
       "name": "Porażko - Stomatologia i Nefrologia",
-      "description": "Profesjonalne usługi stomatologiczne i nefrologiczne w Opolu",
+      "alternateName": ["Porażko", "Gabinet Porażko"],
+      "description": "Profesjonalne usługi stomatologiczne i nefrologiczne w Opolu. Justyna Porażko — stomatolog. Tomasz Porażko — nefrolog, internista.",
       "url": "https://porazko.pl",
       "telephone": "+48 735 239 795",
       "email": "porazko@poczta.onet.pl",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://porazko.pl/images/og-image.png",
+        "width": 1200,
+        "height": 630
+      },
+      "image": "https://porazko.pl/images/og-image.png",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "plac Piłsudskiego 11A",
         "addressLocality": "Opole",
         "postalCode": "45-706",
+        "addressRegion": "opolskie",
         "addressCountry": "PL"
       },
       "geo": {
@@ -97,7 +107,21 @@ const structuredData = {
         "latitude": 50.6696645,
         "longitude": 17.9138753
       },
-      "openingHours": "Mo-Fr 09:00-18:00",
+      "areaServed": {
+        "@type": "City",
+        "name": "Opole"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      ],
+      "priceRange": "$$",
+      "currenciesAccepted": "PLN",
+      "paymentAccepted": "Karta płatnicza, Przelew",
       "medicalSpecialty": ["Dentistry", "Nephrology", "Internal Medicine"],
       "employee": [
         { "@id": "https://porazko.pl/#tomasz-porazko" },
@@ -124,6 +148,15 @@ const structuredData = {
           "reviewBody": "Gorąco polecam Pana Doktora - cierpliwy, skoncentrowany na pacjencie, zainteresowany ogólnym stanem zdrowia, a przede wszystkim bardzo kompetentny."
         }
       ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://porazko.pl/#website",
+      "name": "Porażko - Stomatologia i Nefrologia",
+      "url": "https://porazko.pl",
+      "description": "Gabinet stomatologiczny i nefrologiczny w Opolu. Justyna Porażko — dentysta. Tomasz Porażko — nefrolog, internista.",
+      "publisher": { "@id": "https://porazko.pl/#clinic" },
+      "inLanguage": "pl-PL"
     },
     {
       "@type": "Physician",
@@ -164,6 +197,50 @@ const structuredData = {
   ]
 };
 
+// Landing page structured data — CollectionPage with speakable + significantLinks
+const landingPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": "https://porazko.pl/#homepage",
+  "name": "Porażko | Stomatolog i Nefrolog w Opolu - Gabinet Lekarski",
+  "url": "https://porazko.pl",
+  "description": "Gabinet stomatologiczny i nefrologiczny w Opolu. Justyna Porażko - dentysta. Tomasz Porażko - nefrolog, internista. Umów wizytę!",
+  "inLanguage": "pl-PL",
+  "isPartOf": {
+    "@type": "WebSite",
+    "@id": "https://porazko.pl/#website"
+  },
+  "publisher": {
+    "@id": "https://porazko.pl/#clinic"
+  },
+  "primaryImageOfPage": {
+    "@type": "ImageObject",
+    "url": "https://porazko.pl/images/og-image.png",
+    "width": 1200,
+    "height": 630
+  },
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ["h1", "h2", "meta[name='description']"]
+  },
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Strona główna",
+        "item": "https://porazko.pl"
+      }
+    ]
+  },
+  "significantLink": [
+    "https://porazko.pl/dentist",
+    "https://porazko.pl/internist"
+  ],
+  "mainEntity": { "@id": "https://porazko.pl/#clinic" }
+};
+
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="pl">
@@ -180,10 +257,15 @@ export default function RootLayout({ children }: RootLayoutProps) {
             `,
           }}
         />
-        {/* Schema.org Structured Data */}
+        {/* Schema.org — Global (Organization + WebSite + Persons) */}
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(globalStructuredData) }}
+        />
+        {/* Schema.org — Landing Page (CollectionPage) */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(landingPageSchema) }}
         />
       </head>
       <body className="antialiased">

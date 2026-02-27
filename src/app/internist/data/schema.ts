@@ -1,11 +1,21 @@
 export const INTERNIST_PAGE_SCHEMA = {
   "@context": "https://schema.org",
   "@type": "MedicalWebPage",
+  "@id": "https://porazko.pl/internist/#webpage",
   name: "Nefrolog Internista Opole - dr hab. Tomasz Porażko",
   description:
     "Nefrolog i internista w Opolu - dr hab. n. med. Tomasz Porażko. Diagnostyka i leczenie chorób nerek, USG, leczenie nerkozastępcze.",
   url: "https://porazko.pl/internist",
+  inLanguage: "pl-PL",
+  isPartOf: {
+    "@type": "WebSite",
+    "@id": "https://porazko.pl/#website",
+  },
   specialty: ["Nephrology", "InternalMedicine"],
+  speakable: {
+    "@type": "SpeakableSpecification",
+    cssSelector: ["h1", "h2", "meta[name='description']"],
+  },
   about: {
     "@type": "Physician",
     "@id": "https://porazko.pl/#tomasz-porazko",
