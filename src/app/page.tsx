@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <div className="hidden tablet:flex phone-landscape:hidden py-2 h-[15vh] items-center justify-center flex-shrink-0">
+    <div className="hidden tablet:flex py-2 h-[15vh] items-center justify-center flex-shrink-0 landing-heading">
       <h1 className="text-[clamp(1.25rem,4vh,5rem)] font-bold text-center text-dark-gray">
         Jakiego wsparcia zdrowotnego potrzebujesz?
       </h1>

@@ -78,8 +78,12 @@ body {
   animation: fadeInUp 0.4s ease-out 0.35s forwards;
 }
 
-/* Phone landscape - enable scroll on homepage */
+/* Phone landscape - hide heading, enable scroll on homepage */
 @media (orientation: landscape) and (max-height: 500px) {
+  .landing-heading {
+    display: none !important;
+  }
+
   .main-content-homepage {
     height: auto !important;
     min-height: 100dvh;
