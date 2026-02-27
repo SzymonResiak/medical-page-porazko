@@ -7,6 +7,9 @@ import { Opinions } from "@/components/Opinions";
 import { FAQ } from "@/components/FAQ";
 import { DENTIST_OPINIONS } from "@/data/opinions";
 import { DENTIST_FAQ_ITEMS } from "./data/faqItems";
+import { DENTIST_FAQ_SCHEMA } from "./data/faqSchema";
+import { DENTIST_PAGE_SCHEMA, DENTIST_SERVICES_SCHEMA } from "./data/schema";
+import { FAQSchema } from "@/components/FAQSchema";
 import { XRay } from "./components/XRay";
 import { Services } from "./components/Services";
 import { About } from "./components/About";
@@ -49,6 +52,9 @@ export default function DentistPage() {
   return (
     <>
       <h1 className="sr-only">Stomatolog Opole - Justyna Porażko | Dentysta</h1>
+      <FAQSchema items={DENTIST_FAQ_SCHEMA} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(DENTIST_PAGE_SCHEMA) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(DENTIST_SERVICES_SCHEMA) }} />
       <Breadcrumbs
         items={[
           { label: "Strona główna", href: "/" },

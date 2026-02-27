@@ -102,6 +102,27 @@ const structuredData = {
       "employee": [
         { "@id": "https://porazko.pl/#tomasz-porazko" },
         { "@id": "https://porazko.pl/#justyna-porazko" }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "6",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Maciej" },
+          "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+          "reviewBody": "Pani Doktor to najlepszy stomatolog jakiego znam - pełen profesjonalizm wykonywanych zabiegów! Bardzo miła atmosfera, podejście pełne życzliwości, zrozumienia oraz cierpliwości do pacjenta."
+        },
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Beata" },
+          "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+          "reviewBody": "Gorąco polecam Pana Doktora - cierpliwy, skoncentrowany na pacjencie, zainteresowany ogólnym stanem zdrowia, a przede wszystkim bardzo kompetentny."
+        }
       ]
     },
     {
