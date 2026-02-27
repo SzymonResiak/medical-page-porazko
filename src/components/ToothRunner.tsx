@@ -10,145 +10,115 @@ const JUMP_FORCE = -11;
 const GAME_SPEED_INITIAL = 4;
 const GAME_SPEED_INCREMENT = 0.001;
 
-// Tooth character — cute cartoon style
+// Tooth icon — classic tooth icon shape with smiley face
 function drawTooth(ctx: CanvasRenderingContext2D, x: number, y: number, size: number) {
-  const s = size * 1.3;
+  const s = size * 1.4;
   ctx.save();
 
-  // Shadow
-  ctx.fillStyle = "rgba(0,0,0,0.06)";
-  ctx.beginPath();
-  ctx.ellipse(x, y + s * 0.55, s * 0.35, s * 0.08, 0, 0, Math.PI * 2);
-  ctx.fill();
-
-  // Main tooth body (wide crown)
+  // Tooth icon shape (like a dental logo)
   ctx.fillStyle = "#FFFFFF";
-  ctx.strokeStyle = "#BDBDBD";
-  ctx.lineWidth = 1.5;
+  ctx.strokeStyle = "#CCCCCC";
+  ctx.lineWidth = 2;
   ctx.beginPath();
-  // Left side of crown
-  ctx.moveTo(x - s * 0.38, y - s * 0.1);
-  ctx.quadraticCurveTo(x - s * 0.42, y - s * 0.7, x - s * 0.15, y - s * 0.95);
-  // Top bump (two cusps)
-  ctx.quadraticCurveTo(x - s * 0.05, y - s * 1.08, x, y - s * 0.9);
-  ctx.quadraticCurveTo(x + s * 0.05, y - s * 1.08, x + s * 0.15, y - s * 0.95);
-  // Right side of crown
-  ctx.quadraticCurveTo(x + s * 0.42, y - s * 0.7, x + s * 0.38, y - s * 0.1);
-  // Right root
-  ctx.quadraticCurveTo(x + s * 0.35, y + s * 0.15, x + s * 0.2, y + s * 0.45);
-  ctx.quadraticCurveTo(x + s * 0.15, y + s * 0.55, x + s * 0.08, y + s * 0.4);
-  // Center gap between roots
-  ctx.quadraticCurveTo(x, y + s * 0.2, x - s * 0.08, y + s * 0.4);
-  // Left root
-  ctx.quadraticCurveTo(x - s * 0.15, y + s * 0.55, x - s * 0.2, y + s * 0.45);
-  ctx.quadraticCurveTo(x - s * 0.35, y + s * 0.15, x - s * 0.38, y - s * 0.1);
+  // Start from left side, go up
+  ctx.moveTo(x - s * 0.35, y + s * 0.05);
+  // Left side up to crown
+  ctx.quadraticCurveTo(x - s * 0.5, y - s * 0.3, x - s * 0.4, y - s * 0.65);
+  // Left top curve
+  ctx.quadraticCurveTo(x - s * 0.35, y - s * 0.95, x - s * 0.1, y - s * 0.85);
+  // Top dip (center notch like real tooth icon)
+  ctx.quadraticCurveTo(x, y - s * 0.75, x + s * 0.1, y - s * 0.85);
+  // Right top curve
+  ctx.quadraticCurveTo(x + s * 0.35, y - s * 0.95, x + s * 0.4, y - s * 0.65);
+  // Right side down
+  ctx.quadraticCurveTo(x + s * 0.5, y - s * 0.3, x + s * 0.35, y + s * 0.05);
+  // Right root (tapers to point)
+  ctx.quadraticCurveTo(x + s * 0.3, y + s * 0.35, x + s * 0.15, y + s * 0.55);
+  ctx.quadraticCurveTo(x + s * 0.1, y + s * 0.6, x + s * 0.05, y + s * 0.45);
+  // Valley between roots
+  ctx.quadraticCurveTo(x, y + s * 0.25, x - s * 0.05, y + s * 0.45);
+  // Left root (tapers to point)
+  ctx.quadraticCurveTo(x - s * 0.1, y + s * 0.6, x - s * 0.15, y + s * 0.55);
+  ctx.quadraticCurveTo(x - s * 0.3, y + s * 0.35, x - s * 0.35, y + s * 0.05);
   ctx.closePath();
   ctx.fill();
   ctx.stroke();
 
-  // Shine highlight
-  ctx.fillStyle = "rgba(255,255,255,0.7)";
-  ctx.beginPath();
-  ctx.ellipse(x - s * 0.12, y - s * 0.65, s * 0.07, s * 0.15, -0.3, 0, Math.PI * 2);
-  ctx.fill();
-
-  // Eyes (bigger, cuter)
+  // Eyes — simple dots
   ctx.fillStyle = "#2E2E2E";
   ctx.beginPath();
-  ctx.ellipse(x - s * 0.14, y - s * 0.5, s * 0.045, s * 0.06, 0, 0, Math.PI * 2);
-  ctx.fill();
-  ctx.beginPath();
-  ctx.ellipse(x + s * 0.14, y - s * 0.5, s * 0.045, s * 0.06, 0, 0, Math.PI * 2);
+  ctx.arc(x - s * 0.13, y - s * 0.4, s * 0.05, 0, Math.PI * 2);
+  ctx.arc(x + s * 0.13, y - s * 0.4, s * 0.05, 0, Math.PI * 2);
   ctx.fill();
 
-  // Eye highlights
-  ctx.fillStyle = "#FFFFFF";
-  ctx.beginPath();
-  ctx.arc(x - s * 0.12, y - s * 0.52, s * 0.02, 0, Math.PI * 2);
-  ctx.arc(x + s * 0.16, y - s * 0.52, s * 0.02, 0, Math.PI * 2);
-  ctx.fill();
-
-  // Rosy cheeks
-  ctx.fillStyle = "rgba(255,150,150,0.25)";
-  ctx.beginPath();
-  ctx.ellipse(x - s * 0.25, y - s * 0.32, s * 0.07, s * 0.04, 0, 0, Math.PI * 2);
-  ctx.fill();
-  ctx.beginPath();
-  ctx.ellipse(x + s * 0.25, y - s * 0.32, s * 0.07, s * 0.04, 0, 0, Math.PI * 2);
-  ctx.fill();
-
-  // Happy smile
+  // Smile — simple arc
   ctx.strokeStyle = "#2E2E2E";
   ctx.lineWidth = 1.5;
   ctx.beginPath();
-  ctx.arc(x, y - s * 0.3, s * 0.1, 0.15 * Math.PI, 0.85 * Math.PI);
+  ctx.arc(x, y - s * 0.18, s * 0.13, 0.2 * Math.PI, 0.8 * Math.PI);
   ctx.stroke();
 
   ctx.restore();
 }
 
-// Toothbrush obstacle — standing upright with rounded head
+// Toothbrush obstacle — side view (horizontal brush, bristles facing left toward player)
 function drawToothbrush(ctx: CanvasRenderingContext2D, x: number, y: number, h: number) {
   ctx.save();
   const totalH = h + 10;
 
-  // Handle (rounded rectangle)
-  const handleW = 10;
-  const handleH = totalH * 0.6;
-  const handleY = y - handleH;
+  // Handle — long horizontal bar extending right, thin
+  const handleLen = 28;
+  const handleThick = 6;
+  const handleY = y - totalH * 0.35;
   ctx.fillStyle = "#338075";
   ctx.strokeStyle = "#17554C";
-  ctx.lineWidth = 1.5;
+  ctx.lineWidth = 1;
   ctx.beginPath();
-  ctx.roundRect(x - handleW / 2, handleY, handleW, handleH, 3);
+  ctx.roundRect(x, handleY - handleThick / 2, handleLen, handleThick, 2);
   ctx.fill();
   ctx.stroke();
 
-  // Handle grip lines
+  // Grip texture on handle
   ctx.strokeStyle = "rgba(255,255,255,0.3)";
-  ctx.lineWidth = 1;
-  for (let i = 1; i <= 3; i++) {
-    const ly = handleY + handleH * 0.3 + i * (handleH * 0.15);
+  for (let i = 0; i < 3; i++) {
+    const gx = x + 8 + i * 7;
     ctx.beginPath();
-    ctx.moveTo(x - handleW / 2 + 2, ly);
-    ctx.lineTo(x + handleW / 2 - 2, ly);
+    ctx.moveTo(gx, handleY - handleThick / 2 + 1);
+    ctx.lineTo(gx, handleY + handleThick / 2 - 1);
     ctx.stroke();
   }
 
-  // Neck (slightly narrower)
-  const neckH = totalH * 0.08;
+  // Neck — connecting handle to head
+  const neckLen = 5;
   ctx.fillStyle = "#e0e0e0";
-  ctx.fillRect(x - 3, handleY - neckH, 6, neckH);
+  ctx.fillRect(x - neckLen, handleY - 2, neckLen, 4);
 
-  // Head (rounded, wider)
-  const headW = 18;
-  const headH = totalH * 0.32;
-  const headY = handleY - neckH - headH;
-  ctx.fillStyle = "#f5f5f5";
+  // Head — vertical rectangle on the left side (bristles face player)
+  const headW = 10;
+  const headH = totalH * 0.75;
+  const headX = x - neckLen - headW;
+  const headY = y - totalH + 2;
+  ctx.fillStyle = "#f0f0f0";
   ctx.strokeStyle = "#BDBDBD";
   ctx.lineWidth = 1;
   ctx.beginPath();
-  ctx.roundRect(x - headW / 2, headY, headW, headH, 4);
+  ctx.roundRect(headX, headY, headW, headH, 3);
   ctx.fill();
   ctx.stroke();
 
-  // Bristle rows (colorful)
-  const bristleColors = ["#7EE081", "#5BC85F", "#7EE081"];
-  const rows = 3;
-  const cols = 4;
-  const bristlePadX = 2.5;
-  const bristlePadY = 2.5;
-  const bristleW = (headW - bristlePadX * 2) / cols;
-  const bristleH = (headH - bristlePadY * 2) / rows;
+  // Bristles — rows of green tufts on the left face of the head
+  const bristleLen = 6;
+  const rows = Math.max(3, Math.floor(headH / 6));
+  const bristleGap = headH / (rows + 1);
+  const colors = ["#7EE081", "#5BC85F", "#7EE081"];
 
-  for (let r = 0; r < rows; r++) {
-    for (let c = 0; c < cols; c++) {
-      ctx.fillStyle = bristleColors[r % bristleColors.length];
-      const bx = x - headW / 2 + bristlePadX + c * bristleW + 0.5;
-      const by = headY + bristlePadY + r * bristleH + 0.5;
-      ctx.beginPath();
-      ctx.roundRect(bx, by, bristleW - 1, bristleH - 1, 1);
-      ctx.fill();
+  for (let i = 1; i <= rows; i++) {
+    const by = headY + i * bristleGap;
+    ctx.fillStyle = colors[i % colors.length];
+    // Each tuft is 2-3 tiny bristles
+    for (let j = 0; j < 3; j++) {
+      const bx = headX - bristleLen + j * 2;
+      ctx.fillRect(bx, by - 1.5, 2, 3);
     }
   }
 
@@ -280,8 +250,8 @@ export const ToothRunner = () => {
         const toothBottom = g.toothY + 12;
 
         for (const obs of g.obstacles) {
-          const obsLeft = obs.x - 8;
-          const obsRight = obs.x + 8;
+          const obsLeft = obs.x - 20;
+          const obsRight = obs.x + 5;
           const obsTop = GROUND_Y + 20 - obs.height;
 
           if (
