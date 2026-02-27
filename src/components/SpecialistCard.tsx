@@ -36,8 +36,8 @@ export const SpecialistCard = ({
   imagePosition = "right-top",
 }: SpecialistCardProps) => {
   return (
-    <div className="group relative w-full h-full tablet-landscape:min-w-[540px]">
-      <div className="specialist-card-wrapper rounded-[20px] p-4 tablet:p-6 tablet-landscape:p-[clamp(0.75rem,1.5vh,1.25rem)] desktop:p-[clamp(1rem,2vh,2rem)] relative overflow-hidden h-full flex flex-col">
+    <div className="group relative w-full h-full">
+      <div className="rounded-[16px] tablet:rounded-[20px] p-3 tablet:p-6 tablet-landscape:p-6 desktop:p-8 relative overflow-hidden h-full flex flex-col specialist-card-wrapper">
         <Image
           src={imageSrc}
           alt={imageAlt}
@@ -53,45 +53,31 @@ export const SpecialistCard = ({
           priority={priority}
         />
         <div className="relative flex flex-col h-full min-h-0">
-          {/* Header z ikonką - skalowalna - ukryta na phone-landscape */}
-          <div className="specialist-card-header flex items-center gap-2 tablet:gap-3 tablet-landscape:gap-[1vh] mb-1 tablet:mb-2 tablet-landscape:mb-[2vh] flex-shrink-0">
-            <div
-              className="hidden tablet:flex items-center justify-center rounded-full bg-white flex-shrink-0 aspect-square w-14 h-14 tablet-landscape:w-auto tablet-landscape:h-auto"
-              style={{
-                height: "clamp(2.5rem, 5vh, 8rem)",
-                width: "clamp(2.5rem, 5vh, 8rem)",
-              }}
-            >
-              <div
-                className="[&_svg]:w-full [&_svg]:h-full"
-                style={{ width: "50%", height: "50%" }}
-              >
-                {icon}
-              </div>
+          {/* Header: icon + tagline */}
+          <div className="flex items-center gap-2 tablet:gap-3 mb-1 tablet:mb-3 flex-shrink-0">
+            <div className="flex-shrink-0">
+              <IconCircle icon={icon} size="2xs" backgroundColor="#FFFFFF" className="tablet:!w-[38px] tablet:!h-[38px]" />
             </div>
-            <div className="block tablet:hidden flex-shrink-0">
-              <IconCircle icon={icon} size="xs" />
-            </div>
-            <p className="text-dark-gray text-[clamp(0.625rem,0.3rem+1.4vw,3rem)] leading-tight line-clamp-2">
+            <p className="text-dark-gray text-[11px] tablet:text-sm desktop:text-base leading-tight line-clamp-2">
               {shortDescription}
             </p>
           </div>
 
-          {/* Content - zajmuje ~40% karty */}
-          <div className="specialist-card-content flex-grow min-h-0 overflow-hidden tablet-landscape:h-[40%] desktop:h-[40%] flex flex-col justify-center pb-1">
-            <h2 className="text-[clamp(1rem,0.25rem+4vw,4rem)] font-bold text-dark-gray">
+          {/* Content */}
+          <div className="flex-grow min-h-0 flex flex-col justify-center">
+            <h2 className="text-xl tablet:text-2xl tablet-landscape:text-3xl desktop:text-4xl font-bold text-dark-gray">
               {title}
             </h2>
-            <h3 className="text-[clamp(0.875rem,0.2rem+3.5vw,3rem)] text-dark-gray">
+            <h3 className="text-base tablet:text-lg tablet-landscape:text-xl desktop:text-2xl text-dark-gray">
               {name}
             </h3>
-            <p className="mt-[0.5vh] text-dark-gray text-[clamp(0.75rem,0.4rem+1.4vw,2rem)]">
+            <p className="hidden tablet:block mt-2 text-dark-gray text-sm desktop:text-base leading-relaxed max-w-[65%]">
               {description}
             </p>
           </div>
 
-          {/* Button - zawsze na dole */}
-          <div className="flex justify-end mt-auto pt-2 tablet:pt-[0.5vh] flex-shrink-0">
+          {/* Button */}
+          <div className="flex justify-end mt-auto pt-2 flex-shrink-0">
             {showBackButton ? (
               <Link href="/">
                 <Button rightIcon={<BackIcon />} />
