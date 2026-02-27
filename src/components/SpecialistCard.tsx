@@ -65,10 +65,10 @@ export const SpecialistCard = ({
 
           {/* Content */}
           <div className="flex-grow min-h-0 flex flex-col justify-center">
-            <h2 className="text-xl tablet:text-2xl tablet-landscape:text-3xl desktop:text-4xl desktop-lg:text-5xl desktop-3:text-5xl desktop-4k:text-6xl font-bold text-dark-gray">
+            <h2 className="text-xl tablet:text-2xl tablet-landscape:text-3xl desktop:text-4xl desktop-lg:text-5xl desktop-3:text-6xl desktop-4k:text-7xl font-bold text-dark-gray">
               {title}
             </h2>
-            <h3 className="mt-1 tablet:mt-2 desktop-3:mt-3 desktop-4k:mt-4 text-base tablet:text-lg tablet-landscape:text-xl desktop:text-2xl desktop-lg:text-3xl desktop-3:text-3xl desktop-4k:text-4xl text-dark-gray">
+            <h3 className="mt-1 tablet:mt-2 desktop-3:mt-3 desktop-4k:mt-4 text-base tablet:text-lg tablet-landscape:text-xl desktop:text-2xl desktop-lg:text-3xl desktop-3:text-4xl desktop-4k:text-5xl text-dark-gray">
               {name}
             </h3>
             <p className="card-description mt-2 desktop-3:mt-4 desktop-4k:mt-6 text-dark-gray text-xs tablet:text-sm desktop:text-base desktop-lg:text-lg desktop-3:text-xl desktop-4k:text-2xl leading-relaxed max-w-[80%] tablet:max-w-[65%] line-clamp-3 tablet:line-clamp-none">
