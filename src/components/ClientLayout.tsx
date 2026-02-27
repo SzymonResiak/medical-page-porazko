@@ -44,7 +44,7 @@ const ConditionalFooter = ({ isValidRoute }: { isValidRoute: boolean }) => {
 
   if (isMainPage) {
     return (
-      <div className="flex-grow flex flex-col justify-end pt-2 desktop:pt-3 pb-[env(safe-area-inset-bottom)]">
+      <div className="flex-shrink-0 pt-2 desktop:pt-3 pb-[env(safe-area-inset-bottom)]">
         <FooterLandingPage />
         <Copyright className="text-right text-xs tablet:text-sm mt-1" />
       </div>
@@ -78,10 +78,10 @@ export const ClientLayout = ({ children }: ClientLayoutProps) => {
       {isSubpage && <FloatingIsland />}
 
       {/* Wrapper z flexbox - order zmienia kolejność na różnych breakpointach */}
-      <div className="flex flex-col">
+      <div className={`flex flex-col ${isMainPage ? "flex-grow min-h-0" : ""}`}>
         {/* Karty: zawsze na górze na subpages, na homepage: mobile=dół, desktop=góra */}
         {isValidRoute && (
-          <div className={`${isSubpage ? "order-1 mb-4" : "order-2 tablet-landscape:order-1 desktop:order-1"}`}>
+          <div className={`${isSubpage ? "order-1 mb-4" : "order-2 tablet-landscape:order-1 desktop:order-1"} ${isMainPage ? "flex-grow min-h-0 flex flex-col" : ""}`}>
             <StaticCards />
           </div>
         )}

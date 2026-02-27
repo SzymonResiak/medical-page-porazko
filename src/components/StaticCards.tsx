@@ -50,7 +50,7 @@ export const StaticCards = () => {
   const isSubpage = isDentist || isInternist;
 
   return (
-    <div className={`w-full ${isMainPage ? "flex-grow tablet-landscape:flex-grow-0 desktop:flex-grow-0 flex-shrink-0 min-h-0" : ""}`}>
+    <div className={`w-full ${isMainPage ? "flex-grow tablet-landscape:flex-grow-0 desktop:flex-grow-0 flex-shrink min-h-0 flex flex-col" : ""}`}>
       <AnimatePresence mode="popLayout">
         {isMainPage && (
           <motion.div
@@ -58,12 +58,12 @@ export const StaticCards = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0, scale: 0.97, transition: { duration: 0.25 } }}
-            className="grid gap-2 tablet:gap-3 tablet-landscape:gap-4 desktop-lg:gap-6 grid-cols-1 tablet-landscape:grid-cols-2 desktop:grid-cols-2 w-full"
+            className="grid grid-rows-2 tablet-landscape:grid-rows-1 tablet-landscape:grid-cols-2 desktop:grid-rows-1 desktop:grid-cols-2 gap-2 tablet:gap-3 tablet-landscape:gap-4 desktop-lg:gap-6 w-full flex-grow min-h-0"
           >
-            <div className="w-full h-[calc(50dvh-1.5rem)] tablet:h-[calc(50dvh-2rem)] tablet-landscape:h-auto tablet-landscape:min-h-[540px] desktop:min-h-[540px] overflow-hidden">
+            <div className="w-full min-h-0 tablet-landscape:min-h-[540px] desktop:min-h-[540px] overflow-hidden">
               <DentistCard priority />
             </div>
-            <div className="w-full h-[calc(50dvh-1.5rem)] tablet:h-[calc(50dvh-2rem)] tablet-landscape:h-auto tablet-landscape:min-h-[540px] desktop:min-h-[540px] overflow-hidden">
+            <div className="w-full min-h-0 tablet-landscape:min-h-[540px] desktop:min-h-[540px] overflow-hidden">
               <InternistCard />
             </div>
           </motion.div>
