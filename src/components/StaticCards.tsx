@@ -49,7 +49,7 @@ export const StaticCards = () => {
   const isSubpage = isDentist || isInternist;
 
   return (
-    <div className={`w-full ${isMainPage ? "flex-grow tablet-landscape:flex-grow-0 desktop:flex-grow-0 flex-shrink min-h-0 flex flex-col" : ""}`}>
+    <div className={`w-full ${isMainPage ? "flex-grow flex-shrink min-h-0 flex flex-col" : ""}`}>
       <AnimatePresence mode="popLayout">
         {isMainPage && (
           <motion.div
