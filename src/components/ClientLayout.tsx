@@ -22,10 +22,14 @@ const Copyright = ({ className = "" }: { className?: string }) => (
 );
 
 const MainContent = ({ children, isMainPage }: { children: React.ReactNode; isMainPage: boolean }) => (
-  <div className={`p-2 tablet-landscape:p-4 desktop:p-6 desktop-lg:px-20 desktop-lg:py-8 pb-[calc(0.5rem+env(safe-area-inset-bottom))] bg-off-white ${
-    isMainPage ? "min-h-[100dvh] flex flex-col main-content-homepage tablet-landscape:h-[100dvh] tablet-landscape:overflow-hidden desktop:h-[100dvh] desktop:overflow-hidden" : ""
+  <div className={`bg-off-white ${
+    isMainPage ? "min-h-[100dvh] tablet-landscape:h-[100dvh] tablet-landscape:overflow-hidden desktop:h-[100dvh] desktop:overflow-hidden" : ""
   }`}>
-    {children}
+    <div className={`max-w-[1600px] mx-auto p-2 tablet-landscape:p-4 desktop:p-6 desktop-lg:px-12 desktop-lg:py-8 pb-[calc(0.5rem+env(safe-area-inset-bottom))] ${
+      isMainPage ? "h-full flex flex-col main-content-homepage" : ""
+    }`}>
+      {children}
+    </div>
   </div>
 );
 
