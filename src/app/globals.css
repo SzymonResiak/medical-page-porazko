@@ -47,6 +47,21 @@ body {
     BlinkMacSystemFont, sans-serif;
 }
 
+/* Show card description on tall viewports (iPhone X+), hide on short (SE) */
+.card-description {
+  display: none;
+}
+@media (min-height: 700px) {
+  .card-description {
+    display: block;
+  }
+}
+@media (min-width: 700px) {
+  .card-description {
+    display: block;
+  }
+}
+
 @keyframes fadeInUp {
   from {
     opacity: 0;

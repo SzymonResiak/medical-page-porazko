@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export const About = () => {
   return (
     <div className="flex flex-col">
@@ -10,14 +8,7 @@ export const About = () => {
         <br /> o każdy detal Twojego <br /> zdrowia
       </p>
       <div className="flex flex-col tablet:flex-row tablet:gap-5 items-center">
-        <Image
-          src="/images/medicine-bg.png"
-          alt="Konsultacja internistyczna"
-          width={500}
-          height={500}
-          style={{ width: "auto", height: "auto" }}
-        />
-        <div className="p-9 mt-8 tablet:mt-0 border border-light-gray rounded-[30px] flex-1">
+        <div className="p-9 border border-light-gray rounded-[30px] flex-1">
           <p className="text-xl desktop-lg:text-4xl font-bold">O mnie</p>
           <p className="mt-2 desktop-lg:text-2xl">
             Jestem absolwentem Wydziału Lekarskiego Uniwersytetu Medycznego im.

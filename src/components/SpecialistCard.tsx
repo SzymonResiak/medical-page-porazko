@@ -71,7 +71,7 @@ export const SpecialistCard = ({
             <h3 className="text-base tablet:text-lg tablet-landscape:text-xl desktop:text-2xl text-dark-gray">
               {name}
             </h3>
-            <p className="hidden tablet:block mt-2 text-dark-gray text-sm desktop:text-base leading-relaxed max-w-[65%]">
+            <p className="card-description mt-2 text-dark-gray text-xs tablet:text-sm desktop:text-base leading-relaxed max-w-[80%] tablet:max-w-[65%] line-clamp-3 tablet:line-clamp-none">
               {description}
             </p>
           </div>
