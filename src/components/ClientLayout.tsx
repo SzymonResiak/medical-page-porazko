@@ -85,13 +85,13 @@ export const ClientLayout = ({ children }: ClientLayoutProps) => {
       <div className={`flex flex-col ${isMainPage ? "flex-grow min-h-0" : ""}`}>
         {/* Karty: zawsze na górze na subpages, na homepage: mobile=dół, desktop=góra */}
         {isValidRoute && (
-          <div className={`${isSubpage ? "order-1" : "order-2 tablet-landscape:order-1 desktop:order-1"} ${isMainPage ? "flex-grow min-h-0 flex flex-col" : ""}`}>
+          <div className={`${isSubpage ? "order-1" : "order-2 tablet:order-1"} ${isMainPage ? "flex-grow min-h-0 flex flex-col" : ""}`}>
             <StaticCards />
           </div>
         )}
 
         {/* Children: na subpages zawsze pod kafelkiem */}
-        <div id="page-content" className={`${isSubpage ? "order-2" : "order-1 tablet-landscape:order-2 desktop:order-2 tablet-landscape:mt-3 desktop:mt-4"}`}>
+        <div id="page-content" className={`${isSubpage ? "order-2" : "order-1 tablet:order-2 tablet:mt-3 desktop:mt-4"}`}>
           <PageTransition>{children}</PageTransition>
         </div>
       </div>
