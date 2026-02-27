@@ -7,6 +7,9 @@ import { Opinions } from "@/components/Opinions";
 import { FAQ } from "@/components/FAQ";
 import { INTERNIST_OPINIONS } from "@/data/opinions";
 import { INTERNIST_FAQ_ITEMS } from "./data/faqItems";
+import { INTERNIST_FAQ_SCHEMA } from "./data/faqSchema";
+import { INTERNIST_PAGE_SCHEMA, INTERNIST_SERVICES_SCHEMA } from "./data/schema";
+import { FAQSchema } from "@/components/FAQSchema";
 import { Services } from "./components/Services";
 import { About } from "./components/About";
 
@@ -47,6 +50,9 @@ export default function InternistPage() {
   return (
     <>
       <h1 className="sr-only">Nefrolog Internista Opole - dr hab. Tomasz Porażko</h1>
+      <FAQSchema items={INTERNIST_FAQ_SCHEMA} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(INTERNIST_PAGE_SCHEMA) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(INTERNIST_SERVICES_SCHEMA) }} />
       <Breadcrumbs
         items={[
           { label: "Strona główna", href: "/" },
