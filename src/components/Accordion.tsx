@@ -29,7 +29,7 @@ export const Accordion = memo(function Accordion({
   }, []);
 
   return (
-    <div className={`w-full rounded-[20px] bg-light-gray transition-all duration-200 hover:border-b-2 hover:border-primary ${className}`}>
+    <div className={`w-full rounded-[20px] bg-light-gray ${className}`}>
       <button
         onClick={handleToggle}
         className="flex w-full items-center justify-between p-2.5 tablet:p-5 text-left"
