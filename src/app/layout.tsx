@@ -38,6 +38,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "pl_PL",
     siteName: "Porażko",
+    url: "https://porazko.pl",
     title: "Porażko | Stomatolog i Nefrolog w Opolu - Gabinet Lekarski",
     description:
       "Gabinet stomatologiczny i nefrologiczny w Opolu. Justyna Porażko - dentysta. Tomasz Porażko - nefrolog, internista.",
@@ -197,50 +198,6 @@ const globalStructuredData = {
   ]
 };
 
-// Landing page structured data — CollectionPage with speakable + significantLinks
-const landingPageSchema = {
-  "@context": "https://schema.org",
-  "@type": "CollectionPage",
-  "@id": "https://porazko.pl/#homepage",
-  "name": "Porażko | Stomatolog i Nefrolog w Opolu - Gabinet Lekarski",
-  "url": "https://porazko.pl",
-  "description": "Gabinet stomatologiczny i nefrologiczny w Opolu. Justyna Porażko - dentysta. Tomasz Porażko - nefrolog, internista. Umów wizytę!",
-  "inLanguage": "pl-PL",
-  "isPartOf": {
-    "@type": "WebSite",
-    "@id": "https://porazko.pl/#website"
-  },
-  "publisher": {
-    "@id": "https://porazko.pl/#clinic"
-  },
-  "primaryImageOfPage": {
-    "@type": "ImageObject",
-    "url": "https://porazko.pl/images/og-image.png",
-    "width": 1200,
-    "height": 630
-  },
-  "speakable": {
-    "@type": "SpeakableSpecification",
-    "cssSelector": ["h1", "h2", "meta[name='description']"]
-  },
-  "breadcrumb": {
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Strona główna",
-        "item": "https://porazko.pl"
-      }
-    ]
-  },
-  "significantLink": [
-    "https://porazko.pl/dentist",
-    "https://porazko.pl/internist"
-  ],
-  "mainEntity": { "@id": "https://porazko.pl/#clinic" }
-};
-
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="pl">
@@ -262,11 +219,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(globalStructuredData) }}
         />
-        {/* Schema.org — Landing Page (CollectionPage) */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(landingPageSchema) }}
-        />
+
       </head>
       <body className="antialiased">
         <main>

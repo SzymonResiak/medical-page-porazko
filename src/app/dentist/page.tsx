@@ -30,6 +30,9 @@ export const metadata: Metadata = {
     "wybielanie zębów Opole",
   ],
   openGraph: {
+    type: "website",
+    locale: "pl_PL",
+    siteName: "Porażko",
     title: "Stomatolog Opole - Justyna Porażko | Dentysta",
     description:
       "Stomatolog w Opolu - lek. stom. Justyna Porażko. Kompleksowa opieka stomatologiczna dla całej rodziny.",

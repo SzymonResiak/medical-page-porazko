@@ -28,6 +28,9 @@ export const metadata: Metadata = {
     "przewlekła choroba nerek",
   ],
   openGraph: {
+    type: "website",
+    locale: "pl_PL",
+    siteName: "Porażko",
     title: "Nefrolog Internista Opole - dr hab. Tomasz Porażko",
     description:
       "Nefrolog i internista w Opolu - dr hab. n. med. Tomasz Porażko. Diagnostyka i leczenie chorób nerek.",
