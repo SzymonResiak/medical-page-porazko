@@ -87,7 +87,7 @@ export const ClientLayout = ({ children }: ClientLayoutProps) => {
         )}
 
         {/* Children: na subpages zawsze pod kafelkiem */}
-        <div id="page-content" className={`${isSubpage ? "order-2 mt-2" : "order-1 tablet-landscape:order-2 desktop:order-2 tablet-landscape:mt-3 desktop:mt-4"}`}>
+        <div id="page-content" className={`${isSubpage ? "order-2" : "order-1 tablet-landscape:order-2 desktop:order-2 tablet-landscape:mt-3 desktop:mt-4"}`}>
           <PageTransition>{children}</PageTransition>
         </div>
       </div>
