@@ -2,7 +2,6 @@
 
 import { useState, memo, useCallback } from "react";
 import { IconCircle } from "./IconCircle";
-import { TopIcon } from "./icons/TopIcon";
 import { DownIcon } from "./icons/DownIcon";
 import { useIsMobile } from "@/hooks/useMediaQuery";
 
@@ -39,11 +38,14 @@ export const Accordion = memo(function Accordion({
         <h3 className="text-sm tablet:text-3xl font-normal text-dark-gray flex-1 mx-2 tablet:mx-5">
           {header}
         </h3>
-        <IconCircle
-          icon={isExpanded ? <TopIcon /> : <DownIcon />}
-          backgroundColor={isExpanded ? "#2E2E2E" : "#FFFFFF"}
-          size={isMobile ? "2xs" : "sm"}
-        />
+        <div className={`transition-all duration-300 ease-in-out ${isExpanded ? "rotate-180" : "rotate-0"}`}>
+          <IconCircle
+            icon={<DownIcon />}
+            backgroundColor={isExpanded ? "#2E2E2E" : "#FFFFFF"}
+            size={isMobile ? "2xs" : "sm"}
+            className="!transition-colors !duration-300 !ease-in-out"
+          />
+        </div>
       </button>
 
       <div
