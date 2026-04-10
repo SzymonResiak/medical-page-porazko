@@ -19,7 +19,7 @@ interface SpecialistCardProps {
   link: string;
   showBackButton?: boolean;
   priority?: boolean;
-  imagePosition?: "right-top" | "left-bottom" | "center";
+  imagePosition?: "right-top" | "left-bottom" | "center" | "top";
 }
 
 export const SpecialistCard = ({
@@ -37,7 +37,7 @@ export const SpecialistCard = ({
 }: SpecialistCardProps) => {
   return (
     <div className="group relative w-full h-full">
-      <div className="rounded-[16px] tablet:rounded-[20px] desktop-3:rounded-[30px] desktop-4k:rounded-[40px] p-3 tablet:p-6 tablet-landscape:p-6 desktop:p-8 desktop-3:p-12 desktop-4k:p-16 relative overflow-hidden h-full flex flex-col specialist-card-wrapper">
+      <div className="rounded-[16px] tablet:rounded-[20px] desktop-3:rounded-[30px] desktop-4k:rounded-[40px] pt-5 px-5 pb-[30px] tablet:p-6 tablet-landscape:p-6 desktop:p-8 desktop-3:p-12 desktop-4k:p-16 relative overflow-hidden h-full flex flex-col specialist-card-wrapper">
         <Image
           src={imageSrc}
           alt={imageAlt}
@@ -47,6 +47,8 @@ export const SpecialistCard = ({
               ? "object-left-bottom"
               : imagePosition === "center"
               ? "object-center"
+              : imagePosition === "top"
+              ? "object-top"
               : "object-right-top"
           }`}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -58,20 +60,20 @@ export const SpecialistCard = ({
             <div className="flex-shrink-0">
               <IconCircle icon={icon} size="2xs" backgroundColor="#FFFFFF" className="tablet:!w-[38px] tablet:!h-[38px] desktop-3:!w-[52px] desktop-3:!h-[52px] desktop-4k:!w-[64px] desktop-4k:!h-[64px]" />
             </div>
-            <p className="text-dark-gray text-[11px] tablet:text-sm desktop:text-base desktop-3:text-lg desktop-4k:text-xl leading-tight line-clamp-2">
+            <p className="text-dark-gray text-[length:var(--fs-h5)] leading-[150%] line-clamp-2">
               {shortDescription}
             </p>
           </div>
 
           {/* Content */}
           <div className="flex-grow min-h-0 flex flex-col justify-center">
-            <h2 className="text-xl tablet:text-2xl tablet-landscape:text-3xl desktop:text-4xl desktop-lg:text-5xl desktop-3:text-6xl desktop-4k:text-7xl font-bold text-dark-gray">
+            <h2 className="text-[length:var(--fs-h1)] leading-none font-bold text-dark-gray">
               {title}
             </h2>
-            <h3 className="mt-1 tablet:mt-2 desktop-3:mt-3 desktop-4k:mt-4 text-base tablet:text-lg tablet-landscape:text-xl desktop:text-2xl desktop-lg:text-3xl desktop-3:text-4xl desktop-4k:text-5xl text-dark-gray">
+            <h3 className="tablet:mt-[-8px] text-[length:var(--fs-h2)] leading-[150%] text-dark-gray">
               {name}
             </h3>
-            <p className="card-description mt-2 desktop-3:mt-4 desktop-4k:mt-6 text-dark-gray text-xs tablet:text-sm desktop:text-base desktop-lg:text-lg desktop-3:text-xl desktop-4k:text-2xl leading-relaxed max-w-[80%] tablet:max-w-[65%] line-clamp-3 tablet:line-clamp-none">
+            <p className="card-description mt-5 tablet:mt-2 text-dark-gray text-[length:var(--fs-h4)] leading-[150%] max-w-[80%] tablet:max-w-[65%] line-clamp-3 tablet:line-clamp-none">
               {description}
             </p>
           </div>

@@ -26,6 +26,23 @@
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-rgb: 255, 255, 255;
+
+  /* Typography scale — Mobile (Figma) */
+  --fs-h1: 1.5625rem;  /* 25px */
+  --fs-h2: 1.25rem;    /* 20px */
+  --fs-h3: 1.125rem;   /* 18px */
+  --fs-h4: 1rem;       /* 16px */
+  --fs-h5: 0.875rem;   /* 14px */
+}
+
+@media (min-width: 1024px) {
+  :root {
+    /* Typography scale — Desktop (Figma) */
+    --fs-h1: 3.125rem;    /* 50px */
+    --fs-h2: 2.5rem;      /* 40px */
+    --fs-h3: 1.5625rem;   /* 25px */
+    --fs-h4: 1.25rem;     /* 20px */
+  }
 }
 
 html {
@@ -45,6 +62,7 @@ body {
   background: rgb(var(--background-rgb));
   font-family: "Noto Sans Telugu UI", system-ui, -apple-system,
     BlinkMacSystemFont, sans-serif;
+  line-height: 1.5;
 }
 
 /* Show card description on tall viewports (iPhone X+), hide on short (SE) */

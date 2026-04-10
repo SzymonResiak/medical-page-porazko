@@ -3,27 +3,50 @@ import { KidneysIcon } from "@/components/icons/KidneysIcon";
 import { InfoLabel } from "@/components/InfoLabel";
 import { TransferIcon } from "@/components/icons/TransferIcon";
 import { InvoiceIcon } from "@/components/icons/InvoiceIcon";
+import { CONTACT } from "@/data/constants";
 
 export const Services = () => {
   return (
     <div>
-      <p className="text-2xl desktop-lg:text-7xl">
-        Wszystko, czego potrzebujesz dla zdrowia nerek{" "}
+      <p className="text-[length:var(--fs-h1)] leading-[150%]">
+        Wszystko, czego potrzebujesz dla zdrowia nerek <br />
         <span className="font-bold block tablet:inline">
           oferta diagnostyki i leczenia
         </span>
       </p>
-      <p className="mt-5 text-lg desktop-lg:text-4xl">
-        Diagnostyka i leczenie <br /> dopasowane do Twoich potrzeb.
+      <p className="mt-5 text-[length:var(--fs-h2)] desktop:text-[length:var(--fs-h1)] leading-[150%]">
+        Diagnostyka i leczenie dopasowane do Twoich potrzeb.
       </p>
 
-      <div className="mt-10 flex flex-col gap-5">
+      <div className="mt-[50px] text-right flex flex-col gap-[10px]">
+        <p className="text-[length:var(--fs-h3)] leading-[150%]">
+          Skontaktuj się z dr hab.n.med. Tomaszem Porażko, aby umówić wizytę
+        </p>
+        {/* Mobile: small dark button */}
+        <div className="flex justify-end tablet:hidden">
+          <a
+            href={CONTACT.phoneLink}
+            className="inline-flex items-center justify-center bg-dark-gray text-off-white text-[12px] leading-[16px] rounded-[15px] px-[12px] py-[12px] hover:opacity-80 transition-opacity"
+          >
+            zadzwoń
+          </a>
+        </div>
+        {/* Tablet+: bold phone number */}
+        <a
+          href={CONTACT.phoneLink}
+          className="hidden tablet:inline text-[length:var(--fs-h3)] leading-[150%] hover:underline"
+        >
+          Zadzwoń: {CONTACT.phone}
+        </a>
+      </div>
+
+      <div className="mt-[50px] flex flex-col gap-5">
         <Accordion
           header="Diagnostyka i leczenie chorób nerek"
           icon={<KidneysIcon />}
           isOpen={true}
         >
-          <div className="text-sm desktop-lg:text-2xl">
+          <div className="text-[length:var(--fs-h3)] leading-[150%]">
             <p>
               Specjalizuję się w diagnostyce i leczeniu schorzeń nerek, oferując
               skuteczną pomoc w takich przypadkach jak:
@@ -50,7 +73,7 @@ export const Services = () => {
           icon={<KidneysIcon />}
           isOpen={true}
         >
-          <div className="text-sm desktop-lg:text-2xl">
+          <div className="text-[length:var(--fs-h3)] leading-[150%]">
             <p>
               W trakcie wizyt wykonuję badania USG, ze szczególnym
               uwzględnieniem nerek i dróg moczowych, a także:
@@ -69,7 +92,7 @@ export const Services = () => {
           icon={<KidneysIcon />}
           isOpen={true}
         >
-          <div className="text-sm desktop-lg:text-2xl">
+          <div className="text-[length:var(--fs-h3)] leading-[150%]">
             <p>
               Konsultacje w zakresie diagnostyki i wytwarzania dostępu do naczyń
               do hemodializy oraz dostępu do dializy otrzewnowej.
@@ -91,7 +114,7 @@ export const Services = () => {
           </div>
         </Accordion>
       </div>
-      <div className="flex flex-col desktop-lg:flex-row gap-5 mt-5">
+      <div className="flex flex-col desktop-lg:flex-row gap-[10px] desktop-lg:gap-5 mt-[50px]">
         <InfoLabel
           icon={<TransferIcon variant="green" />}
           text="Akceptuję płatność kartą lub przelewem"

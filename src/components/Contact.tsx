@@ -5,10 +5,9 @@ import { CONTACT } from "@/data/constants";
 export const Contact = () => {
   return (
     <div>
-      {/* Desktop: telefon na górze */}
-      <div className="hidden tablet:block">
+      <div>
         <a href={CONTACT.phoneLink} className="group/phone inline-block">
-          <Button leftIcon={<PhoneIcon />}>
+          <Button leftIcon={<PhoneIcon />} mobileIconSize="md" textClassName="!text-[length:var(--fs-h2)] desktop:!text-[length:var(--fs-h3)] desktop:!leading-[34px] desktop:!p-5 desktop:!rounded-[30px] !font-bold">
             <span className="group-hover/phone:bg-yellow-200/60 group-hover/phone:px-1 transition-all duration-200 rounded">
               {CONTACT.phone}
             </span>
@@ -16,17 +15,10 @@ export const Contact = () => {
         </a>
       </div>
 
-      <p className="text-2xl desktop-lg:text-5xl mt-5">
+      <p className="text-[length:var(--fs-h1)] leading-[150%] mt-5">
         Zapraszam po wcześniejszej rejestracji telefonicznej <br />
         <span className="font-bold">{CONTACT.workingHours}</span>
       </p>
-
-      {/* Mobile: telefon pod tekstem */}
-      <div className="tablet:hidden mt-5">
-        <a href={CONTACT.phoneLink}>
-          <Button leftIcon={<PhoneIcon />}>{CONTACT.phone}</Button>
-        </a>
-      </div>
     </div>
   );
 };

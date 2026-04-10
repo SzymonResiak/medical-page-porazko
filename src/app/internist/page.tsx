@@ -12,6 +12,7 @@ import { INTERNIST_PAGE_SCHEMA, INTERNIST_SERVICES_SCHEMA } from "./data/schema"
 import { FAQSchema } from "@/components/FAQSchema";
 import { Services } from "./components/Services";
 import { About } from "./components/About";
+import { ScrollIndicator } from "@/components/ScrollIndicator";
 
 export const metadata: Metadata = {
   title: "Nefrolog Internista Opole - dr hab. Tomasz Porażko",
@@ -62,27 +63,30 @@ export default function InternistPage() {
           { label: "Internista, Nefrolog" },
         ]}
       />
-      <ScrollAnimation>
-        <Contact />
-      </ScrollAnimation>
-      <ScrollAnimation>
-        <Services />
-      </ScrollAnimation>
-      <ScrollAnimation>
-        <About />
-      </ScrollAnimation>
-      <ScrollAnimation>
-        <Opinions
-          title={<>Opinie pacjentów to <br /> moja{" "}<span className="font-bold">najlepsza rekomendacja</span></>}
-          opinions={INTERNIST_OPINIONS}
-        />
-      </ScrollAnimation>
-      <ScrollAnimation>
-        <Location />
-      </ScrollAnimation>
-      <ScrollAnimation>
-        <FAQ items={INTERNIST_FAQ_ITEMS} />
-      </ScrollAnimation>
+      <ScrollIndicator />
+      <div className="flex flex-col gap-[30px] desktop:gap-0">
+        <ScrollAnimation>
+          <Contact />
+        </ScrollAnimation>
+        <ScrollAnimation className="desktop:mt-[80px]">
+          <Services />
+        </ScrollAnimation>
+        <ScrollAnimation className="desktop:mt-[80px]">
+          <About />
+        </ScrollAnimation>
+        <ScrollAnimation className="desktop:mt-[80px]">
+          <Opinions
+            title={<>Opinie pacjentów to moja <span className="font-bold">najlepsza rekomendacja</span></>}
+            opinions={INTERNIST_OPINIONS}
+          />
+        </ScrollAnimation>
+        <ScrollAnimation className="desktop:mt-[80px]">
+          <Location />
+        </ScrollAnimation>
+        <ScrollAnimation className="desktop:mt-[80px]">
+          <FAQ items={INTERNIST_FAQ_ITEMS} />
+        </ScrollAnimation>
+      </div>
     </>
   );
 }

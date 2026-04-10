@@ -14,6 +14,7 @@ import { XRay } from "./components/XRay";
 import { Services } from "./components/Services";
 import { About } from "./components/About";
 import { Certificates } from "./components/Certificates";
+import { ScrollIndicator } from "@/components/ScrollIndicator";
 
 export const metadata: Metadata = {
   title: "Stomatolog Opole - Justyna Porażko | Dentysta",
@@ -64,33 +65,36 @@ export default function DentistPage() {
           { label: "Stomatolog" },
         ]}
       />
-      <ScrollAnimation>
-        <Contact />
-      </ScrollAnimation>
-      <ScrollAnimation>
-        <XRay />
-      </ScrollAnimation>
-      <ScrollAnimation>
-        <Services />
-      </ScrollAnimation>
-      <ScrollAnimation>
-        <About />
-      </ScrollAnimation>
-      <ScrollAnimation>
-        <Certificates />
-      </ScrollAnimation>
-      <ScrollAnimation>
-        <Opinions
-          title={<>Wasze uśmiechy to <br /> moja{" "}<span className="font-bold">najlepsza rekomendacja</span></>}
-          opinions={DENTIST_OPINIONS}
-        />
-      </ScrollAnimation>
-      <ScrollAnimation>
-        <Location />
-      </ScrollAnimation>
-      <ScrollAnimation>
-        <FAQ items={DENTIST_FAQ_ITEMS} />
-      </ScrollAnimation>
+      <ScrollIndicator />
+      <div className="flex flex-col gap-[30px] desktop:gap-0">
+        <ScrollAnimation>
+          <Contact />
+        </ScrollAnimation>
+        <ScrollAnimation className="desktop:mt-[80px]">
+          <XRay />
+        </ScrollAnimation>
+        <ScrollAnimation className="desktop:mt-[80px]">
+          <Services />
+        </ScrollAnimation>
+        <ScrollAnimation className="desktop:mt-[80px]">
+          <About />
+        </ScrollAnimation>
+        <ScrollAnimation className="desktop:mt-[80px]">
+          <Certificates />
+        </ScrollAnimation>
+        <ScrollAnimation className="desktop:mt-[80px]">
+          <Opinions
+            title={<>Wasze uśmiechy to moja <span className="font-bold">najlepsza rekomendacja</span></>}
+            opinions={DENTIST_OPINIONS}
+          />
+        </ScrollAnimation>
+        <ScrollAnimation className="desktop:mt-[80px]">
+          <Location />
+        </ScrollAnimation>
+        <ScrollAnimation className="desktop:mt-[80px]">
+          <FAQ items={DENTIST_FAQ_ITEMS} />
+        </ScrollAnimation>
+      </div>
     </>
   );
 }

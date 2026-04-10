@@ -5,6 +5,7 @@ interface InfoLabelProps {
   text: string | { text: string; bold?: boolean; newLine?: boolean }[];
   className?: string;
   textColor?: "white" | "black";
+  textClassName?: string;
 }
 
 export const InfoLabel = memo(function InfoLabel({
@@ -12,6 +13,7 @@ export const InfoLabel = memo(function InfoLabel({
   text,
   className,
   textColor = "black",
+  textClassName,
 }: InfoLabelProps) {
   const renderText = () => {
     if (typeof text === "string") {
@@ -39,9 +41,9 @@ export const InfoLabel = memo(function InfoLabel({
         </div>
       )}
       <span
-        className={`text-[0.75rem] tablet:text-[1.25rem] font-normal leading-none ${
+        className={`text-[0.875rem] tablet:text-[1.25rem] font-normal leading-none ${
           textColor === "white" ? "text-white" : "text-black"
-        }`}
+        } ${textClassName ?? ""}`}
       >
         {renderText()}
       </span>

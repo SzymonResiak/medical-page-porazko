@@ -13,7 +13,8 @@ interface SpecialistHeroCardProps {
   title: string;
   name: string;
   description: string;
-  imagePosition?: "right-top" | "left-bottom" | "center";
+  imagePosition?: "right-top" | "left-bottom" | "center" | "top";
+  mobileImageClassName?: string;
 }
 
 export const SpecialistHeroCard = ({
@@ -25,9 +26,10 @@ export const SpecialistHeroCard = ({
   name,
   description,
   imagePosition = "right-top",
+  mobileImageClassName,
 }: SpecialistHeroCardProps) => {
   return (
-    <div className="w-full rounded-[20px] overflow-hidden relative h-[250px] tablet:h-[280px] desktop:h-[300px]">
+    <div className="w-full rounded-[30px] overflow-hidden relative h-[360px] tablet:h-[280px] desktop:h-[560px]">
       {/* Background image */}
       <Image
         src={imageSrc}
@@ -35,35 +37,37 @@ export const SpecialistHeroCard = ({
         fill
         className={`object-cover ${
           imagePosition === "left-bottom"
-            ? "object-left-bottom"
+            ? "tablet:object-left-bottom"
             : imagePosition === "center"
             ? "object-center"
+            : imagePosition === "top"
+            ? "object-top"
             : "object-right-top"
-        }`}
+        } ${mobileImageClassName ?? "object-left-bottom"}`}
         sizes="100vw"
         priority
       />
 
       {/* Content overlay */}
-      <div className="relative z-10 h-full flex flex-col justify-between p-5 tablet:p-8 desktop:p-10">
+      <div className="relative z-10 h-full flex flex-col justify-between pt-5 px-5 pb-[30px] tablet:p-8 desktop:p-10">
         {/* Top: icon + description */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-[10px]">
           <IconCircle icon={icon} size="xs" backgroundColor="#FFFFFF" />
-          <p className="text-dark-gray text-xs tablet:text-sm desktop:text-base">
+          <p className="text-dark-gray text-[length:var(--fs-h5)] desktop:text-[length:var(--fs-h4)] leading-[150%]">
             {shortDescription}
           </p>
         </div>
 
-        {/* Bottom: title + name + back button */}
+        {/* Bottom: title + name + description + back button */}
         <div className="flex items-end justify-between">
           <div>
-            <h2 className="text-dark-gray font-bold text-xl tablet:text-3xl desktop:text-4xl">
+            <h2 className="text-dark-gray font-bold text-[length:var(--fs-h1)] leading-[150%]">
               {title}
             </h2>
-            <h3 className="text-dark-gray text-base tablet:text-xl desktop:text-2xl">
+            <h3 className="text-dark-gray text-[length:var(--fs-h2)] leading-[150%]">
               {name}
             </h3>
-            <p className="mt-1 text-dark-gray text-xs tablet:text-sm desktop:text-base max-w-lg">
+            <p className="mt-5 tablet:mt-1 text-dark-gray text-[length:var(--fs-h4)] tablet:text-sm desktop:text-[length:var(--fs-h3)] desktop:leading-[34px] max-w-lg">
               {description}
             </p>
           </div>

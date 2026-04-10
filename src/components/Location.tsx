@@ -5,11 +5,8 @@ import { CLINIC, CONTACT } from "@/data/constants";
 export const Location = memo(function Location() {
   return (
     <div>
-      <p className="text-2xl desktop-lg:text-7xl">
-        Zlokalizuj gabinet{" "}
-        <span className="font-bold">
-          na <br /> mapie
-        </span>
+      <p className="text-[length:var(--fs-h1)] leading-[150%]">
+        Zlokalizuj gabinet <span className="font-bold">na mapie</span>
       </p>
       <div className="bg-dark-gray rounded-[20px] p-[30px] mt-5 block desktop-lg:hidden">
         <p className="text-off-white text-sm">
@@ -22,7 +19,7 @@ export const Location = memo(function Location() {
         <LocationMap />
       </div>
       <div className="mt-5">
-        <p className="text-xl desktop-lg:text-4xl text-right">
+        <p className="text-[length:var(--fs-h2)] leading-[150%] text-right">
           {CONTACT.address.street},
           <br /> {CONTACT.address.city}
         </p>

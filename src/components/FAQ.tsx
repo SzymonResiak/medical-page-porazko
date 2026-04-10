@@ -13,17 +13,17 @@ interface FAQProps {
 export const FAQ = ({ items }: FAQProps) => {
   return (
     <div className="mb-12 desktop-lg:mb-38">
-      <p className="text-2xl desktop-lg:text-7xl desktop-lg:text-center">
-        Często zadawane <br /> <span className="font-bold">pytania</span>
+      <p className="text-[length:var(--fs-h1)] leading-[150%] text-center">
+        Często zadawane <span className="font-bold">pytania</span>
       </p>
-      <p className="mt-7 text-lg desktop-lg:text-4xl desktop-lg:text-center">
+      <p className="mt-[30px] text-[length:var(--fs-h3)] leading-[150%] text-center">
         Znajdziesz tu kluczowe informacje o moich usługach, płatnościach i
         wizytach
       </p>
-      <div className="mt-12 flex flex-col gap-5">
+      <div className="mt-5 flex flex-col gap-5">
         {items.map((item, index) => (
           <Accordion key={index} header={item.question}>
-            <div className="text-sm desktop-lg:text-2xl">{item.answer}</div>
+            <div className="text-[length:var(--fs-h3)] leading-[150%]">{item.answer}</div>
           </Accordion>
         ))}
       </div>

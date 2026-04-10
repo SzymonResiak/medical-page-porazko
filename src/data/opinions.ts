@@ -4,12 +4,14 @@ export interface Opinion {
   name: string;
   rating: number;
   review: string;
+  mobileOnly?: boolean;
 }
 
 export const DENTIST_OPINIONS: Opinion[] = [
   {
     name: "M.",
     rating: 5,
+    mobileOnly: true,
     review:
       "Po wizycie u Pani doktor, postanowiłam oddać leczenie mojego dziecka w jej ręce. Zaangażowanie, szczegółowe wytłumaczenie i anielskie podejście, nawet w krytycznych momentach kiedy dziecko dostawało skrajnej histerii Pani doktor była opanowana i starała się aby zostało skończone leczenie zęba. Moja córka dziś sama powiedziała, że pani doktor jest najlepsza, a mieliśmy do czynienia z wieloma specjalistami w okolicy. Polecam wszystkim tym, którzy boją się dentysty bo sama chodzę do Pani z przyjemnością po traumie z dzieciństwa i jako mama widząc zaangażowanie z jakim Pani Justyna uspokajała i zachęcała moje dziecko do zakończenia leczenia zęba.",
   },
@@ -29,21 +31,21 @@ export const DENTIST_OPINIONS: Opinion[] = [
 
 export const INTERNIST_OPINIONS: Opinion[] = [
   {
-    name: "Beata",
-    rating: 5,
-    review:
-      "Gorąco polecam Pana Doktora - cierpliwy, skoncentrowany na pacjencie, zainteresowany ogólnym stanem zdrowia, a przede wszystkim bardzo kompetentny. W porównaniu do wizyt u innych lekarzy creme de la creme.",
-  },
-  {
     name: "Pacjentka",
     rating: 5,
     review:
       "Bardzo dobry specjalista, z dużą wiedzą, zaangażowany i konkretny. Taki lekarz z powołania. Polecam z czystym sumieniem.",
   },
   {
-    name: "Ania",
+    name: "Beata D.",
     rating: 5,
     review:
-      "Naprawdę bardzo miły lekarz, i bardzo kompetentny, pacjent jest zawsze dokładnie zbadany, mama znosi nawet długą podróż do doktora bo jest naprawdę świetny i bardzo pomocny. Lekarz z powołania. Bardzo doktorze za wszystko serdecznie dziękujemy, bo tam gdzie nie widzieli szans doktor wytłumaczył i tak pokierował, że jest lepiej nawet pod względem psychicznym.",
+      "Gorąco polecam Pana Doktora - cierpliwy, skoncentrowany na pacjencie, zainteresowany ogólnym stanem zdrowia, a przede wszystkim bardzo kompetentny. Wizyta mojej mamy odbyła się w ramach NFZ, w porównaniu do wizyt u innych lekarzy (nawet tych prywatnych) creme de la creme.",
+  },
+  {
+    name: "Ania z Nysy",
+    rating: 5,
+    review:
+      "Naprawdę bardzo miły lekarz, i bardzo kompetentny, pacjent jest zawsze dokładnie zbadany, mama znosi nawet długą podróż do doktora, bo jest naprawdę świetny i bardzo pomocny. Lekarz z powołania. Bardzo doktorze za wszystko serdecznie dziękujemy, bo tam gdzie nie widzieli szans doktor wytłumaczył i tak pokierował, że jest lepiej nawet pod względem psychicznym.",
   },
 ];

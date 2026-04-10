@@ -35,7 +35,7 @@ export const Accordion = memo(function Accordion({
         aria-expanded={isExpanded}
       >
         {icon && <IconCircle icon={icon} size={isMobile ? "2xs" : "lg"} />}
-        <h3 className="text-sm tablet:text-3xl font-normal text-dark-gray flex-1 mx-2 tablet:mx-5">
+        <h3 className="text-[length:var(--fs-h5)] tablet:text-[length:var(--fs-h3)] leading-[150%] font-normal text-dark-gray flex-1 ml-5 mr-2 tablet:mx-5">
           {header}
         </h3>
         <div className={`transition-all duration-300 ease-in-out ${isExpanded ? "rotate-180" : "rotate-0"}`}>
