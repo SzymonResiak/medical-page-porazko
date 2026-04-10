@@ -45,23 +45,23 @@ export const FloatingIsland = () => {
         }
       `}
     >
-      <div className="inline-flex items-center gap-3 px-5 py-2.5 bg-off-white/80 backdrop-blur-md border border-dark-gray rounded-full shadow-lg">
+      <div className="inline-flex items-stretch shadow-lg rounded-[30px] overflow-hidden">
+        {/* Left — wróć */}
         <Link
           href="/"
-          className="flex items-center gap-2 text-dark-gray text-sm font-medium active:scale-95 transition-transform"
+          className="flex items-center gap-[15px] px-5 py-5 bg-dark-gray rounded-l-[30px] active:scale-95 transition-transform"
         >
-          <div className="w-5 h-5"><BackIcon /></div>
-          <span>Wróć</span>
+          <div className="w-[36px] h-[36px] text-off-white flex-shrink-0 rotate-180"><BackIcon /></div>
+          <span className="text-off-white text-[18px] leading-[25px]">wróć</span>
         </Link>
 
-        <div className="w-px h-5 bg-dark-gray/30" />
-
+        {/* Right — zadzwoń */}
         <a
           href={CONTACT.phoneLink}
-          className="flex items-center gap-2 text-dark-gray text-sm font-medium active:scale-95 transition-transform"
+          className="flex items-center gap-[15px] px-5 py-5 bg-accent rounded-r-[30px] active:scale-95 transition-transform"
         >
-          <div className="w-5 h-5"><PhoneIcon /></div>
-          <span>Zadzwoń</span>
+          <div className="w-[36px] h-[36px] text-off-white flex-shrink-0"><PhoneIcon /></div>
+          <span className="text-off-white text-[18px] leading-[25px]">zadzwoń</span>
         </a>
       </div>
     </div>

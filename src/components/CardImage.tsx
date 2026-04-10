@@ -27,6 +27,7 @@ interface CardImageProps {
   title: string;
   description: string;
   className?: string;
+  sizes?: string;
 }
 
 export const CardImage = ({
@@ -34,33 +35,31 @@ export const CardImage = ({
   title,
   description,
   className,
+  sizes = "(max-width: 48rem) 100vw, (max-width: 75rem) 50vw, 33vw",
 }: CardImageProps) => {
   return (
     <div
       className={
-        "relative overflow-hidden rounded-[1.875rem] bg-white " +
-        "border border-gray-300 transition-all duration-300 p-[1.875rem] " +
-        "hover:scale-[1.03] hover:shadow-lg " +
-        className
+        "flex flex-col gap-[10px] rounded-[30px] bg-[#FCFCFC] " +
+        "border-[0.5px] border-[rgba(128,128,128,0.55)] p-[35px] " +
+        (className ?? "")
       }
     >
-      <div className="relative w-full h-auto aspect-[3/2] mb-[1.875rem] px-[1.875rem]">
+      <div className="relative w-full aspect-[3/2] rounded-[20px] overflow-hidden flex-shrink-0">
         <Image
           src={cardImages[imageName]}
           alt={title}
           fill
-          className="object-contain rounded-[1.875rem]"
-          sizes="(max-width: 48rem) 100vw, (max-width: 75rem) 50vw, 33vw"
+          className="object-cover"
+          sizes={sizes}
         />
       </div>
-      <div className="flex flex-col w-full">
-        <h3 className="text-[1rem] tablet:text-[1.25rem] font-semibold text-gray-900 mb-[0.5rem]">
-          {title}
-        </h3>
-        <p className="text-[0.75rem] tablet:text-[1rem] font-normal text-gray-600">
-          {description}
-        </p>
-      </div>
+      <h3 className="text-[length:var(--fs-h3)] font-bold leading-[34px] text-dark-gray">
+        {title}
+      </h3>
+      <p className="text-[length:var(--fs-h4)] font-normal leading-[27px] text-[rgba(46,46,46,0.7)]">
+        {description}
+      </p>
     </div>
   );
 };

@@ -11,6 +11,7 @@ export const XRay = () => {
           text="Nowoczesna cyfrowa, diagnostyka rentgenowska. Obraz jest uzyskiwany natychmiastowo z minimalizacją szkodliwej dawki."
           className="bg-primary"
           textColor="white"
+          textClassName="!text-[length:var(--fs-h3)] !leading-[150%]"
         />
       </div>
       {/* Mobile: without icon */}
@@ -19,6 +20,7 @@ export const XRay = () => {
           text="Nowoczesna cyfrowa, diagnostyka rentgenowska. Obraz jest uzyskiwany natychmiastowo z minimalizacją szkodliwej dawki."
           className="bg-primary"
           textColor="white"
+          textClassName="!text-[length:var(--fs-h3)] !leading-[150%]"
         />
       </div>
     </div>

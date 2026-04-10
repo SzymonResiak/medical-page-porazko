@@ -12,6 +12,7 @@
     "@googlemaps/react-wrapper": "^1.2.0",
     "clsx": "^2.1.1",
     "framer-motion": "^12.6.3",
+    "lottie-react": "^2.4.1",
     "next": "^15.5.9",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",

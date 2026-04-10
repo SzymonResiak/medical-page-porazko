@@ -16,7 +16,7 @@ interface ClientLayoutProps {
 const VALID_ROUTES = ["/", "/dentist", "/internist"];
 
 const Copyright = ({ className = "" }: { className?: string }) => (
-  <p className={`text-sm text-dark-gray ${className}`}>
+  <p className={`text-[length:var(--fs-h4)] text-dark-gray ${className}`}>
     © 2026 SPLIN – Wszelkie prawa zastrzeżone.
   </p>
 );
@@ -25,7 +25,7 @@ const MainContent = ({ children, isMainPage }: { children: React.ReactNode; isMa
   <div className={`bg-off-white ${
     isMainPage ? "h-[100dvh] overflow-hidden" : ""
   }`}>
-    <div className={`max-w-[1600px] mx-auto p-2 tablet-landscape:p-4 desktop:p-6 desktop-lg:px-12 desktop-lg:py-8 desktop-3:px-16 desktop-3:py-10 desktop-4k:py-12 pb-[calc(0.5rem+env(safe-area-inset-bottom))] ${
+    <div className={`max-w-[1600px] mx-auto p-5 tablet-landscape:p-4 desktop:px-6 desktop:pt-[100px] desktop:pb-6 desktop-lg:px-12 desktop-lg:pt-[100px] desktop-lg:pb-8 desktop-3:px-16 desktop-3:pt-[100px] desktop-3:pb-10 desktop-4k:pt-[100px] desktop-4k:pb-12 pb-[calc(2.5rem+env(safe-area-inset-bottom))] ${
       isMainPage ? "h-full flex flex-col main-content-homepage" : ""
     }`}>
       {children}
@@ -58,7 +58,7 @@ const ConditionalFooter = ({ isValidRoute }: { isValidRoute: boolean }) => {
   return (
     <ScrollAnimation>
       <Footer />
-      <Copyright className="text-right mt-1" />
+      <Copyright className="text-right mt-[50px] mb-[50px]" />
     </ScrollAnimation>
   );
 };

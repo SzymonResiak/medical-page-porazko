@@ -17,7 +17,7 @@ export const InternistCard = ({ showBackButton = false }: InternistCardProps) =>
       description="Badanie USG jamy brzusznej obejmujące nerki, drogi moczowe, płuca, naczynia oraz przetoki i grafty do hemodializ."
       link="/internist"
       showBackButton={showBackButton}
-      imagePosition="left-bottom"
+      imagePosition="top"
     />
   );
 };

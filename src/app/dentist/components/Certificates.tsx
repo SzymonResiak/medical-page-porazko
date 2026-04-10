@@ -2,6 +2,9 @@
 
 import Image from "next/image";
 import { useState, useCallback, useEffect } from "react";
+import { InfoLabel } from "@/components/InfoLabel";
+import { TranslateIcon } from "@/components/icons/TranslateIcon";
+import { TransferIcon } from "@/components/icons/TransferIcon";
 import { createPortal } from "react-dom";
 
 const CERTIFICATES = [
@@ -76,14 +79,9 @@ export const Certificates = () => {
 
   return (
     <>
+      <p className="text-[length:var(--fs-h2)] leading-[150%] mb-5 desktop:mb-[80px]">Oto niektóre z moich certyfikatów</p>
       <div className="w-full p-0 flex justify-center">
-        <div
-          className="grid w-full gap-[1.5625rem] place-content-center"
-          style={{
-            gridTemplateColumns:
-              "repeat(auto-fit, minmax(min(100%, 140px), 1fr))",
-          }}
-        >
+        <div className="grid w-full gap-[1.5625rem] grid-cols-2 [&>*:last-child]:col-span-2 tablet:grid-cols-[repeat(auto-fit,minmax(140px,1fr))] tablet:[&>*:last-child]:col-span-1">
           {CERTIFICATES.map((certificate, index) => (
             <button
               key={certificate}
@@ -107,6 +105,21 @@ export const Certificates = () => {
             </button>
           ))}
         </div>
+      </div>
+
+      <div className="flex flex-col desktop-lg:flex-row gap-5 mt-5 desktop:mt-[80px]">
+        <InfoLabel
+          icon={<TranslateIcon />}
+          text="Biegle komunikuję się po angielsku"
+          className="bg-light-gray flex-1"
+          textColor="black"
+        />
+        <InfoLabel
+          icon={<TransferIcon variant="white" />}
+          text="Akceptuję płatność kartą lub przelewem"
+          className="bg-light-gray flex-1"
+          textColor="black"
+        />
       </div>
 
       {selectedCert && <Lightbox src={selectedCert} onClose={closeLightbox} />}

@@ -26,7 +26,7 @@ const HERO_DATA = {
     title: "Internista, nefrolog",
     name: "Tomasz Porażko",
     description: "Badanie USG jamy brzusznej obejmujące nerki, drogi moczowe, płuca, naczynia oraz przetoki i grafty do hemodializ.",
-    imagePosition: "left-bottom" as const,
+    imagePosition: "top" as const,
   },
 };
 
@@ -82,7 +82,7 @@ export const StaticCards = () => {
         {isInternist && (
           <motion.div key="internist-hero" {...cardEntrance} {...cardExit}>
             <div className="tablet-landscape:hidden desktop:hidden">
-              <SpecialistHeroCard {...HERO_DATA.internist} />
+              <SpecialistHeroCard {...HERO_DATA.internist}  />
             </div>
             <div className="hidden tablet-landscape:block desktop:block min-h-[300px]">
               <InternistCard showBackButton />

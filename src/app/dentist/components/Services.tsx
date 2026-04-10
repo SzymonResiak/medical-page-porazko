@@ -46,22 +46,24 @@ const SERVICES = [
 export const Services = () => {
   return (
     <div>
-      <p className="text-2xl desktop-lg:text-7xl">
-        Kompleksowa opieka stomatologiczna <br />
-        <span className="font-bold block tablet:inline">
-          znajdź usługę dla siebie
-        </span>
+      <p className="text-[length:var(--fs-h1)] leading-[150%]">
+        Kompleksowa opieka stomatologiczna
       </p>
-      <p className="mt-5 text-lg desktop-lg:text-4xl">
+      <p className="text-[length:var(--fs-h1)] font-bold leading-none">
+        znajdź usługę dla siebie
+      </p>
+      <p className="mt-5 text-[length:var(--fs-h2)] desktop:leading-[54px] leading-[150%]">
         Pełna oferta stomatologiczna dopasowana do Twoich potrzeb
       </p>
-      <div className="mt-10 grid grid-cols-1 tablet:grid-cols-2 desktop:grid-cols-3 desktop-lg:grid-cols-4 gap-5">
+      <div className="mt-10 grid grid-cols-1 tablet:grid-cols-2 desktop:grid-cols-3 gap-5 desktop:gap-[30px]">
         {SERVICES.map((service) => (
           <CardImage
             key={service.imageName}
             imageName={service.imageName}
             title={service.title}
             description={service.description}
+            // className={(index + 1) % 4 === 0 ? "desktop:col-span-3" : ""}
+            // sizes={(index + 1) % 4 === 0 ? "100vw" : "(max-width: 48rem) 100vw, (max-width: 75rem) 50vw, 33vw"}
           />
         ))}
       </div>
